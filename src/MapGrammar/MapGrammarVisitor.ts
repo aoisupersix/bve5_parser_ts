@@ -1,8 +1,9 @@
 import { MapGrammarParserVisitor } from './Parser/MapGrammarParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext } from './Parser/MapGrammarParser';
+import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext } from './Parser/MapGrammarParser';
 import * as ast from './AstNodes/mapGrammarAstNodes';
 import { Token } from './token';
+import { ParserRuleContext } from 'antlr4ts';
 
 export type AstNode = ast.MapGrammarAstNode | null
 
@@ -258,5 +259,29 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     return this.visit(ctx.legacy())
   }
   //#endregion
+
+  /**
+   * 距離程の巡回
+   * @param ctx 
+   */
+  visitDistance(ctx: DistanceContext): AstNode {
+    let start = ctx.start
+    if (ctx.parent !== undefined) {
+      start = ctx.parent.start
+    }
+
+    const node = new ast.DistanceNode(
+      Token.fromIToken(start)!,
+      Token.fromIToken(ctx.stop),
+      ctx.text
+    )
+    
+    const val = this.visit(ctx.expr())
+    if (val !== null) {
+      node.value = val
+    }
+
+    return node
+  }
 }
 

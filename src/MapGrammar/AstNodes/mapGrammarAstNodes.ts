@@ -73,3 +73,8 @@ export class DistanceNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Distance
   value: MapGrammarAstNode | null = null
 }
+
+export class CurveSetgaugeNode extends SyntaxNode {
+  static readonly mapElement: MapElement = MapElement.Curve
+  static readonly function: MapFunction = 
+}
