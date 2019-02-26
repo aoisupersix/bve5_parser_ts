@@ -8,6 +8,7 @@ import { MapFunction } from "../mapFunction";
 export enum MapGrammarType {
   Root,
   Distance,
+  CurveSetgaugeNode,
 }
 
 /**
@@ -19,7 +20,7 @@ export abstract class MapGrammarAstNode {
   /**
    * Astノードの種類
    */
-  abstract type: MapGrammarType
+  readonly abstract type: MapGrammarType
 
   constructor(
     /**
@@ -43,8 +44,8 @@ export abstract class MapGrammarAstNode {
  * 構文のASTノードベースクラス。
  */
 export abstract class SyntaxNode extends MapGrammarAstNode {
-  static readonly mapElement: MapElement
-  static readonly function: MapFunction
+  readonly mapElement: MapElement
+  readonly function: MapFunction
 }
 
 /**
@@ -60,7 +61,7 @@ export abstract class SyntaxWithKeyNode extends SyntaxNode {
  * 各構文はstatementsに格納されています。
  */
 export class RootNode extends MapGrammarAstNode {
-  type: MapGrammarType = MapGrammarType.Root
+  readonly type: MapGrammarType = MapGrammarType.Root
   version: string | null = null
   encoding: string | null = null
   statements: Array<MapGrammarAstNode> = []
@@ -74,7 +75,12 @@ export class DistanceNode extends MapGrammarAstNode {
   value: MapGrammarAstNode | null = null
 }
 
+/**
+ * Curve.SetGauge(value)ノード。
+ */
 export class CurveSetgaugeNode extends SyntaxNode {
-  static readonly mapElement: MapElement = MapElement.Curve
-  static readonly function: MapFunction = 
+  readonly type: MapGrammarType = MapGrammarType.CurveSetgaugeNode
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.SetGauge
+  value: MapGrammarAstNode | null = null
 }

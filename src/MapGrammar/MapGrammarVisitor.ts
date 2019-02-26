@@ -1,13 +1,31 @@
 import { MapGrammarParserVisitor } from './Parser/MapGrammarParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext } from './Parser/MapGrammarParser';
+import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext, CurveContext } from './Parser/MapGrammarParser';
 import * as ast from './AstNodes/mapGrammarAstNodes';
 import { Token } from './token';
 import { ParserRuleContext } from 'antlr4ts';
+import { MapFunction } from './mapFunction';
 
 export type AstNode = ast.MapGrammarAstNode | null
 
 export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> implements MapGrammarParserVisitor<AstNode> {
+
+  /**
+   * SyntaxNodeのインスタンス化に必要なデータをコンテキストから取得して返します。
+   * @param ctx 構文の文脈データ
+   */
+  private getSyntaxData(ctx: ParserRuleContext): [Token, Token | undefined, string] {
+    let start = ctx.start
+    let text = ctx.text
+    if (ctx.parent !== undefined) {
+      start = ctx.parent.start
+      text = start.text! + ctx.text
+    }
+    const st = Token.fromIToken(start)!
+    const et = Token.fromIToken(ctx.stop)
+
+    return [st, et, text]
+  }
 
   defaultResult() {
     return null
@@ -269,7 +287,6 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     if (ctx.parent !== undefined) {
       start = ctx.parent.start
     }
-
     const node = new ast.DistanceNode(
       Token.fromIToken(start)!,
       Token.fromIToken(ctx.stop),
@@ -282,6 +299,27 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     }
 
     return node
+  }
+
+  /**
+   * 平面曲線の巡回
+   * @param ctx 
+   */
+  visitCurve(ctx: CurveContext): AstNode {
+    const data = this.getSyntaxData(ctx)
+
+    if (ctx._func.text === undefined) {
+      return null
+    }
+    const funcName = ctx._func.text.toLowerCase()
+    switch(funcName) {
+      case MapFunction.SetGauge:
+        const node = new ast.CurveSetgaugeNode(data[0], data[1], data[2])
+        node.value = this.visit(ctx._value)
+        return node
+    }
+
+    return null
   }
 }
 

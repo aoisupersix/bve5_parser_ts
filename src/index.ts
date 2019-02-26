@@ -5,7 +5,7 @@ import { MapGrammarParser } from './MapGrammar/Parser/MapGrammarParser'
 import { RootNode, MapGrammarType } from './MapGrammar/AstNodes/mapGrammarAstNodes';
 
 // Create the lexer and parser
-let inputStream = new ANTLRInputStream("BveTs Map 2.02 \n Curve.Begin(4,3);")
+let inputStream = new ANTLRInputStream("BveTs Map 2.02 \n 0; Curve.SetGauge(4);")
 let lexer = new MapGrammarLexer(inputStream)
 let tokenStream = new CommonTokenStream(lexer)
 let parser = new MapGrammarParser(tokenStream)
