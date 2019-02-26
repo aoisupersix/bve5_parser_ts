@@ -1,0 +1,21 @@
+{
+  "name": "bve5_parser",
+  "version": "0.1.0",
+  "description": "Typescript parsing library for BveTrainsim 5",
+  "main": "out/index.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "antlr-map": "antlr4ts -o src/MapGrammar/Parser -visitor src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4"
+  },
+  "author": "aoisupersix",
+  "license": "ISC",
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.2"
+  },
+  "devDependencies": {
+    "antlr4ts-cli": "^0.5.0-alpha.2",
+    "typescript": "^3.3.3333"
+  }
+}
