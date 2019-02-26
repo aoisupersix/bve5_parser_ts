@@ -6,7 +6,7 @@
     {
       "label": "Compile Typescript",
       "type": "npm",
-      "script": "watch",
+      "script": "compile",
       "problemMatcher": []
     },
     {

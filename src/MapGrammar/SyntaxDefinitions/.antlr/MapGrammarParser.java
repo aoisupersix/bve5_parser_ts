@@ -3789,8 +3789,8 @@ public class MapGrammarParser extends Parser {
 
 	public static class LegacyContext extends ParserRuleContext {
 		public Token func;
-		public NullableExprContext start;
-		public NullableExprContext end;
+		public NullableExprContext arg_start;
+		public NullableExprContext arg_end;
 		public NullableExprContext red;
 		public NullableExprContext green;
 		public NullableExprContext blue;
@@ -3838,11 +3838,11 @@ public class MapGrammarParser extends Parser {
 				setState(926);
 				match(OPN_PAR);
 				setState(927);
-				((LegacyContext)_localctx).start = nullableExpr();
+				((LegacyContext)_localctx).arg_start = nullableExpr();
 				setState(928);
 				match(COMMA);
 				setState(929);
-				((LegacyContext)_localctx).end = nullableExpr();
+				((LegacyContext)_localctx).arg_end = nullableExpr();
 				setState(930);
 				match(COMMA);
 				setState(931);
@@ -4538,7 +4538,7 @@ public class MapGrammarParser extends Parser {
 	}
 
 	public static class VarContext extends ParserRuleContext {
-		public string varName;
+		public string | undefined varName;
 		public Token v;
 		public TerminalNode VAR_START() { return getToken(MapGrammarParser.VAR_START, 0); }
 		public TerminalNode VAR() { return getToken(MapGrammarParser.VAR, 0); }
@@ -4573,7 +4573,7 @@ public class MapGrammarParser extends Parser {
 	}
 
 	public static class StringContext extends ParserRuleContext {
-		public string text;
+		public string | undefined value;
 		public String_textContext v;
 		public TerminalNode QUOTE() { return getToken(MapGrammarParser.QUOTE, 0); }
 		public TerminalNode RQUOTE() { return getToken(MapGrammarParser.RQUOTE, 0); }
@@ -4598,7 +4598,7 @@ public class MapGrammarParser extends Parser {
 			((StringContext)_localctx).v = string_text();
 			setState(1053);
 			match(RQUOTE);
-			 ((StringContext)_localctx).text =  (((StringContext)_localctx).v!=null?_input.getText(((StringContext)_localctx).v.start,((StringContext)_localctx).v.stop):null) ;
+			 ((StringContext)_localctx).value =  (((StringContext)_localctx).v!=null?_input.getText(((StringContext)_localctx).v.start,((StringContext)_localctx).v.stop):null) ;
 			}
 		}
 		catch (RecognitionException re) {
@@ -4658,7 +4658,7 @@ public class MapGrammarParser extends Parser {
 	}
 
 	public static class EncodingContext extends ParserRuleContext {
-		public string text;
+		public string | undefined value;
 		public Encode_stringContext v;
 		public TerminalNode SELECT_ENCODE() { return getToken(MapGrammarParser.SELECT_ENCODE, 0); }
 		public Encode_stringContext encode_string() {
@@ -4692,7 +4692,7 @@ public class MapGrammarParser extends Parser {
 				}
 			}
 
-			((EncodingContext)_localctx).text =  (((EncodingContext)_localctx).v!=null?_input.getText(((EncodingContext)_localctx).v.start,((EncodingContext)_localctx).v.stop):null); 
+			((EncodingContext)_localctx).value =  (((EncodingContext)_localctx).v!=null?_input.getText(((EncodingContext)_localctx).v.start,((EncodingContext)_localctx).v.stop):null); 
 			}
 		}
 		catch (RecognitionException re) {

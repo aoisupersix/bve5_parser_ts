@@ -235,7 +235,7 @@ varAssign :
 
 //レガシー関数
 legacy :
-	  DOT func=FOG OPN_PAR start=nullableExpr COMMA end=nullableExpr COMMA red=nullableExpr COMMA green=nullableExpr COMMA blue=nullableExpr CLS_PAR
+	  DOT func=FOG OPN_PAR arg_start=nullableExpr COMMA arg_end=nullableExpr COMMA red=nullableExpr COMMA green=nullableExpr COMMA blue=nullableExpr CLS_PAR
 	| DOT func=CURVE OPN_PAR radius=nullableExpr COMMA cant=nullableExpr CLS_PAR
 	| DOT func=PITCH OPN_PAR rate=nullableExpr CLS_PAR
 	| DOT func=TURN OPN_PAR slope=nullableExpr CLS_PAR
@@ -269,20 +269,20 @@ expr :
 	| dist=DISTANCE									#distanceExpr
 	;
 
-var returns [string varName]:
+var returns [string | undefined varName]:
 	VAR_START v=VAR { $varName = $v.text ;}
 	;
 
-string returns [string text]:
-	QUOTE v=string_text RQUOTE { $text = $v.text ;}
+string returns [string | undefined value]:
+	QUOTE v=string_text RQUOTE { $value = $v.text ;}
 	;
 
 string_text :
 	CHAR*
 	;
 
-encoding returns [string text]:
-	SELECT_ENCODE v=encode_string ENCODE_END? {$text = $v.text; }
+encoding returns [string | undefined value]:
+	SELECT_ENCODE v=encode_string ENCODE_END? {$value = $v.text; }
 	;
 
 encode_string :

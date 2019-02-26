@@ -2,6 +2,7 @@ import { ANTLRInputStream, CommonTokenStream } from 'antlr4ts'
 import { MapGrammarVisitor } from './MapGrammar/MapGrammarVisitor'
 import { MapGrammarLexer } from './MapGrammar/Parser/MapGrammarLexer'
 import { MapGrammarParser } from './MapGrammar/Parser/MapGrammarParser'
+import { RootNode, MapGrammarType } from './MapGrammar/AstNodes/mapGrammarAstNodes';
 
 // Create the lexer and parser
 let inputStream = new ANTLRInputStream("BveTs Map 2.02 \n Curve.Begin(4,3);")
@@ -15,4 +16,8 @@ let tree = parser.root()
 // Create the visitor
 const mapGrammarVisitor = new MapGrammarVisitor()
 // Use the visitor entry point
-mapGrammarVisitor.visit(tree)
+const node = mapGrammarVisitor.visit(tree)
+if (node !== null && node.type === MapGrammarType.Root) {
+  const root = <RootNode>node
+  console.log(root.version)
+}

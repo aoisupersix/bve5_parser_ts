@@ -3143,11 +3143,11 @@ export class MapGrammarParser extends Parser {
 				this.state = 926;
 				this.match(MapGrammarParser.OPN_PAR);
 				this.state = 927;
-				_localctx._start = this.nullableExpr();
+				_localctx._arg_start = this.nullableExpr();
 				this.state = 928;
 				this.match(MapGrammarParser.COMMA);
 				this.state = 929;
-				_localctx._end = this.nullableExpr();
+				_localctx._arg_end = this.nullableExpr();
 				this.state = 930;
 				this.match(MapGrammarParser.COMMA);
 				this.state = 931;
@@ -3703,7 +3703,7 @@ export class MapGrammarParser extends Parser {
 			_localctx._v = this.string_text();
 			this.state = 1053;
 			this.match(MapGrammarParser.RQUOTE);
-			 _localctx.text =  (_localctx._v != null ? this._input.getTextFromRange(_localctx._v._start, _localctx._v._stop) : undefined) ;
+			 _localctx.value =  (_localctx._v != null ? this._input.getTextFromRange(_localctx._v._start, _localctx._v._stop) : undefined) ;
 			}
 		}
 		catch (re) {
@@ -3780,7 +3780,7 @@ export class MapGrammarParser extends Parser {
 				}
 			}
 
-			_localctx.text =  (_localctx._v != null ? this._input.getTextFromRange(_localctx._v._start, _localctx._v._stop) : undefined); 
+			_localctx.value =  (_localctx._v != null ? this._input.getTextFromRange(_localctx._v._start, _localctx._v._stop) : undefined); 
 			}
 		}
 		catch (re) {
@@ -6785,8 +6785,8 @@ export class VarAssignContext extends ParserRuleContext {
 
 export class LegacyContext extends ParserRuleContext {
 	public _func: Token;
-	public _start: NullableExprContext;
-	public _end: NullableExprContext;
+	public _arg_start: NullableExprContext;
+	public _arg_end: NullableExprContext;
 	public _red: NullableExprContext;
 	public _green: NullableExprContext;
 	public _blue: NullableExprContext;
@@ -7504,7 +7504,7 @@ export class PowExprContext extends ExprContext {
 
 
 export class VarContext extends ParserRuleContext {
-	public varName: string;
+	public varName: string | undefined;
 	public _v: Token;
 	public VAR_START(): TerminalNode { return this.getToken(MapGrammarParser.VAR_START, 0); }
 	public VAR(): TerminalNode { return this.getToken(MapGrammarParser.VAR, 0); }
@@ -7537,7 +7537,7 @@ export class VarContext extends ParserRuleContext {
 
 
 export class StringContext extends ParserRuleContext {
-	public text: string;
+	public value: string | undefined;
 	public _v: String_textContext;
 	public QUOTE(): TerminalNode { return this.getToken(MapGrammarParser.QUOTE, 0); }
 	public RQUOTE(): TerminalNode { return this.getToken(MapGrammarParser.RQUOTE, 0); }
@@ -7611,7 +7611,7 @@ export class String_textContext extends ParserRuleContext {
 
 
 export class EncodingContext extends ParserRuleContext {
-	public text: string;
+	public value: string | undefined;
 	public _v: Encode_stringContext;
 	public SELECT_ENCODE(): TerminalNode { return this.getToken(MapGrammarParser.SELECT_ENCODE, 0); }
 	public encode_string(): Encode_stringContext {
