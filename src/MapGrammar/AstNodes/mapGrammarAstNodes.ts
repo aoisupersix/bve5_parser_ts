@@ -115,9 +115,142 @@ export class VarAssignNode extends MapGrammarAstNode {
 }
 
 //#region 数式関係
+/**
+ * 加算ノード。
+ */
 export class AdditionNode extends InfixExpressionNode {
-
+  type: MapGrammarType = MapGrammarType.Calc_Addition
 }
+
+/**
+ * 減算ノード。
+ */
+export class SubtractionNode extends InfixExpressionNode {
+  type: MapGrammarType = MapGrammarType.Calc_Subtraction
+}
+
+/**
+ * 乗算ノード。
+ */
+export class MultiplicationNode extends InfixExpressionNode {
+  type: MapGrammarType = MapGrammarType.Calc_Multiplication
+}
+
+/**
+ * 除算ノード。
+ */
+export class DivisionNode extends InfixExpressionNode {
+  type: MapGrammarType = MapGrammarType.Calc_Division
+}
+
+/**
+ * 剰余算ノード。
+ */
+export class ModuloNode extends InfixExpressionNode {
+  type: MapGrammarType = MapGrammarType.Calc_Modulo
+}
+
+/**
+ * ユーナリ演算ノード
+ */
+export class UnaryNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Unary
+  inner: MapGrammarAstNode | null = null
+}
+
+/**
+ * 絶対値関数ノード
+ */
+export class AbsNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Abs
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * ArcTan関数ノード
+ */
+export class Atan2Node extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Atan2
+  y: MapGrammarAstNode | null = null
+  x: MapGrammarAstNode | null = null
+}
+
+/**
+ * Ceil関数ノード
+ */
+export class CeilNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Ceil
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Cos関数ノード
+ */
+export class CosNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Cos
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Exp関数ノード
+ */
+export class ExpNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Exp
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Floor関数ノード
+ */
+export class FloorNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Floor
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Log関数ノード
+ */
+export class LogNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Log
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Pow関数ノード
+ */
+export class PowNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Pow
+  x: MapGrammarAstNode | null = null
+  y: MapGrammarAstNode | null = null
+}
+
+/**
+ * Rand関数ノード
+ */
+export class RandNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Rand
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Sin関数ノード
+ */
+export class SinNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Sin
+  value: MapGrammarAstNode | null = null
+}
+
+/**
+ * Sqrt関数ノード
+ */
+export class SqrtNode extends MapGrammarAstNode {
+  type: MapGrammarType = MapGrammarType.Calc_Sqrt
+  value: MapGrammarAstNode | null = null
+}
+//#endregion
+
+//#region 値
+
 //#endregion
 
 /**
