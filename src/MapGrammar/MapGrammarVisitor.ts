@@ -1,6 +1,6 @@
 import { MapGrammarParserVisitor } from './Parser/MapGrammarParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext, CurveContext } from './Parser/MapGrammarParser';
+import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext, CurveContext, VarAssignContext } from './Parser/MapGrammarParser';
 import * as ast from './AstNodes/mapGrammarAstNodes';
 import { Token } from './token';
 import { ParserRuleContext } from 'antlr4ts';
@@ -320,6 +320,20 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     }
 
     return null
+  }
+
+  visitVarAssign(ctx: VarAssignContext): AstNode {
+    const data = this.getSyntaxData(ctx)
+
+    const node = new ast.VarAssignNode(data[0], data[1], data[2])
+    if (ctx._v.varName !== undefined) {
+      node.varName = ctx._v.varName
+    }
+    const val = this.visit(ctx.expr())
+    if (val !== null) {
+      node.value = val
+    }
+    return node
   }
 }
 
