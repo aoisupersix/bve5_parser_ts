@@ -7,7 +7,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "antlr-map": "antlr4ts -o src/MapGrammar/Parser -visitor src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4"
+    "build-antlr-map": "antlr4ts -o src/MapGrammar/Parser -visitor src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4"
   },
   "author": "aoisupersix",
   "license": "ISC",
