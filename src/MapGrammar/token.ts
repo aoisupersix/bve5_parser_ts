@@ -4,6 +4,7 @@ export class Token {
   constructor(
     public line: number,
     public charPositionInLine: number,
+    public lengthnull: number | null,
     public text: string | undefined
   ) {}
 
@@ -12,6 +13,11 @@ export class Token {
       return undefined
     }
 
-    return new Token(token.line, token.charPositionInLine, token.text)
+    let len: number | null = token.stopIndex - token.startIndex
+    if (len <= 0) {
+      len = null
+    }
+
+    return new Token(token.line, token.charPositionInLine, len, token.text)
   }
 }
