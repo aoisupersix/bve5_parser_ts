@@ -3,6 +3,20 @@ import { MapElement } from "../mapElement";
 import { MapFunction } from "../mapFunction";
 
 /**
+ * 全てのマップ構文ASTノードです。
+ * RootNodeのstatementsは型を絞れた方がいいと思うので距離程、変数宣言、マップ構文のみ許可します。
+ */
+export type statementNode = DistanceNode | VarAssignNode | SyntaxNode
+
+/**
+ * 全ての数式ASTノードです。
+ * 引数や変数値はこのノードの内のどれかが入ります。
+ */
+export type exprNode = AdditionNode | SubtractionNode | MultiplicationNode | DivisionNode | ModuloNode | UnaryNode
+  | AbsNode | Atan2Node | CeilNode | CosNode | ExpNode | FloorNode | LogNode | PowNode | RandNode | SinNode | SqrtNode
+  | NumberNode | DistanceVariableNode | StringNode | VarNode
+
+/**
  * マップ構文のASTノード種類
  */
 export enum MapGrammarType {
@@ -74,15 +88,15 @@ export abstract class SyntaxNode extends MapGrammarAstNode {
  * キーを保持する構文のASTノードベースクラス。
  */
 export abstract class SyntaxWithKeyNode extends SyntaxNode {
-  key: MapGrammarAstNode | null = null
+  key: exprNode | null = null
 }
 
 /**
  * 二項演算数式のASTノードベースクラス。
  */
 export abstract class InfixExpressionNode extends MapGrammarAstNode {
-  left: MapGrammarAstNode | null = null
-  right: MapGrammarAstNode | null = null
+  left: exprNode | null = null
+  right: exprNode | null = null
 }
 
 /**
@@ -92,9 +106,9 @@ export abstract class InfixExpressionNode extends MapGrammarAstNode {
  */
 export class RootNode extends MapGrammarAstNode {
   readonly type: MapGrammarType = MapGrammarType.Root
-  version: string | null = null
+  version: string
   encoding: string | null = null
-  statements: Array<MapGrammarAstNode> = []
+  statements: Array<statementNode> = []
 }
 
 /**
@@ -102,7 +116,7 @@ export class RootNode extends MapGrammarAstNode {
  */
 export class DistanceNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Distance
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -111,7 +125,7 @@ export class DistanceNode extends MapGrammarAstNode {
 export class VarAssignNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.VarAssign
   varName: string | null = null
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 //#region 数式関係
@@ -155,7 +169,7 @@ export class ModuloNode extends InfixExpressionNode {
  */
 export class UnaryNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Unary
-  inner: MapGrammarAstNode | null = null
+  inner: exprNode | null = null
 }
 
 /**
@@ -163,7 +177,7 @@ export class UnaryNode extends MapGrammarAstNode {
  */
 export class AbsNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Abs
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -171,8 +185,8 @@ export class AbsNode extends MapGrammarAstNode {
  */
 export class Atan2Node extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Atan2
-  y: MapGrammarAstNode | null = null
-  x: MapGrammarAstNode | null = null
+  y: exprNode | null = null
+  x: exprNode | null = null
 }
 
 /**
@@ -180,7 +194,7 @@ export class Atan2Node extends MapGrammarAstNode {
  */
 export class CeilNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Ceil
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -188,7 +202,7 @@ export class CeilNode extends MapGrammarAstNode {
  */
 export class CosNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Cos
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -196,7 +210,7 @@ export class CosNode extends MapGrammarAstNode {
  */
 export class ExpNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Exp
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -204,7 +218,7 @@ export class ExpNode extends MapGrammarAstNode {
  */
 export class FloorNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Floor
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -212,7 +226,7 @@ export class FloorNode extends MapGrammarAstNode {
  */
 export class LogNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Log
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -220,8 +234,8 @@ export class LogNode extends MapGrammarAstNode {
  */
 export class PowNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Pow
-  x: MapGrammarAstNode | null = null
-  y: MapGrammarAstNode | null = null
+  x: exprNode | null = null
+  y: exprNode | null = null
 }
 
 /**
@@ -229,7 +243,7 @@ export class PowNode extends MapGrammarAstNode {
  */
 export class RandNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Rand
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -237,7 +251,7 @@ export class RandNode extends MapGrammarAstNode {
  */
 export class SinNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Sin
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
 /**
@@ -245,7 +259,7 @@ export class SinNode extends MapGrammarAstNode {
  */
 export class SqrtNode extends MapGrammarAstNode {
   type: MapGrammarType = MapGrammarType.Calc_Sqrt
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 //#endregion
 

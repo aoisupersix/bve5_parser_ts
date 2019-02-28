@@ -53,7 +53,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     for(const statement of ctx.statement()) {
       const child = this.visit(statement)
       if (child !== null) {
-        node.statements.push(child)
+        node.statements.push(<ast.statementNode>child)
       }
     }
     
