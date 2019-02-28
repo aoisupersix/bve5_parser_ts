@@ -460,7 +460,77 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * @param ctx 
    */
   visitCosExpr(ctx: parser.CosExprContext): ast.exprNode {
-    const node = new ast.CeilNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    const node = new ast.CosNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * EXP関数の巡回
+   * @param ctx 
+   */
+  visitExpExpr(ctx: parser.ExpExprContext): ast.exprNode {
+    const node = new ast.ExpNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * FLOOR関数の巡回
+   * @param ctx 
+   */
+  visitFloorExpr(ctx: parser.FloorExprContext): ast.exprNode {
+    const node = new ast.FloorNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * POW関数の巡回
+   * @param ctx 
+   */
+  visitPowExpr(ctx: parser.PowExprContext): ast.exprNode {
+    const node = new ast.PowNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.x = <ast.exprNode>this.visit(ctx._x)
+    node.y = <ast.exprNode>this.visit(ctx._y)
+    return node
+  }
+
+  /**
+   * RAND関数の巡回
+   * @param ctx 
+   */
+  visitRandExpr(ctx: parser.RandExprContext): ast.exprNode {
+    const node = new ast.RandNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    const value = this.visit(ctx._value)
+    // Rand.valueはnull許容
+    if (value !== null) {
+      node.value = <ast.exprNode>value
+    }
+
+    return node
+  }
+
+  /**
+   * SIN関数の巡回
+   * @param ctx 
+   */
+  visitSinExpr(ctx: parser.SinExprContext): ast.exprNode {
+    const node = new ast.SinNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * SQRT関数の巡回
+   * @param ctx 
+   */
+  visitSqrtExpr(ctx: parser.SqrtExprContext): ast.exprNode {
+    const node = new ast.SqrtNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
     node.value = <ast.exprNode>this.visit(ctx._value)
 
     return node
