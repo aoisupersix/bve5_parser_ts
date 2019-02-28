@@ -572,7 +572,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    */
   visitVarExpr(ctx: parser.VarExprContext): ast.VarNode {
     const node = new ast.VarNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
-    node.varName = ctx._v.text
+    node.varName = ctx._v.varName!
     return node
   }
 }

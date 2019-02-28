@@ -5,6 +5,7 @@ import { MapFunction } from "../mapFunction";
 /**
  * 全てのマップ構文ASTノードです。
  * RootNodeのstatementsは型を絞れた方がいいと思うので距離程、変数宣言、マップ構文のみ許可します。
+ * ASTの構造としてはルートノードの下にこれらのノードが構文分だけぶら下がる形になります。
  */
 export type statementNode = DistanceNode | VarAssignNode | SyntaxNode
 
