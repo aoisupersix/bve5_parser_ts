@@ -535,5 +535,45 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
 
     return node
   }
+
+  /**
+   * 数字項の巡回
+   * @param ctx 
+   */
+  visitNumberExpr(ctx: parser.NumberExprContext): ast.exprNode {
+    const node = new ast.NumberNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = Number(ctx._num.text!)
+
+    return node
+  }
+
+  /**
+   * 距離変数項の巡回
+   * @param ctx 
+   */
+  visitDistanceExpr(ctx: parser.DistanceExprContext): ast.DistanceVariableNode {
+    return new ast.DistanceVariableNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+  }
+
+  /**
+   * 文字列項の巡回
+   * @param ctx 
+   */
+  visitStringExpr(ctx: parser.StringExprContext): ast.StringNode {
+    const node = new ast.StringNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = ctx._str.text
+
+    return node
+  }
+
+  /**
+   * 変数項の巡回
+   * @param ctx 
+   */
+  visitVarExpr(ctx: parser.VarExprContext): ast.VarNode {
+    const node = new ast.VarNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.varName = ctx._v.text
+    return node
+  }
 }
 
