@@ -1,10 +1,11 @@
 import { MapGrammarParserVisitor } from './Parser/MapGrammarParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import { RootContext, DistStateContext, IncludeContext, IncludeStateContext, CurveStateContext, GradientStateContext, TrackStateContext, StructureStateContext, RepeaterStateContext, BackgroundStateContext, StationStateContext, SectionStateContext, SignalStateContext, SpeedlimitStateContext, PretrainStateContext, LightStateContext, FogStateContext, DrawdistanceContext, DrawdistanceStateContext, CabilluminanceStateContext, IrregularityStateContext, AdhesionStateContext, SoundStateContext, Sound3dStateContext, RollingnoiseStateContext, FlangenoiseStateContext, JointnoiseStateContext, TrainStateContext, VarAssignStateContext, LegacyStateContext, DistanceContext, CurveContext, VarAssignContext } from './Parser/MapGrammarParser';
+import * as parser from './Parser/MapGrammarParser';
 import * as ast from './AstNodes/mapGrammarAstNodes';
 import { Token } from './token';
 import { ParserRuleContext } from 'antlr4ts';
 import { MapFunction } from './mapFunction';
+import { MapGrammarLexer } from './Parser/MapGrammarLexer';
 
 export type AstNode = ast.MapGrammarAstNode | null
 
@@ -35,7 +36,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * ルートの巡回
    * @param ctx 
    */
-  visitRoot(ctx: RootContext): AstNode {
+  visitRoot(ctx: parser.RootContext): AstNode {
     const node = new ast.RootNode(
       Token.fromIToken(ctx.start)!,
       Token.fromIToken(ctx.stop),
@@ -65,7 +66,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 距離程ステートメントの巡回
    * @param ctx 
    */
-  visitDistState(ctx: DistStateContext): AstNode {
+  visitDistState(ctx: parser.DistStateContext): AstNode {
     return this.visit(ctx.distance())
   }
 
@@ -73,7 +74,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * インクルードステートメントの巡回
    * @param ctx 
    */
-  visitIncludeState(ctx: IncludeStateContext): AstNode {
+  visitIncludeState(ctx: parser.IncludeStateContext): AstNode {
     return this.visit(ctx.include())
   }
 
@@ -81,7 +82,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 平面曲線ステートメントの巡回
    * @param ctx 
    */
-  visitCurveState(ctx: CurveStateContext): AstNode {
+  visitCurveState(ctx: parser.CurveStateContext): AstNode {
     return this.visit(ctx.curve())
   }
 
@@ -89,7 +90,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 縦曲線ステートメントの巡回
    * @param ctx 
    */
-  visitGradientState(ctx: GradientStateContext): AstNode {
+  visitGradientState(ctx: parser.GradientStateContext): AstNode {
     return this.visit(ctx.gradient())
   }
 
@@ -97,7 +98,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 他軌道ステートメントの巡回
    * @param ctx 
    */
-  visitTrackState(ctx: TrackStateContext): AstNode {
+  visitTrackState(ctx: parser.TrackStateContext): AstNode {
     return this.visit(ctx.track())
   }
 
@@ -105,7 +106,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * ストラクチャステートメントの巡回
    * @param ctx 
    */
-  visitStructureState(ctx: StructureStateContext): AstNode {
+  visitStructureState(ctx: parser.StructureStateContext): AstNode {
     return this.visit(ctx.structure())
   }
 
@@ -113,7 +114,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 連続ストラクチャステートメントの巡回
    * @param ctx 
    */
-  visitRepeaterState(ctx: RepeaterStateContext): AstNode {
+  visitRepeaterState(ctx: parser.RepeaterStateContext): AstNode {
     return this.visit(ctx.repeater())
   }
 
@@ -121,7 +122,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 背景ステートメントの巡回
    * @param ctx 
    */
-  visitBackgroundState(ctx: BackgroundStateContext): AstNode {
+  visitBackgroundState(ctx: parser.BackgroundStateContext): AstNode {
     return this.visit(ctx.background())
   }
 
@@ -129,7 +130,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 停車場ステートメントの巡回
    * @param ctx 
    */
-  visitStationState(ctx: StationStateContext): AstNode {
+  visitStationState(ctx: parser.StationStateContext): AstNode {
     return this.visit(ctx.station())
   }
 
@@ -137,7 +138,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 閉そくステートメントの巡回
    * @param ctx 
    */
-  visitSectionState(ctx: SectionStateContext): AstNode {
+  visitSectionState(ctx: parser.SectionStateContext): AstNode {
     return this.visit(ctx.section())
   }
 
@@ -145,7 +146,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 地上子ステートメントの巡回
    * @param ctx 
    */
-  visitSignalState(ctx: SignalStateContext): AstNode {
+  visitSignalState(ctx: parser.SignalStateContext): AstNode {
     return this.visit(ctx.signal())
   }
 
@@ -153,7 +154,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 速度制限ステートメントの巡回
    * @param ctx 
    */
-  visitSpeedlimitState(ctx: SpeedlimitStateContext): AstNode {
+  visitSpeedlimitState(ctx: parser.SpeedlimitStateContext): AstNode {
     return this.visit(ctx.speedlimit())
   }
 
@@ -161,7 +162,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 先行列車ステートメントの巡回
    * @param ctx 
    */
-  visitPretrainState(ctx: PretrainStateContext): AstNode {
+  visitPretrainState(ctx: parser.PretrainStateContext): AstNode {
     return this.visit(ctx.pretrain())
   }
 
@@ -169,7 +170,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 光源ステートメントの巡回
    * @param ctx 
    */
-  visitLightState(ctx: LightStateContext): AstNode {
+  visitLightState(ctx: parser.LightStateContext): AstNode {
     return this.visit(ctx.light())
   }
 
@@ -177,7 +178,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 霧効果ステートメントの巡回
    * @param ctx 
    */
-  visitFogState(ctx: FogStateContext): AstNode {
+  visitFogState(ctx: parser.FogStateContext): AstNode {
     return this.visit(ctx.fog())
   }
 
@@ -185,7 +186,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 風景描画距離ステートメントの巡回
    * @param ctx 
    */
-  visitDrawdistanceState(ctx: DrawdistanceStateContext): AstNode {
+  visitDrawdistanceState(ctx: parser.DrawdistanceStateContext): AstNode {
     return this.visit(ctx.drawdistance())
   }
 
@@ -193,7 +194,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 運転台の明るさステートメントの巡回
    * @param ctx 
    */
-  visitCabilluminanceState(ctx: CabilluminanceStateContext): AstNode {
+  visitCabilluminanceState(ctx: parser.CabilluminanceStateContext): AstNode {
     return this.visit(ctx.cabilluminance())
   }
 
@@ -201,7 +202,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 軌道変位ステートメントの巡回
    * @param ctx 
    */
-  visitIrregularityState(ctx: IrregularityStateContext): AstNode {
+  visitIrregularityState(ctx: parser.IrregularityStateContext): AstNode {
     return this.visit(ctx.irregularity())
   }
 
@@ -209,7 +210,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 粘着特性ステートメントの巡回
    * @param ctx 
    */
-  visitAdhesionState(ctx: AdhesionStateContext): AstNode {
+  visitAdhesionState(ctx: parser.AdhesionStateContext): AstNode {
     return this.visit(ctx.adhesion())
   }
 
@@ -217,7 +218,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 音ステートメントの巡回
    * @param ctx 
    */
-  visitSoundState(ctx: SoundStateContext): AstNode {
+  visitSoundState(ctx: parser.SoundStateContext): AstNode {
     return this.visit(ctx.sound())
   }
 
@@ -225,7 +226,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 固定音源ステートメントの巡回
    * @param ctx 
    */
-  visitSound3dState(ctx: Sound3dStateContext): AstNode {
+  visitSound3dState(ctx: parser.Sound3dStateContext): AstNode {
     return this.visit(ctx.sound3d())
   }
 
@@ -233,7 +234,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 走行音ステートメントの巡回
    * @param ctx 
    */
-  visitRollingnoiseState(ctx: RollingnoiseStateContext): AstNode {
+  visitRollingnoiseState(ctx: parser.RollingnoiseStateContext): AstNode {
     return this.visit(ctx.rollingnoise())
   }
 
@@ -241,7 +242,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * フランジきしり音ステートメントの巡回
    * @param ctx 
    */
-  visitFlangenoiseState(ctx: FlangenoiseStateContext): AstNode {
+  visitFlangenoiseState(ctx: parser.FlangenoiseStateContext): AstNode {
     return this.visit(ctx.flangenoise())
   }
 
@@ -249,7 +250,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 分岐器通過音ステートメントの巡回
    * @param ctx 
    */
-  visitJointnoiseState(ctx: JointnoiseStateContext): AstNode {
+  visitJointnoiseState(ctx: parser.JointnoiseStateContext): AstNode {
     return this.visit(ctx.jointnoise())
   }
 
@@ -257,7 +258,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 他列車ステートメントの巡回
    * @param ctx 
    */
-  visitTrainState(ctx: TrainStateContext): AstNode {
+  visitTrainState(ctx: parser.TrainStateContext): AstNode {
     return this.visit(ctx.train())
   }
 
@@ -265,7 +266,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 変数宣言ステートメントの巡回
    * @param ctx 
    */
-  visitVarAssignState(ctx: VarAssignStateContext): AstNode {
+  visitVarAssignState(ctx: parser.VarAssignStateContext): AstNode {
     return this.visit(ctx.varAssign())
   }
 
@@ -273,7 +274,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * レガシーステートメントの巡回
    * @param ctx 
    */
-  visitLegacyState(ctx: LegacyStateContext): AstNode {
+  visitLegacyState(ctx: parser.LegacyStateContext): AstNode {
     return this.visit(ctx.legacy())
   }
   //#endregion
@@ -282,7 +283,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 距離程の巡回
    * @param ctx 
    */
-  visitDistance(ctx: DistanceContext): AstNode {
+  visitDistance(ctx: parser.DistanceContext): AstNode {
     let start = ctx.start
     if (ctx.parent !== undefined) {
       start = ctx.parent.start
@@ -305,7 +306,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    * 平面曲線の巡回
    * @param ctx 
    */
-  visitCurve(ctx: CurveContext): AstNode {
+  visitCurve(ctx: parser.CurveContext): AstNode {
     const data = this.getSyntaxData(ctx)
 
     if (ctx._func.text === undefined) {
@@ -322,7 +323,11 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     return null
   }
 
-  visitVarAssign(ctx: VarAssignContext): AstNode {
+  /**
+   * 変数宣言の巡回
+   * @param ctx 
+   */
+  visitVarAssign(ctx: parser.VarAssignContext): ast.VarAssignNode {
     const data = this.getSyntaxData(ctx)
 
     const node = new ast.VarAssignNode(data[0], data[1], data[2])
@@ -331,8 +336,133 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     }
     const val = this.visit(ctx.expr())
     if (val !== null) {
-      node.value = val
+      node.value = <ast.exprNode>val
     }
+    return node
+  }
+
+  /**
+   * 連続引数の巡回
+   * @param ctx 
+   */
+  visitExprArgs(ctx: parser.ExprArgsContext): AstNode {
+    return this.visit(ctx.nullableExpr())
+  }
+
+  /**
+   * null許容数式の巡回
+   * @param ctx 
+   */
+  visitNullableExpr(ctx: parser.NullableExprContext): AstNode {
+    const expr = ctx.expr()
+    if (expr !== undefined) {
+      return this.visit(expr)
+    }
+
+    // NULL
+    return null
+  }
+
+  /**
+   * 括弧あり数式の巡回
+   * @param ctx 
+   */
+  visitParensExpr(ctx: parser.ParensExprContext): AstNode {
+    return this.visit(ctx.expr())
+  }
+
+  /**
+   * ユーナリ演算の巡回
+   * @param ctx 
+   */
+  visitUnaryExpr(ctx: parser.UnaryExprContext): AstNode {
+    switch(ctx._op.type) {
+      case MapGrammarLexer.PLUS:
+        return this.visit(ctx.expr())
+      case MapGrammarLexer.MINUS:
+        return this.visit(ctx.expr())
+      default:
+        // error
+        return null
+    }
+  }
+
+  /**
+   * 二項演算の巡回
+   * @param ctx 
+   */
+  visitInfixExpr(ctx: parser.InfixExprContext): AstNode {
+    let node: ast.AdditionNode | ast.SubtractionNode | ast.MultiplicationNode | ast.DivisionNode | ast.ModuloNode | null = null
+    const start = Token.fromIToken(ctx.start)!
+    const end = Token.fromIToken(ctx.stop)
+
+    switch(ctx._op.type) {
+    case MapGrammarLexer.PLUS:
+      node = new ast.AdditionNode(start, end, ctx.text)
+      break
+    case MapGrammarLexer.MINUS:
+      node = new ast.SubtractionNode(start, end, ctx.text)
+      break
+    case MapGrammarLexer.MULT:
+      node = new ast.MultiplicationNode(start, end, ctx.text)
+      break
+    case MapGrammarLexer.DIV:
+      node = new ast.DivisionNode(start, end, ctx.text)
+      break
+    case MapGrammarLexer.MOD:
+      node = new ast.ModuloNode(start, end, ctx.text)
+      break
+    }
+
+    if (node !== null) {
+      node.left = this.visit(ctx._left)
+      node.right = this.visit(ctx._right)
+    }
+
+    return node
+  }
+
+  /**
+   * ABS関数の巡回
+   * @param ctx 
+   */
+  visitAbsExpr(ctx: parser.AbsExprContext): ast.exprNode {
+    const node = new ast.AbsNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * Atan2関数の巡回
+   * @param ctx 
+   */
+  visitAtan2Expr(ctx: parser.Atan2ExprContext): ast.exprNode {
+    const node = new ast.Atan2Node(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.y = <ast.exprNode>this.visit(ctx._y)
+    node.x = <ast.exprNode>this.visit(ctx._x)
+    return node
+  }
+
+  /**
+   * CEIL関数の巡回
+   * @param ctx 
+   */
+  visitCeilExpr(ctx: parser.CeilExprContext): ast.exprNode {
+    const node = new ast.CeilNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
+    return node
+  }
+
+  /**
+   * COS関数の巡回
+   * @param ctx 
+   */
+  visitCosExpr(ctx: parser.CosExprContext): ast.exprNode {
+    const node = new ast.CeilNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    node.value = <ast.exprNode>this.visit(ctx._value)
+
     return node
   }
 }
