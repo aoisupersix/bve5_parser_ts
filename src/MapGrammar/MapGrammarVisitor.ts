@@ -575,5 +575,9 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     node.varName = ctx._v.varName!
     return node
   }
+
+  visitErrorNode(node: any): AstNode {
+    return null
+  }
 }
 

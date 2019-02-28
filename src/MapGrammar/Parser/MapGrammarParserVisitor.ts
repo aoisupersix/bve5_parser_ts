@@ -88,6 +88,7 @@ import { StringContext } from "./MapGrammarParser";
 import { String_textContext } from "./MapGrammarParser";
 import { EncodingContext } from "./MapGrammarParser";
 import { Encode_stringContext } from "./MapGrammarParser";
+import { Error_tokensContext } from "./MapGrammarParser";
 
 
 /**
@@ -738,5 +739,12 @@ export interface MapGrammarParserVisitor<Result> extends ParseTreeVisitor<Result
 	 * @return the visitor result
 	 */
 	visitEncode_string?: (ctx: Encode_stringContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `MapGrammarParser.error_tokens`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitError_tokens?: (ctx: Error_tokensContext) => Result;
 }
 

@@ -1,9 +1,9 @@
 BveTs Map 2.02
-
 //****************************
 //* メインマップファイル
 //****************************
 20000;
+エラー;
   Gradient.BeginTransition();
   Curve.SetGauge(1.067);
   Cabilluminance.Interpolate(1);

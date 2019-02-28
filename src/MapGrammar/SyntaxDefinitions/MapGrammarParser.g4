@@ -288,3 +288,7 @@ encoding returns [string | undefined value]:
 encode_string :
 	ENCODE_CHAR*
 	;
+
+error_tokens :
+	ERROR_TOKEN*
+	;

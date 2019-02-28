@@ -3,6 +3,33 @@
  */
 lexer grammar MapGrammarLexer;
 
+@lexer::header {
+import { Token, CommonToken } from "antlr4ts";
+}
+
+@lexer::members {
+	tokenQueue: Array<Token> = []
+
+	public nextToken(): Token {
+		if (this.tokenQueue.length > 0) {
+			return this.tokenQueue.splice(0, 1)[0]
+		}
+
+		let next = super.nextToken()
+		if (next.type !== MapGrammarLexer.ERROR_TOKEN) {
+			return next
+		}
+
+		let tokenString = ""
+		while(next.type === MapGrammarLexer.ERROR_TOKEN) {
+			tokenString += next.text!
+			next = super.nextToken()
+		}
+		this.tokenQueue.push(next)
+		return new CommonToken(MapGrammarLexer.ERROR_TOKEN, tokenString)
+	}
+}
+
 //ヘッダー
 BVETS : B V E T S;
 MAP : M A P;
@@ -154,7 +181,7 @@ VAR : [a-zA-Z0-9_]+;
 //文字列
 QUOTE : '\'' -> pushMode(STRING_MODE) ;
 
-ERROR_CHAR : .;
+ERROR_TOKEN : .+?;
 
 mode STRING_MODE;
 RQUOTE : '\'' -> popMode ;
