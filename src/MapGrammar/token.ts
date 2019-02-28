@@ -13,7 +13,7 @@ export class Token {
       return undefined
     }
 
-    let len: number | null = token.stopIndex - token.startIndex
+    let len: number | null = token.stopIndex - token.startIndex + 1
     if (len <= 0) {
       len = null
     }

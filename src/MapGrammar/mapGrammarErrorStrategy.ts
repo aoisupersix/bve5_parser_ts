@@ -40,7 +40,7 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
     this.beginErrorCondition(recognizer)
     const token = recognizer.currentToken
     const expectedString = this.getExpectedTokens(recognizer)
-    const msg = `入力文字列${token.text}にマップ構文'${expectedString}'がありません。`
+    const msg = `入力文字列'${token.text}'にマップ構文'${expectedString}'がありません。`
 
     this.addError(recognizer, msg)
 
@@ -63,8 +63,8 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
       return
     }
     this.beginErrorCondition(recognizer)
-    const token = recognizer.currentToken
-    const msg = `入力文字列${token.text}が予期されたマップ構文と一致しませんでした。`
+    const token = this.getTokenErrorDisplay(recognizer.currentToken)
+    const msg = `入力文字列${token}が予期されたマップ構文と一致しませんでした。`
 
     this.addError(recognizer, msg)
 
