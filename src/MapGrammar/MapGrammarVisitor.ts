@@ -330,7 +330,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     if (ctx._func.text === undefined) {
       return null
     }
-    const funcName = ctx._element.text !== undefined ?
+    const funcName = ctx._element !== undefined ?
       `${ctx._element.text}.${ctx._func.text}`.toLowerCase() :
       ctx._func.text.toLowerCase()
     switch(funcName) {
@@ -584,7 +584,8 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    */
   visitStringExpr(ctx: parser.StringExprContext): ast.StringNode {
     const node = new ast.StringNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
-    node.value = ctx._str.text
+    const str = ctx.string()
+    node.value = str.value !== undefined ? str.value : ""
 
     return node
   }
