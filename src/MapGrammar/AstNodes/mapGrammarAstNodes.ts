@@ -24,6 +24,65 @@ export enum MapGrammarType {
   Root,
   Distance,
   VarAssign,
+  CurveSetgauge,
+  CurveSetcenter,
+  CurveSetfunction,
+  CurveBegintransition,
+  CurveBegin,
+  CurveEnd,
+  CurveInterpolate,
+  CurveChange,
+  GradientBegintransition,
+  GradientBegin,
+  GradientEnd,
+  GradientInterpolate,
+  TrackXInterpolate,
+  TrackYInterpolate,
+  TrackPosition,
+  TrackCantSetgauge,
+  TrackCantSetcenter,
+  TrackCantSetfunction,
+  TrackCantBegintransition,
+  TrackCantBegin,
+  TrackCantEnd,
+  TrackCantInterpolate,
+  StructureLoad,
+  StructurePut,
+  StructurePut0,
+  StructurePutBetween,
+  RepeaterBegin,
+  RepeaterBegin0,
+  RepeaterEnd,
+  BackgroundChange,
+  StationLoad,
+  StationPut,
+  SectionBegin,
+  SectionSetspeedlimit,
+  SignalLoad,
+  SignalPut,
+  BeaconPut,
+  SpeedlimitBegin,
+  SpeedlimitEnd,
+  PretrainPass,
+  LightAmbient,
+  LightDiffuse,
+  LightDirection,
+  FogInterpolate,
+  DrawdistanceChange,
+  CabilluminanceInterpolate,
+  IrregularityChange,
+  AdhesionChange,
+  SoundLoad,
+  SoundPlay,
+  Sound3dLoad,
+  Sound3dChange,
+  RollingnoiseChange,
+  FlangenoiseChange,
+  JointnoisePlay,
+  TrainAdd,
+  TrainLoad,
+  TrainEnable,
+  TrainStop,
   Calc_Addition,
   Calc_Subtraction,
   Calc_Multiplication,
@@ -41,7 +100,6 @@ export enum MapGrammarType {
   Calc_Rand,
   Calc_Sin,
   Calc_Sqrt,
-  CurveSetgaugeNode,
   Number,
   DistanceVariable,
   String,
@@ -298,6 +356,7 @@ export class VarNode extends MapGrammarAstNode {
 }
 //#endregion
 
+//#region Curve構文
 /**
  * Curve.SetGauge(value)ノード。
  */
@@ -307,3 +366,8 @@ export class CurveSetgaugeNode extends SyntaxNode {
   readonly function: MapFunction = MapFunction.SetGauge
   value: MapGrammarAstNode | null = null
 }
+
+export class CurveSetcenterNode extends SyntaxNode {
+  readonly type: 
+}
+//#endregion

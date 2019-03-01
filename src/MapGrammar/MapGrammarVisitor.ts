@@ -302,6 +302,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     return node
   }
 
+  //#region SyntaxNode Visitor
   /**
    * 平面曲線の巡回
    * @param ctx 
@@ -322,6 +323,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
 
     return null
   }
+  //#endregion
 
   /**
    * 変数宣言の巡回
