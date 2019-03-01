@@ -302,7 +302,7 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     return node
   }
 
-  //#region SyntaxNode Visitor
+  //#region Syntax Visitor
   /**
    * 平面曲線の巡回
    * @param ctx 
@@ -318,6 +318,27 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
       case MapFunction.SetGauge:
         const node = new ast.CurveSetgaugeNode(data[0], data[1], data[2])
         node.value = this.visit(ctx._value)
+        return node
+    }
+
+    return null
+  }
+
+  visitTrack(ctx: parser.TrackContext): AstNode {
+    const data = this.getSyntaxData(ctx)
+
+    if (ctx._func.text === undefined) {
+      return null
+    }
+    const funcName = ctx._element.text !== undefined ?
+      `${ctx._element.text}.${ctx._func.text}`.toLowerCase() :
+      ctx._func.text.toLowerCase()
+    switch(funcName) {
+      case MapFunction.X_Interpolate:
+        const node = new ast.TrackXInterpolateNode(data[0], data[1], data[2])
+        node.key = this.visit(ctx._key)
+        node.x = this.visit(ctx._x)
+        node.radius = this.visit(ctx._radius)
         return node
     }
 
@@ -576,10 +597,6 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     const node = new ast.VarNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
     node.varName = ctx._v.varName!
     return node
-  }
-
-  visitErrorNode(node: any): AstNode {
-    return null
   }
 }
 
