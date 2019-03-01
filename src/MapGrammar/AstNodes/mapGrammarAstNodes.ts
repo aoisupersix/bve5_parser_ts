@@ -361,13 +361,79 @@ export class VarNode extends MapGrammarAstNode {
  * Curve.SetGauge(value)ノード。
  */
 export class CurveSetgaugeNode extends SyntaxNode {
-  readonly type: MapGrammarType = MapGrammarType.CurveSetgaugeNode
+  readonly type: MapGrammarType = MapGrammarType.CurveSetgauge
   readonly mapElement: MapElement = MapElement.Curve
   readonly function: MapFunction = MapFunction.SetGauge
-  value: MapGrammarAstNode | null = null
+  value: exprNode | null = null
 }
 
+/**
+ * Curve.SetCenter(x)ノード。
+ */
 export class CurveSetcenterNode extends SyntaxNode {
-  readonly type: 
+  readonly type: MapGrammarType = MapGrammarType.CurveSetcenter
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.SetCenter
+  x: exprNode | null = null
+}
+
+/**
+ * Curve.SetFunction(id)ノード。
+ */
+export class CurveSetfunctionNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveSetfunction
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.SetFunction
+  id: exprNode | null = null
+}
+
+/**
+ * Curve.BeginTransition()ノード。
+ */
+export class CurveBegintransitionNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveBegintransition
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.BeginTransition
+}
+
+/**
+ * Curve.Begin(radius?, cant?)ノード。
+ */
+export class CurveBeginNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveBegin
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.Begin
+  radius: exprNode | null = null
+  cant: exprNode | null = null
+}
+
+/**
+ * Curve.End()ノード。
+ */
+export class CurveEndNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveEnd
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.End
+}
+
+/**
+ * Curve.Interpolate(radius?, cant?)ノード。
+ */
+export class CurveInterpolateNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveInterpolate
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.Interpolate
+  radius: exprNode | null = null
+  cant: exprNode | null = null
+}
+
+/**
+ * Curve.Change(radius)ノード。
+ */
+export class CurveChangeNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.CurveChange
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.Change
+  radius: exprNode | null = null
 }
 //#endregion
