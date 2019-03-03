@@ -436,6 +436,7 @@ export class CurveChangeNode extends SyntaxNode {
   readonly function: MapFunction = MapFunction.Change
   radius: exprNode | null = null
 }
+//#endregion
 
 /**
  * Track[Key].X.Interpolate(x?, radius?)ノード。

@@ -6,13 +6,19 @@
   "scripts": {
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require ts-node/register test/**/*.ts",
+    "test-watch": "mocha --watch-extensions ts -w --require ts-node/register test/**/*.ts",
     "build-antlr-map": "antlr4ts -o src/MapGrammar/Parser -visitor src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4"
   },
   "author": "aoisupersix",
   "license": "ISC",
   "dependencies": {
-    "antlr4ts": "^0.5.0-alpha.2"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "antlr4ts": "^0.5.0-alpha.2",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.2"
   },
   "devDependencies": {
     "@types/node": "^11.9.6",
