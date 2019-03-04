@@ -141,6 +141,32 @@ export abstract class MapGrammarAstNode {
 export abstract class SyntaxNode extends MapGrammarAstNode {
   readonly mapElement: MapElement
   readonly function: MapFunction
+
+  /**
+   * MapGrammarVisitor.getSyntaxDataの戻り値からインスタンスを生成する便利コンストラクタ
+   * @param data start,end,textをまとめた配列
+   */
+  constructor(data: [Token, Token | undefined, string])
+
+  /**
+   * ベースクラスと同じコンストラクタ
+   * @param start 
+   * @param end 
+   * @param text 
+   */
+  constructor(start: Token, end: Token | undefined, text: string)
+  constructor(startOrData: any, end?: Token | undefined, text?: string) {
+    if (startOrData instanceof Token) {
+      var start = startOrData
+      super(start, end, text!)
+    }else {
+      const data = <[Token, Token | undefined, string]>startOrData
+      start = data[0]
+      const end = data[1]
+      const text = data[2]
+      super(start, end, text)
+    }
+  }
 }
 
 /**

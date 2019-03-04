@@ -316,9 +316,20 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     const funcName = ctx._func.text.toLowerCase()
     switch(funcName) {
       case MapFunction.SetGauge:
-        const node = new ast.CurveSetgaugeNode(data[0], data[1], data[2])
-        node.value = this.visit(ctx._value)
-        return node
+        const setGaugeNode = new ast.CurveSetgaugeNode(data[0], data[1], data[2])
+        setGaugeNode.value = this.visit(ctx._value)
+        return setGaugeNode
+      case MapFunction.SetCenter:
+        const setCenterNode = new ast.CurveSetcenterNode(data[0], data[1], data[2])
+        setCenterNode.x = this.visit(ctx._x)
+        return setCenterNode
+      case MapFunction.SetFunction:
+        const setFunctionNode = new ast.CurveSetfunctionNode(data[0], data[1], data[2])
+        setFunctionNode.id = this.visit(ctx._id)
+        return setFunctionNode
+      case MapFunction.BeginTransition:
+        const beginTransitionNode = new ast.CurveBegintransitionNode(data[0], data[1], data[2])
+        
     }
 
     return null
