@@ -316,20 +316,35 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     const funcName = ctx._func.text.toLowerCase()
     switch(funcName) {
       case MapFunction.SetGauge:
-        const setGaugeNode = new ast.CurveSetgaugeNode(data[0], data[1], data[2])
+        const setGaugeNode = new ast.CurveSetgaugeNode(data)
         setGaugeNode.value = this.visit(ctx._value)
         return setGaugeNode
       case MapFunction.SetCenter:
-        const setCenterNode = new ast.CurveSetcenterNode(data[0], data[1], data[2])
+        const setCenterNode = new ast.CurveSetcenterNode(data)
         setCenterNode.x = this.visit(ctx._x)
         return setCenterNode
       case MapFunction.SetFunction:
-        const setFunctionNode = new ast.CurveSetfunctionNode(data[0], data[1], data[2])
+        const setFunctionNode = new ast.CurveSetfunctionNode(data)
         setFunctionNode.id = this.visit(ctx._id)
         return setFunctionNode
       case MapFunction.BeginTransition:
-        const beginTransitionNode = new ast.CurveBegintransitionNode(data[0], data[1], data[2])
-        
+        return new ast.CurveBegintransitionNode(data)
+      case MapFunction.Begin:
+        const beginNode = new ast.CurveBeginNode(data)
+        beginNode.radius = this.visit(ctx._radius)
+        beginNode.cant = this.visit(ctx._cant)
+        return beginNode
+      case MapFunction.End:
+        return new ast.CurveEndNode(data)
+      case MapFunction.Interpolate:
+        const interpolateNode = new ast.CurveInterpolateNode(data)
+        interpolateNode.radius = this.visit(ctx._radius)
+        interpolateNode.cant = this.visit(ctx._cant)
+        return interpolateNode
+      case MapFunction.Change:
+        const changeNode = new ast.CurveChangeNode(data)
+        changeNode.radius = this.visit(ctx._radius)
+        return changeNode
     }
 
     return null
