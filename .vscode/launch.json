@@ -9,10 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "program": "${workspaceFolder}/out/index.js",
-      "preLaunchTask": "Compile Typescript",
-      "outFiles": [
-        "${workspaceFolder}/out/**/*.js"
-      ]
+      "preLaunchTask": "Compile Typescript"
     }
   ]
 }

@@ -331,8 +331,6 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
         return new ast.CurveBegintransitionNode(data)
       case MapFunction.Begin:
         const beginNode = new ast.CurveBeginNode(data)
-        beginNode.radius = this.visit(ctx._radius)
-        beginNode.cant = this.visit(ctx._cant)
         return beginNode
       case MapFunction.End:
         return new ast.CurveEndNode(data)
