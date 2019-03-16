@@ -315,25 +315,31 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     }
     const funcName = ctx._func.text.toLowerCase()
     switch(funcName) {
-      case MapFunction.SetGauge:  /* Curve.SetGauge(value) */
+
+      /* Curve.SetGauge(value) */
+      case MapFunction.SetGauge:
         const setGaugeNode = new ast.CurveSetgaugeNode(data)
         setGaugeNode.value = this.visit(ctx._value)
         return setGaugeNode
 
-      case MapFunction.SetCenter: /* Curve.SetCenter(x) */
+      /* Curve.SetCenter(x) */
+      case MapFunction.SetCenter:
         const setCenterNode = new ast.CurveSetcenterNode(data)
         setCenterNode.x = this.visit(ctx._x)
         return setCenterNode
 
-      case MapFunction.SetFunction: /* Curve.SetFunction(id) */
+      /* Curve.SetFunction(id) */
+      case MapFunction.SetFunction:
         const setFunctionNode = new ast.CurveSetfunctionNode(data)
         setFunctionNode.id = this.visit(ctx._id)
         return setFunctionNode
 
-      case MapFunction.BeginTransition: /* Curve.BeginTransition() */
+      /* Curve.BeginTransition() */
+      case MapFunction.BeginTransition:
         return new ast.CurveBegintransitionNode(data)
 
-      case MapFunction.Begin: /* Curve.Begin(radius, cant?) */
+      /* Curve.Begin(radius, cant?) */
+      case MapFunction.Begin:
         const beginNode = new ast.CurveBeginNode(data)
         beginNode.radius = this.visit(ctx._radius)
         if (ctx._cant !== undefined) {
@@ -341,20 +347,23 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
         }
         return beginNode
 
-      case MapFunction.End: /* Curve.End() */
+      /* Curve.End() */
+      case MapFunction.End:
         return new ast.CurveEndNode(data)
 
-      case MapFunction.Interpolate: /* Curve.Interpolate(radius?, cant?) */
+      /* Curve.Interpolate(radius?, cant?) */
+      case MapFunction.Interpolate:
         const interpolateNode = new ast.CurveInterpolateNode(data)
-        if (ctx._radius !== undefined) {
+        if (ctx._radiusE !== undefined) {
+          interpolateNode.radius = this.visit(ctx._radiusE)
+        }else if (ctx._radius !== undefined) {
           interpolateNode.radius = this.visit(ctx._radius)
-        }
-        if (ctx._cant !== undefined) {
           interpolateNode.cant = this.visit(ctx._cant)
         }
         return interpolateNode
 
-      case MapFunction.Change: /* Curve.Change(radius) */
+      /* Curve.Change(radius) */
+      case MapFunction.Change:
         const changeNode = new ast.CurveChangeNode(data)
         changeNode.radius = this.visit(ctx._radius)
         return changeNode
