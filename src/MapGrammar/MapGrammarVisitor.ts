@@ -491,7 +491,11 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
       case MapGrammarLexer.PLUS:
         return this.visit(ctx.expr())
       case MapGrammarLexer.MINUS:
-        return this.visit(ctx.expr())
+      const start = Token.fromIToken(ctx.start)!
+      const end = Token.fromIToken(ctx.stop)
+      const node = new ast.UnaryNode(start, end, ctx.text)
+      node.inner = this.visit(ctx.expr())
+      return node
       default:
         // error
         return null
