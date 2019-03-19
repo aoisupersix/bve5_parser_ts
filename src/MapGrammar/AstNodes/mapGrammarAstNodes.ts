@@ -464,6 +464,46 @@ export class CurveChangeNode extends SyntaxNode {
 }
 //#endregion
 
+//#region Gradient構文
+/**
+ * Gradient.BeginTransition()ノード。
+ */
+export class GradientBegintransitionNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.GradientBegintransition
+  readonly mapElement: MapElement = MapElement.Gradient
+  readonly function: MapFunction = MapFunction.BeginTransition
+}
+
+/**
+ * Gradient.Begin()ノード。
+ */
+export class GradientBeginNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.GradientBegin
+  readonly mapElement: MapElement = MapElement.Gradient
+  readonly function: MapFunction = MapFunction.Begin
+  gradient: exprNode | null = null
+}
+
+/**
+ * Gradient.End()ノード。
+ */
+export class GradientEndNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.GradientEnd
+  readonly mapElement: MapElement = MapElement.Gradient
+  readonly function: MapFunction = MapFunction.End
+}
+
+/**
+ * Gradient.Interpolate(gradient?)ノード。
+ */
+export class GradientInterpolateNode extends SyntaxNode {
+  readonly type: MapGrammarType = MapGrammarType.GradientInterpolate
+  readonly mapElement: MapElement = MapElement.Gradient
+  readonly function: MapFunction = MapFunction.Interpolate
+  gradient: exprNode | null = null
+}
+//#endregion
+
 /**
  * Track[Key].X.Interpolate(x?, radius?)ノード。
  */
