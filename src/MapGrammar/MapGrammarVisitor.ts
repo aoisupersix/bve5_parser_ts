@@ -372,6 +372,24 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     return null
   }
 
+  /**
+   * 自軌道の勾配の巡回
+   * @param ctx 
+   */
+  visitGradient(ctx: parser.GradientContext): AstNode {
+    const data = this.getSyntaxData(ctx)
+    if (ctx._func.text === undefined) {
+      return null
+    }
+    const funcName = ctx._func.text.toLowerCase()
+    switch(funcName) {
+      case MapFunction.BeginTransition:
+        return null
+    }
+
+    return null
+  }
+
   visitTrack(ctx: parser.TrackContext): AstNode {
     const data = this.getSyntaxData(ctx)
 
