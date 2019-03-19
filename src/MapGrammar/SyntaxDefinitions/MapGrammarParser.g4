@@ -70,7 +70,7 @@ gradient :
 	  DOT func=BEGIN_TRANSITION OPN_PAR CLS_PAR
 	| DOT func=(BEGIN | BEGIN_CONST) OPN_PAR gradientArgs=nullableExpr CLS_PAR	//引数名gradientが被るのでgradientArgsにしている
 	| DOT func=END OPN_PAR CLS_PAR
-	| DOT func=INTERPOLATE OPN_PAR gradientArgsE=expr CLS_PAR
+	| DOT func=INTERPOLATE OPN_PAR gradientArgs=nullableExpr CLS_PAR
 	;
 
 //他軌道

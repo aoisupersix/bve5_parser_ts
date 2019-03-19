@@ -1011,7 +1011,6 @@ public class MapGrammarParser extends Parser {
 	public static class GradientContext extends ParserRuleContext {
 		public Token func;
 		public NullableExprContext gradientArgs;
-		public ExprContext gradientArgsE;
 		public TerminalNode DOT() { return getToken(MapGrammarParser.DOT, 0); }
 		public TerminalNode OPN_PAR() { return getToken(MapGrammarParser.OPN_PAR, 0); }
 		public TerminalNode CLS_PAR() { return getToken(MapGrammarParser.CLS_PAR, 0); }
@@ -1023,9 +1022,6 @@ public class MapGrammarParser extends Parser {
 		public TerminalNode BEGIN_CONST() { return getToken(MapGrammarParser.BEGIN_CONST, 0); }
 		public TerminalNode END() { return getToken(MapGrammarParser.END, 0); }
 		public TerminalNode INTERPOLATE() { return getToken(MapGrammarParser.INTERPOLATE, 0); }
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
 		public GradientContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1100,7 +1096,7 @@ public class MapGrammarParser extends Parser {
 				setState(234);
 				match(OPN_PAR);
 				setState(235);
-				((GradientContext)_localctx).gradientArgsE = expr(0);
+				((GradientContext)_localctx).gradientArgs = nullableExpr();
 				setState(236);
 				match(CLS_PAR);
 				}
@@ -4942,8 +4938,8 @@ public class MapGrammarParser extends Parser {
 		"\u00e2\t\4\2\2\u00e2\u00e3\7X\2\2\u00e3\u00e4\5B\"\2\u00e4\u00e5\7Y\2"+
 		"\2\u00e5\u00f1\3\2\2\2\u00e6\u00e7\7B\2\2\u00e7\u00e8\7.\2\2\u00e8\u00e9"+
 		"\7X\2\2\u00e9\u00f1\7Y\2\2\u00ea\u00eb\7B\2\2\u00eb\u00ec\7/\2\2\u00ec"+
-		"\u00ed\7X\2\2\u00ed\u00ee\5D#\2\u00ee\u00ef\7Y\2\2\u00ef\u00f1\3\2\2\2"+
-		"\u00f0\u00dc\3\2\2\2\u00f0\u00e0\3\2\2\2\u00f0\u00e6\3\2\2\2\u00f0\u00ea"+
+		"\u00ed\7X\2\2\u00ed\u00ee\5B\"\2\u00ee\u00ef\7Y\2\2\u00ef\u00f1\3\2\2"+
+		"\2\u00f0\u00dc\3\2\2\2\u00f0\u00e0\3\2\2\2\u00f0\u00e6\3\2\2\2\u00f0\u00ea"+
 		"\3\2\2\2\u00f1\r\3\2\2\2\u00f2\u00f3\7Z\2\2\u00f3\u00f4\5D#\2\u00f4\u00f5"+
 		"\7[\2\2\u00f5\u00f6\7B\2\2\u00f6\u00f7\7 \2\2\u00f7\u00f8\7B\2\2\u00f8"+
 		"\u00f9\7/\2\2\u00f9\u00fa\7X\2\2\u00fa\u00fb\7Y\2\2\u00fb\u01bd\3\2\2"+
