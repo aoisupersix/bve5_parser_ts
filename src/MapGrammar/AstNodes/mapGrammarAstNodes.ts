@@ -504,6 +504,7 @@ export class GradientInterpolateNode extends SyntaxNode {
 }
 //#endregion
 
+//#region Track構文
 /**
  * Track[Key].X.Interpolate(x?, radius?)ノード。
  */
@@ -513,5 +514,74 @@ export class TrackXInterpolateNode extends SyntaxWithKeyNode {
   readonly function: MapFunction = MapFunction.X_Interpolate
   x: exprNode | null = null
   radius: exprNode | null = null
+}
+
+/**
+ * Track[Key].Y.Interpolate(x?, radius?)ノード。
+ */
+export class TrackYInterpolateNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackYInterpolate
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Y_Interpolate
+  y: exprNode | null = null
+  radius: exprNode | null = null
+}
+
+/**
+ * Track[Key].Cant.SetCenter(x)ノード。
+ */
+export class TrackCantSetcenterNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantSetcenter
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_SetCenter
+  x: exprNode | null = null
+}
+
+/**
+ * Track[Key].Cant.Setfunction(id)ノード。
+ */
+export class TrackCantSetfunctionNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantSetfunction
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_SetFunction
+  id: exprNode | null = null
+}
+
+/**
+ * Track[Key].Cant.BeginTransition()ノード。
+ */
+export class TrackCantBegintransitionNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantBegintransition
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_BeginTransition
+}
+
+/**
+ * Track[Key].Cant.Begin(cant)ノード。
+ */
+export class TrackCantBeginNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantBegin
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_Begin
+  cant: exprNode | null = null
+}
+
+/**
+ * Track[Key].Cant.End()ノード。
+ */
+export class TrackCantEndNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantEnd
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_End
+}
+
+/**
+ * Track[Key].Cant.Interpolate(cant?)ノード。
+ */
+export class TrackCantInterpolateNode extends SyntaxWithKeyNode {
+  readonly type: MapGrammarType = MapGrammarType.TrackCantInterpolate
+  readonly mapElement: MapElement = MapElement.Track
+  readonly function: MapFunction = MapFunction.Cant_Interpolate
+  cant: exprNode | null = null
 }
 //#endregion
