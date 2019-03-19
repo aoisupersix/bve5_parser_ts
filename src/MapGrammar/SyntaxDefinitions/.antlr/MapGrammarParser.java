@@ -1,4 +1,4 @@
-// Generated from d:\workspace\node\bve5_parser\src\MapGrammar\SyntaxDefinitions\MapGrammarParser.g4 by ANTLR 4.7.1
+// Generated from /Users/aoi/Documents/workspace/node/bve5_parser_ts/src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;

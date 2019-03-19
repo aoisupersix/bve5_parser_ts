@@ -383,8 +383,30 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     }
     const funcName = ctx._func.text.toLowerCase()
     switch(funcName) {
+
+      /* Gradient.BeginTransition() */
       case MapFunction.BeginTransition:
-        return null
+        return new ast.GradientBegintransitionNode(data)
+
+      /* Gradient.Begin(gradient?) */
+      case MapFunction.Begin:
+        const beginNode = new ast.GradientBeginNode(data)
+        if (ctx._gradientArgs !== undefined) {
+          beginNode.gradient = this.visit(ctx._gradientArgs)
+        }
+        return beginNode
+
+      /* Gradient.End() */
+      case MapFunction.End:
+        return new ast.GradientEndNode(data)
+
+      /* Gradient.Interpolate(gradient?) */
+      case MapFunction.Interpolate:
+        const interpolateNode = new ast.GradientInterpolateNode(data)
+        if (ctx._gradientArgs !== undefined) {
+          interpolateNode.gradient = this.visit(ctx._gradientArgs)
+        }
+        return interpolateNode
     }
 
     return null
