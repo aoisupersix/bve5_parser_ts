@@ -428,15 +428,15 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
 
       /* Track[].X.Interpolate(x?, radius?) */
       case MapFunction.X_Interpolate:
-        const node = new ast.TrackXInterpolateNode(data[0], data[1], data[2])
-        node.key = this.visit(ctx._key)
+        const xInterpolateNode = new ast.TrackXInterpolateNode(data[0], data[1], data[2])
+        xInterpolateNode.key = this.visit(ctx._key)
         if (ctx._xE !== undefined) {
-          node.x = this.visit(ctx._xE)
+          xInterpolateNode.x = this.visit(ctx._xE)
         }else if (ctx._x !== undefined) {
-          node.x = this.visit(ctx._x)
-          node.radius = this.visit(ctx._radius)
+          xInterpolateNode.x = this.visit(ctx._x)
+          xInterpolateNode.radius = this.visit(ctx._radius)
         }
-        return node
+        return xInterpolateNode
     }
 
     return null
