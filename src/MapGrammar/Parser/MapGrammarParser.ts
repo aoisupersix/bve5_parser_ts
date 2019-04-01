@@ -957,7 +957,7 @@ export class MapGrammarParser extends Parser {
 				this.state = 234;
 				this.match(MapGrammarParser.OPN_PAR);
 				this.state = 235;
-				_localctx._gradientArgsE = this.expr(0);
+				_localctx._gradientArgs = this.nullableExpr();
 				this.state = 236;
 				this.match(MapGrammarParser.CLS_PAR);
 				}
@@ -1111,7 +1111,7 @@ export class MapGrammarParser extends Parser {
 				this.state = 291;
 				this.match(MapGrammarParser.OPN_PAR);
 				this.state = 292;
-				_localctx._xE = this.expr(0);
+				_localctx._yE = this.expr(0);
 				this.state = 293;
 				this.match(MapGrammarParser.CLS_PAR);
 				}
@@ -1137,7 +1137,7 @@ export class MapGrammarParser extends Parser {
 				this.state = 302;
 				this.match(MapGrammarParser.OPN_PAR);
 				this.state = 303;
-				_localctx._x = this.nullableExpr();
+				_localctx._y = this.nullableExpr();
 				this.state = 304;
 				this.match(MapGrammarParser.COMMA);
 				this.state = 305;
@@ -4076,7 +4076,7 @@ export class MapGrammarParser extends Parser {
 		"\x02\x02\xE3\xE4\x05B\"\x02\xE4\xE5\x07Y\x02\x02\xE5\xF1\x03\x02\x02\x02" +
 		"\xE6\xE7\x07B\x02\x02\xE7\xE8\x07.\x02\x02\xE8\xE9\x07X\x02\x02\xE9\xF1" +
 		"\x07Y\x02\x02\xEA\xEB\x07B\x02\x02\xEB\xEC\x07/\x02\x02\xEC\xED\x07X\x02" +
-		"\x02\xED\xEE\x05D#\x02\xEE\xEF\x07Y\x02\x02\xEF\xF1\x03\x02\x02\x02\xF0" +
+		"\x02\xED\xEE\x05B\"\x02\xEE\xEF\x07Y\x02\x02\xEF\xF1\x03\x02\x02\x02\xF0" +
 		"\xDC\x03\x02\x02\x02\xF0\xE0\x03\x02\x02\x02\xF0\xE6\x03\x02\x02\x02\xF0" +
 		"\xEA\x03\x02\x02\x02\xF1\r\x03\x02\x02\x02\xF2\xF3\x07Z\x02\x02\xF3\xF4" +
 		"\x05D#\x02\xF4\xF5\x07[\x02\x02\xF5\xF6\x07B\x02\x02\xF6\xF7\x07 \x02" +
@@ -5460,7 +5460,6 @@ export class CurveContext extends ParserRuleContext {
 export class GradientContext extends ParserRuleContext {
 	public _func: Token;
 	public _gradientArgs: NullableExprContext;
-	public _gradientArgsE: ExprContext;
 	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
 	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
 	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
@@ -5472,9 +5471,6 @@ export class GradientContext extends ParserRuleContext {
 	public BEGIN_CONST(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_CONST, 0); }
 	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
 	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
-	public expr(): ExprContext | undefined {
-		return this.tryGetRuleContext(0, ExprContext);
-	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -5510,6 +5506,7 @@ export class TrackContext extends ParserRuleContext {
 	public _xE: ExprContext;
 	public _x: NullableExprContext;
 	public _radius: NullableExprContext;
+	public _yE: ExprContext;
 	public _y: NullableExprContext;
 	public _radiusH: NullableExprContext;
 	public _radiusV: NullableExprContext;
