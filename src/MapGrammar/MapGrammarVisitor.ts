@@ -437,6 +437,39 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
           xInterpolateNode.radius = this.visit(ctx._radius)
         }
         return xInterpolateNode
+
+      /* Track[].Y.Interpolate(y?, radius?) */
+      case MapFunction.Y_Interpolate:
+        const yInterpolateNode = new ast.TrackYInterpolateNode(data[0], data[1], data[2])
+        yInterpolateNode.key = this.visit(ctx._key)
+        if (ctx._yE !== undefined) {
+          yInterpolateNode.y = this.visit(ctx._yE)
+        }else if (ctx._y !== undefined) {
+          yInterpolateNode.y = this.visit(ctx._y)
+          yInterpolateNode.radius = this.visit(ctx._radius)
+        }
+        return yInterpolateNode
+
+      /* Track[].Position(x, y, radiusH?, radiusV?) */
+      case MapFunction.Position:
+        // TODO: ASTノードが未定義
+      
+      /* Track[].Cant.SetCenter(x) */
+      case MapFunction.Cant_SetCenter:
+      /* Track[].Cant.SetGauge(gauge) */
+      case MapFunction.Cant_SetGauge:
+      /* Track[].Cant.SetFunction(id) */
+      case MapFunction.Cant_SetFunction:
+      /* Track[].Cant.BeginTransition() */
+      case MapFunction.Cant_BeginTransition:
+      /* Track[].Cant.Begin(cant) */
+      case MapFunction.Cant_Begin:
+      /* Track[].Cant.End() */
+      case MapFunction.Cant_End:
+      /* Track[].Cant.Interpolate(cant?) */
+      case MapFunction.Cant_Interpolate:
+      /* Track[].Gauge(gauge) */
+      // TODO: 過去の構文
     }
 
     return null
