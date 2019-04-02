@@ -456,18 +456,55 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
       
       /* Track[].Cant.SetCenter(x) */
       case MapFunction.Cant_SetCenter:
+        const cantSetcenterNode = new ast.TrackCantSetcenterNode(data[0], data[1], data[2])
+        cantSetcenterNode.key = this.visit(ctx._key)
+        cantSetcenterNode.x = this.visit(ctx._x)
+        return cantSetcenterNode
+      
       /* Track[].Cant.SetGauge(gauge) */
       case MapFunction.Cant_SetGauge:
+        const cantSetgaugeNode = new ast.TrackCantSetcenterNode(data[0], data[1], data[2])
+        cantSetgaugeNode.key = this.visit(ctx._key)
+        cantSetgaugeNode.x = this.visit(ctx._gauge)
+        return cantSetgaugeNode
+      
       /* Track[].Cant.SetFunction(id) */
       case MapFunction.Cant_SetFunction:
+        const cantSetfunctionNode = new ast.TrackCantSetfunctionNode(data[0], data[1], data[2])
+        cantSetfunctionNode.key = this.visit(ctx._key)
+        cantSetfunctionNode.id = this.visit(ctx._id)
+        return cantSetfunctionNode
+      
       /* Track[].Cant.BeginTransition() */
       case MapFunction.Cant_BeginTransition:
+        const cantBegintransitionNode = new ast.TrackCantBegintransitionNode(data[0], data[1], data[2])
+        cantBegintransitionNode.key = this.visit(ctx._key)
+        return cantBegintransitionNode
+      
       /* Track[].Cant.Begin(cant) */
       case MapFunction.Cant_Begin:
+        const cantBeginNode = new ast.TrackCantBeginNode(data[0], data[1], data[2])
+        cantBeginNode.key = this.visit(ctx._key)
+        cantBeginNode.cant = this.visit(ctx._cant)
+        return cantBeginNode
+      
       /* Track[].Cant.End() */
       case MapFunction.Cant_End:
+        const cantEndNode = new ast.TrackCantEndNode(data[0], data[1], data[2])
+        cantEndNode.key = this.visit(ctx._key)
+        return cantEndNode
+      
       /* Track[].Cant.Interpolate(cant?) */
       case MapFunction.Cant_Interpolate:
+        const cantInterpolateNode = new ast.TrackCantInterpolateNode(data[0], data[1], data[2])
+        cantInterpolateNode.key = this.visit(ctx._key)
+        if (ctx._cantE !== undefined) {
+          cantInterpolateNode.cant = this.visit(ctx._cantE)
+        }else if (ctx._cant) {
+          cantInterpolateNode.cant = this.visit(ctx._cant)
+        }
+        return cantInterpolateNode
+      
       /* Track[].Gauge(gauge) */
       // TODO: 過去の構文
     }
