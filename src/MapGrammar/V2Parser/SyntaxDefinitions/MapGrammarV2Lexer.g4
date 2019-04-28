@@ -1,7 +1,7 @@
 /*
  *	MapGrammarのANTLR字句定義ファイルです。
  */
-lexer grammar MapGrammarLexer;
+lexer grammar MapGrammarV2Lexer;
 
 @lexer::header {
 import { Token, CommonToken } from "antlr4ts";
@@ -16,21 +16,21 @@ public nextToken(): Token {
 	}
 
 	let next = super.nextToken()
-	if (next.type !== MapGrammarLexer.ERROR_TOKEN) {
+	if (next.type !== MapGrammarV2Lexer.ERROR_TOKEN) {
 		return next
 	}
 
 	const start = next
 	let end = start
 	let tokenString = ""
-	while(next.type === MapGrammarLexer.ERROR_TOKEN) {
+	while(next.type === MapGrammarV2Lexer.ERROR_TOKEN) {
 		tokenString += next.text!
 		end = next
 		next = super.nextToken()
 	}
 	this.tokenQueue.push(next)
 	const token = new CommonToken(
-		MapGrammarLexer.ERROR_TOKEN,
+		MapGrammarV2Lexer.ERROR_TOKEN,
 		tokenString,
 		{ source: start.tokenSource, stream: start.inputStream },
 		start.channel,

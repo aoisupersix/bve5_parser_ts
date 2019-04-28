@@ -1,4 +1,4 @@
-// Generated from src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4 by ANTLR 4.6-SNAPSHOT
+// Generated from src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Lexer.g4 by ANTLR 4.6-SNAPSHOT
 
 
 import { Token, CommonToken } from "antlr4ts";
@@ -18,7 +18,7 @@ import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 import * as Utils from "antlr4ts/misc/Utils";
 
 
-export class MapGrammarLexer extends Lexer {
+export class MapGrammarV2Lexer extends Lexer {
 	public static readonly BVETS = 1;
 	public static readonly MAP = 2;
 	public static readonly SELECT_ENCODE = 3;
@@ -177,12 +177,12 @@ export class MapGrammarLexer extends Lexer {
 		"COMMENT", "VAR_START", "VAR", "QUOTE", "ERROR_TOKEN", "RQUOTE", "CHAR", 
 		"E_WS", "ENCODE_END", "ENCODE_CHAR",
 	];
-	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(MapGrammarLexer._LITERAL_NAMES, MapGrammarLexer._SYMBOLIC_NAMES, []);
+	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(MapGrammarV2Lexer._LITERAL_NAMES, MapGrammarV2Lexer._SYMBOLIC_NAMES, []);
 
 	// @Override
 	// @NotNull
 	public get vocabulary(): Vocabulary {
-		return MapGrammarLexer.VOCABULARY;
+		return MapGrammarV2Lexer.VOCABULARY;
 	}
 	// tslint:enable:no-trailing-whitespace
 
@@ -195,21 +195,21 @@ export class MapGrammarLexer extends Lexer {
 		}
 
 		let next = super.nextToken()
-		if (next.type !== MapGrammarLexer.ERROR_TOKEN) {
+		if (next.type !== MapGrammarV2Lexer.ERROR_TOKEN) {
 			return next
 		}
 
 		const start = next
 		let end = start
 		let tokenString = ""
-		while(next.type === MapGrammarLexer.ERROR_TOKEN) {
+		while(next.type === MapGrammarV2Lexer.ERROR_TOKEN) {
 			tokenString += next.text!
 			end = next
 			next = super.nextToken()
 		}
 		this.tokenQueue.push(next)
 		const token = new CommonToken(
-			MapGrammarLexer.ERROR_TOKEN,
+			MapGrammarV2Lexer.ERROR_TOKEN,
 			tokenString,
 			{ source: start.tokenSource, stream: start.inputStream },
 			start.channel,
@@ -224,20 +224,20 @@ export class MapGrammarLexer extends Lexer {
 
 	constructor(input: CharStream) {
 		super(input);
-		this._interp = new LexerATNSimulator(MapGrammarLexer._ATN, this);
+		this._interp = new LexerATNSimulator(MapGrammarV2Lexer._ATN, this);
 	}
 
 	// @Override
-	public get grammarFileName(): string { return "MapGrammarLexer.g4"; }
+	public get grammarFileName(): string { return "MapGrammarV2Lexer.g4"; }
 
 	// @Override
-	public get ruleNames(): string[] { return MapGrammarLexer.ruleNames; }
+	public get ruleNames(): string[] { return MapGrammarV2Lexer.ruleNames; }
 
 	// @Override
-	public get serializedATN(): string { return MapGrammarLexer._serializedATN; }
+	public get serializedATN(): string { return MapGrammarV2Lexer._serializedATN; }
 
 	// @Override
-	public get modeNames(): string[] { return MapGrammarLexer.modeNames; }
+	public get modeNames(): string[] { return MapGrammarV2Lexer.modeNames; }
 
 	private static readonly _serializedATNSegments: number = 2;
 	private static readonly _serializedATNSegment0: string =
@@ -681,18 +681,18 @@ export class MapGrammarLexer extends Lexer {
 		"\x07\x04\x02\b\x02\x02\x07\x03\x02\x06\x02\x02";
 	public static readonly _serializedATN: string = Utils.join(
 		[
-			MapGrammarLexer._serializedATNSegment0,
-			MapGrammarLexer._serializedATNSegment1,
+			MapGrammarV2Lexer._serializedATNSegment0,
+			MapGrammarV2Lexer._serializedATNSegment1,
 		],
 		"",
 	);
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
-		if (!MapGrammarLexer.__ATN) {
-			MapGrammarLexer.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(MapGrammarLexer._serializedATN));
+		if (!MapGrammarV2Lexer.__ATN) {
+			MapGrammarV2Lexer.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(MapGrammarV2Lexer._serializedATN));
 		}
 
-		return MapGrammarLexer.__ATN;
+		return MapGrammarV2Lexer.__ATN;
 	}
 
 }

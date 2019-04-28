@@ -12,7 +12,7 @@
     {
       "label": "Build Antlr",
       "type": "npm",
-      "script": "build-antlr-map",
+      "script": "build-antlr-v2map",
       "problemMatcher": []
     }
   ]

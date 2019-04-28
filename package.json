@@ -8,7 +8,7 @@
     "watch": "tsc -watch -p ./",
     "test": "mocha --require ts-node/register src/test/**/*.ts",
     "test-watch": "mocha --watch-extensions ts -w --require ts-node/register src/test/**/*.ts",
-    "build-antlr-map": "antlr4ts -o src/MapGrammar/Parser -visitor src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 src/MapGrammar/SyntaxDefinitions/MapGrammarLexer.g4"
+    "build-antlr-v2map": "antlr4ts -o src/MapGrammar/V2Parser/Parser -visitor src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Parser.g4 src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Lexer.g4"
   },
   "author": "aoisupersix",
   "license": "ISC",

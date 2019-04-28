@@ -1,9 +1,9 @@
 /*
  *	MapGrammarのANTLR構文定義ファイルです。
  */
-parser grammar MapGrammarParser;
+parser grammar MapGrammarV2Parser;
 options{
-	tokenVocab=MapGrammarLexer;
+	tokenVocab=MapGrammarV2Lexer;
 }
 
 root :

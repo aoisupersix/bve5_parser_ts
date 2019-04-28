@@ -1,4 +1,4 @@
-// Generated from src/MapGrammar/SyntaxDefinitions/MapGrammarParser.g4 by ANTLR 4.6-SNAPSHOT
+// Generated from src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Parser.g4 by ANTLR 4.6-SNAPSHOT
 
 
 import { ATN } from "antlr4ts/atn/ATN";
@@ -23,11 +23,11 @@ import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 
 import * as Utils from "antlr4ts/misc/Utils";
 
-import { MapGrammarParserListener } from "./MapGrammarParserListener";
-import { MapGrammarParserVisitor } from "./MapGrammarParserVisitor";
+import { MapGrammarV2ParserListener } from "./MapGrammarV2ParserListener";
+import { MapGrammarV2ParserVisitor } from "./MapGrammarV2ParserVisitor";
 
 
-export class MapGrammarParser extends Parser {
+export class MapGrammarV2Parser extends Parser {
 	public static readonly BVETS = 1;
 	public static readonly MAP = 2;
 	public static readonly SELECT_ENCODE = 3;
@@ -210,46 +210,46 @@ export class MapGrammarParser extends Parser {
 		"COMMENT", "VAR_START", "VAR", "QUOTE", "ERROR_TOKEN", "RQUOTE", "CHAR", 
 		"E_WS", "ENCODE_END", "ENCODE_CHAR",
 	];
-	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(MapGrammarParser._LITERAL_NAMES, MapGrammarParser._SYMBOLIC_NAMES, []);
+	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(MapGrammarV2Parser._LITERAL_NAMES, MapGrammarV2Parser._SYMBOLIC_NAMES, []);
 
 	// @Override
 	// @NotNull
 	public get vocabulary(): Vocabulary {
-		return MapGrammarParser.VOCABULARY;
+		return MapGrammarV2Parser.VOCABULARY;
 	}
 	// tslint:enable:no-trailing-whitespace
 
 	// @Override
-	public get grammarFileName(): string { return "MapGrammarParser.g4"; }
+	public get grammarFileName(): string { return "MapGrammarV2Parser.g4"; }
 
 	// @Override
-	public get ruleNames(): string[] { return MapGrammarParser.ruleNames; }
+	public get ruleNames(): string[] { return MapGrammarV2Parser.ruleNames; }
 
 	// @Override
-	public get serializedATN(): string { return MapGrammarParser._serializedATN; }
+	public get serializedATN(): string { return MapGrammarV2Parser._serializedATN; }
 
 	constructor(input: TokenStream) {
 		super(input);
-		this._interp = new ParserATNSimulator(MapGrammarParser._ATN, this);
+		this._interp = new ParserATNSimulator(MapGrammarV2Parser._ATN, this);
 	}
 	// @RuleVersion(0)
 	public root(): RootContext {
 		let _localctx: RootContext = new RootContext(this._ctx, this.state);
-		this.enterRule(_localctx, 0, MapGrammarParser.RULE_root);
+		this.enterRule(_localctx, 0, MapGrammarV2Parser.RULE_root);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 80;
-			this.match(MapGrammarParser.BVETS);
+			this.match(MapGrammarV2Parser.BVETS);
 			this.state = 81;
-			this.match(MapGrammarParser.MAP);
+			this.match(MapGrammarV2Parser.MAP);
 			this.state = 82;
-			_localctx._version = this.match(MapGrammarParser.NUM);
+			_localctx._version = this.match(MapGrammarV2Parser.NUM);
 			this.state = 84;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (_la === MapGrammarParser.SELECT_ENCODE) {
+			if (_la === MapGrammarV2Parser.SELECT_ENCODE) {
 				{
 				this.state = 83;
 				this.encoding();
@@ -259,13 +259,13 @@ export class MapGrammarParser extends Parser {
 			this.state = 91;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << MapGrammarParser.INCLUDE) | (1 << MapGrammarParser.CURVE) | (1 << MapGrammarParser.GRADIENT) | (1 << MapGrammarParser.TRACK) | (1 << MapGrammarParser.STRUCTURE) | (1 << MapGrammarParser.REPEATER) | (1 << MapGrammarParser.BACKGROUND) | (1 << MapGrammarParser.STATION) | (1 << MapGrammarParser.SECTION) | (1 << MapGrammarParser.SIGNAL) | (1 << MapGrammarParser.BEACON) | (1 << MapGrammarParser.SPEEDLIMIT) | (1 << MapGrammarParser.PRETRAIN) | (1 << MapGrammarParser.LIGHT) | (1 << MapGrammarParser.FOG) | (1 << MapGrammarParser.DRAWDISTANCE) | (1 << MapGrammarParser.CABILLUMINANCE) | (1 << MapGrammarParser.IRREGULARITY) | (1 << MapGrammarParser.ADHESION) | (1 << MapGrammarParser.SOUND) | (1 << MapGrammarParser.SOUND3D) | (1 << MapGrammarParser.ROLLINGNOISE) | (1 << MapGrammarParser.FLANGENOISE) | (1 << MapGrammarParser.JOINTNOISE) | (1 << MapGrammarParser.TRAIN) | (1 << MapGrammarParser.LEGACY))) !== 0) || ((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarParser.NUM - 66)) | (1 << (MapGrammarParser.DISTANCE - 66)) | (1 << (MapGrammarParser.PLUS - 66)) | (1 << (MapGrammarParser.MINUS - 66)) | (1 << (MapGrammarParser.ABS - 66)) | (1 << (MapGrammarParser.ATAN2 - 66)) | (1 << (MapGrammarParser.CEIL - 66)) | (1 << (MapGrammarParser.COS - 66)) | (1 << (MapGrammarParser.EXP - 66)) | (1 << (MapGrammarParser.FLOOR - 66)) | (1 << (MapGrammarParser.LOG - 66)) | (1 << (MapGrammarParser.POW - 66)) | (1 << (MapGrammarParser.RAND - 66)) | (1 << (MapGrammarParser.SIN - 66)) | (1 << (MapGrammarParser.SQRT - 66)) | (1 << (MapGrammarParser.OPN_PAR - 66)) | (1 << (MapGrammarParser.VAR_START - 66)) | (1 << (MapGrammarParser.QUOTE - 66)))) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << MapGrammarV2Parser.INCLUDE) | (1 << MapGrammarV2Parser.CURVE) | (1 << MapGrammarV2Parser.GRADIENT) | (1 << MapGrammarV2Parser.TRACK) | (1 << MapGrammarV2Parser.STRUCTURE) | (1 << MapGrammarV2Parser.REPEATER) | (1 << MapGrammarV2Parser.BACKGROUND) | (1 << MapGrammarV2Parser.STATION) | (1 << MapGrammarV2Parser.SECTION) | (1 << MapGrammarV2Parser.SIGNAL) | (1 << MapGrammarV2Parser.BEACON) | (1 << MapGrammarV2Parser.SPEEDLIMIT) | (1 << MapGrammarV2Parser.PRETRAIN) | (1 << MapGrammarV2Parser.LIGHT) | (1 << MapGrammarV2Parser.FOG) | (1 << MapGrammarV2Parser.DRAWDISTANCE) | (1 << MapGrammarV2Parser.CABILLUMINANCE) | (1 << MapGrammarV2Parser.IRREGULARITY) | (1 << MapGrammarV2Parser.ADHESION) | (1 << MapGrammarV2Parser.SOUND) | (1 << MapGrammarV2Parser.SOUND3D) | (1 << MapGrammarV2Parser.ROLLINGNOISE) | (1 << MapGrammarV2Parser.FLANGENOISE) | (1 << MapGrammarV2Parser.JOINTNOISE) | (1 << MapGrammarV2Parser.TRAIN) | (1 << MapGrammarV2Parser.LEGACY))) !== 0) || ((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarV2Parser.NUM - 66)) | (1 << (MapGrammarV2Parser.DISTANCE - 66)) | (1 << (MapGrammarV2Parser.PLUS - 66)) | (1 << (MapGrammarV2Parser.MINUS - 66)) | (1 << (MapGrammarV2Parser.ABS - 66)) | (1 << (MapGrammarV2Parser.ATAN2 - 66)) | (1 << (MapGrammarV2Parser.CEIL - 66)) | (1 << (MapGrammarV2Parser.COS - 66)) | (1 << (MapGrammarV2Parser.EXP - 66)) | (1 << (MapGrammarV2Parser.FLOOR - 66)) | (1 << (MapGrammarV2Parser.LOG - 66)) | (1 << (MapGrammarV2Parser.POW - 66)) | (1 << (MapGrammarV2Parser.RAND - 66)) | (1 << (MapGrammarV2Parser.SIN - 66)) | (1 << (MapGrammarV2Parser.SQRT - 66)) | (1 << (MapGrammarV2Parser.OPN_PAR - 66)) | (1 << (MapGrammarV2Parser.VAR_START - 66)) | (1 << (MapGrammarV2Parser.QUOTE - 66)))) !== 0)) {
 				{
 				{
 				this.state = 86;
 				this.statement();
 				this.state = 87;
-				this.match(MapGrammarParser.STATE_END);
+				this.match(MapGrammarV2Parser.STATE_END);
 				}
 				}
 				this.state = 93;
@@ -273,7 +273,7 @@ export class MapGrammarParser extends Parser {
 				_la = this._input.LA(1);
 			}
 			this.state = 94;
-			this.match(MapGrammarParser.EOF);
+			this.match(MapGrammarV2Parser.EOF);
 			}
 		}
 		catch (re) {
@@ -293,7 +293,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public statement(): StatementContext {
 		let _localctx: StatementContext = new StatementContext(this._ctx, this.state);
-		this.enterRule(_localctx, 2, MapGrammarParser.RULE_statement);
+		this.enterRule(_localctx, 2, MapGrammarV2Parser.RULE_statement);
 		try {
 			this.state = 150;
 			this._errHandler.sync(this);
@@ -312,7 +312,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 97;
-				this.match(MapGrammarParser.INCLUDE);
+				this.match(MapGrammarV2Parser.INCLUDE);
 				this.state = 98;
 				this.include();
 				}
@@ -323,7 +323,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 99;
-				this.match(MapGrammarParser.CURVE);
+				this.match(MapGrammarV2Parser.CURVE);
 				this.state = 100;
 				this.curve();
 				}
@@ -334,7 +334,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 101;
-				this.match(MapGrammarParser.GRADIENT);
+				this.match(MapGrammarV2Parser.GRADIENT);
 				this.state = 102;
 				this.gradient();
 				}
@@ -345,7 +345,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 5);
 				{
 				this.state = 103;
-				this.match(MapGrammarParser.TRACK);
+				this.match(MapGrammarV2Parser.TRACK);
 				this.state = 104;
 				this.track();
 				}
@@ -356,7 +356,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 6);
 				{
 				this.state = 105;
-				this.match(MapGrammarParser.STRUCTURE);
+				this.match(MapGrammarV2Parser.STRUCTURE);
 				this.state = 106;
 				this.structure();
 				}
@@ -367,7 +367,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 7);
 				{
 				this.state = 107;
-				this.match(MapGrammarParser.REPEATER);
+				this.match(MapGrammarV2Parser.REPEATER);
 				this.state = 108;
 				this.repeater();
 				}
@@ -378,7 +378,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 8);
 				{
 				this.state = 109;
-				this.match(MapGrammarParser.BACKGROUND);
+				this.match(MapGrammarV2Parser.BACKGROUND);
 				this.state = 110;
 				this.background();
 				}
@@ -389,7 +389,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 9);
 				{
 				this.state = 111;
-				this.match(MapGrammarParser.STATION);
+				this.match(MapGrammarV2Parser.STATION);
 				this.state = 112;
 				this.station();
 				}
@@ -400,7 +400,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 10);
 				{
 				this.state = 113;
-				this.match(MapGrammarParser.SECTION);
+				this.match(MapGrammarV2Parser.SECTION);
 				this.state = 114;
 				this.section();
 				}
@@ -411,7 +411,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 11);
 				{
 				this.state = 115;
-				this.match(MapGrammarParser.SIGNAL);
+				this.match(MapGrammarV2Parser.SIGNAL);
 				this.state = 116;
 				this.signal();
 				}
@@ -422,7 +422,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 12);
 				{
 				this.state = 117;
-				this.match(MapGrammarParser.BEACON);
+				this.match(MapGrammarV2Parser.BEACON);
 				this.state = 118;
 				this.beacon();
 				}
@@ -433,7 +433,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 13);
 				{
 				this.state = 119;
-				this.match(MapGrammarParser.SPEEDLIMIT);
+				this.match(MapGrammarV2Parser.SPEEDLIMIT);
 				this.state = 120;
 				this.speedlimit();
 				}
@@ -444,7 +444,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 14);
 				{
 				this.state = 121;
-				this.match(MapGrammarParser.PRETRAIN);
+				this.match(MapGrammarV2Parser.PRETRAIN);
 				this.state = 122;
 				this.pretrain();
 				}
@@ -455,7 +455,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 15);
 				{
 				this.state = 123;
-				this.match(MapGrammarParser.LIGHT);
+				this.match(MapGrammarV2Parser.LIGHT);
 				this.state = 124;
 				this.light();
 				}
@@ -466,7 +466,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 16);
 				{
 				this.state = 125;
-				this.match(MapGrammarParser.FOG);
+				this.match(MapGrammarV2Parser.FOG);
 				this.state = 126;
 				this.fog();
 				}
@@ -477,7 +477,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 17);
 				{
 				this.state = 127;
-				this.match(MapGrammarParser.DRAWDISTANCE);
+				this.match(MapGrammarV2Parser.DRAWDISTANCE);
 				this.state = 128;
 				this.drawdistance();
 				}
@@ -488,7 +488,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 18);
 				{
 				this.state = 129;
-				this.match(MapGrammarParser.CABILLUMINANCE);
+				this.match(MapGrammarV2Parser.CABILLUMINANCE);
 				this.state = 130;
 				this.cabilluminance();
 				}
@@ -499,7 +499,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 19);
 				{
 				this.state = 131;
-				this.match(MapGrammarParser.IRREGULARITY);
+				this.match(MapGrammarV2Parser.IRREGULARITY);
 				this.state = 132;
 				this.irregularity();
 				}
@@ -510,7 +510,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 20);
 				{
 				this.state = 133;
-				this.match(MapGrammarParser.ADHESION);
+				this.match(MapGrammarV2Parser.ADHESION);
 				this.state = 134;
 				this.adhesion();
 				}
@@ -521,7 +521,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 21);
 				{
 				this.state = 135;
-				this.match(MapGrammarParser.SOUND);
+				this.match(MapGrammarV2Parser.SOUND);
 				this.state = 136;
 				this.sound();
 				}
@@ -532,7 +532,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 22);
 				{
 				this.state = 137;
-				this.match(MapGrammarParser.SOUND3D);
+				this.match(MapGrammarV2Parser.SOUND3D);
 				this.state = 138;
 				this.sound3d();
 				}
@@ -543,7 +543,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 23);
 				{
 				this.state = 139;
-				this.match(MapGrammarParser.ROLLINGNOISE);
+				this.match(MapGrammarV2Parser.ROLLINGNOISE);
 				this.state = 140;
 				this.rollingnoise();
 				}
@@ -554,7 +554,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 24);
 				{
 				this.state = 141;
-				this.match(MapGrammarParser.FLANGENOISE);
+				this.match(MapGrammarV2Parser.FLANGENOISE);
 				this.state = 142;
 				this.flangenoise();
 				}
@@ -565,7 +565,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 25);
 				{
 				this.state = 143;
-				this.match(MapGrammarParser.JOINTNOISE);
+				this.match(MapGrammarV2Parser.JOINTNOISE);
 				this.state = 144;
 				this.jointnoise();
 				}
@@ -576,7 +576,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 26);
 				{
 				this.state = 145;
-				this.match(MapGrammarParser.TRAIN);
+				this.match(MapGrammarV2Parser.TRAIN);
 				this.state = 146;
 				this.train();
 				}
@@ -596,7 +596,7 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 28);
 				{
 				this.state = 148;
-				this.match(MapGrammarParser.LEGACY);
+				this.match(MapGrammarV2Parser.LEGACY);
 				this.state = 149;
 				this.legacy();
 				}
@@ -620,7 +620,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public distance(): DistanceContext {
 		let _localctx: DistanceContext = new DistanceContext(this._ctx, this.state);
-		this.enterRule(_localctx, 4, MapGrammarParser.RULE_distance);
+		this.enterRule(_localctx, 4, MapGrammarV2Parser.RULE_distance);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -645,7 +645,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public include(): IncludeContext {
 		let _localctx: IncludeContext = new IncludeContext(this._ctx, this.state);
-		this.enterRule(_localctx, 6, MapGrammarParser.RULE_include);
+		this.enterRule(_localctx, 6, MapGrammarV2Parser.RULE_include);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -670,7 +670,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public curve(): CurveContext {
 		let _localctx: CurveContext = new CurveContext(this._ctx, this.state);
-		this.enterRule(_localctx, 8, MapGrammarParser.RULE_curve);
+		this.enterRule(_localctx, 8, MapGrammarV2Parser.RULE_curve);
 		let _la: number;
 		try {
 			this.state = 216;
@@ -680,11 +680,11 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 156;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 157;
 				_localctx._func = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.SET_GAUGE || _la === MapGrammarParser.GAUGE)) {
+				if (!(_la === MapGrammarV2Parser.SET_GAUGE || _la === MapGrammarV2Parser.GAUGE)) {
 					_localctx._func = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -695,11 +695,11 @@ export class MapGrammarParser extends Parser {
 					this.consume();
 				}
 				this.state = 158;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 159;
 				_localctx._value = this.nullableExpr();
 				this.state = 160;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -707,15 +707,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 162;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 163;
-				_localctx._func = this.match(MapGrammarParser.SET_CENTER);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_CENTER);
 				this.state = 164;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 165;
 				_localctx._x = this.nullableExpr();
 				this.state = 166;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -723,15 +723,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 168;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 169;
-				_localctx._func = this.match(MapGrammarParser.SET_FUNCTION);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_FUNCTION);
 				this.state = 170;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 171;
 				_localctx._id = this.nullableExpr();
 				this.state = 172;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -739,13 +739,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 174;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 175;
-				_localctx._func = this.match(MapGrammarParser.BEGIN_TRANSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN_TRANSITION);
 				this.state = 176;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 177;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -753,11 +753,11 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 5);
 				{
 				this.state = 178;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 179;
 				_localctx._func = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.BEGIN || _la === MapGrammarParser.BEGIN_CIRCULAR)) {
+				if (!(_la === MapGrammarV2Parser.BEGIN || _la === MapGrammarV2Parser.BEGIN_CIRCULAR)) {
 					_localctx._func = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -768,23 +768,23 @@ export class MapGrammarParser extends Parser {
 					this.consume();
 				}
 				this.state = 180;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 181;
 				_localctx._radius = this.nullableExpr();
 				this.state = 184;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === MapGrammarParser.COMMA) {
+				if (_la === MapGrammarV2Parser.COMMA) {
 					{
 					this.state = 182;
-					this.match(MapGrammarParser.COMMA);
+					this.match(MapGrammarV2Parser.COMMA);
 					this.state = 183;
 					_localctx._cant = this.nullableExpr();
 					}
 				}
 
 				this.state = 186;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -792,13 +792,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 6);
 				{
 				this.state = 188;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 189;
-				_localctx._func = this.match(MapGrammarParser.END);
+				_localctx._func = this.match(MapGrammarV2Parser.END);
 				this.state = 190;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 191;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -806,13 +806,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 7);
 				{
 				this.state = 192;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 193;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 194;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 195;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -820,15 +820,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 8);
 				{
 				this.state = 196;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 197;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 198;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 199;
 				_localctx._radiusE = this.expr(0);
 				this.state = 200;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -836,19 +836,19 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 9);
 				{
 				this.state = 202;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 203;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 204;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 205;
 				_localctx._radius = this.nullableExpr();
 				this.state = 206;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 207;
 				_localctx._cant = this.nullableExpr();
 				this.state = 208;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -856,15 +856,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 10);
 				{
 				this.state = 210;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 211;
-				_localctx._func = this.match(MapGrammarParser.CHANGE);
+				_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 				this.state = 212;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 213;
 				_localctx._radius = this.nullableExpr();
 				this.state = 214;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -886,7 +886,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public gradient(): GradientContext {
 		let _localctx: GradientContext = new GradientContext(this._ctx, this.state);
-		this.enterRule(_localctx, 10, MapGrammarParser.RULE_gradient);
+		this.enterRule(_localctx, 10, MapGrammarV2Parser.RULE_gradient);
 		let _la: number;
 		try {
 			this.state = 238;
@@ -896,13 +896,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 218;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 219;
-				_localctx._func = this.match(MapGrammarParser.BEGIN_TRANSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN_TRANSITION);
 				this.state = 220;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 221;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -910,11 +910,11 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 222;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 223;
 				_localctx._func = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.BEGIN || _la === MapGrammarParser.BEGIN_CONST)) {
+				if (!(_la === MapGrammarV2Parser.BEGIN || _la === MapGrammarV2Parser.BEGIN_CONST)) {
 					_localctx._func = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -925,11 +925,11 @@ export class MapGrammarParser extends Parser {
 					this.consume();
 				}
 				this.state = 224;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 225;
 				_localctx._gradientArgs = this.nullableExpr();
 				this.state = 226;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -937,13 +937,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 228;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 229;
-				_localctx._func = this.match(MapGrammarParser.END);
+				_localctx._func = this.match(MapGrammarV2Parser.END);
 				this.state = 230;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 231;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -951,15 +951,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 232;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 233;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 234;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 235;
 				_localctx._gradientArgs = this.nullableExpr();
 				this.state = 236;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -981,7 +981,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public track(): TrackContext {
 		let _localctx: TrackContext = new TrackContext(this._ctx, this.state);
-		this.enterRule(_localctx, 12, MapGrammarParser.RULE_track);
+		this.enterRule(_localctx, 12, MapGrammarV2Parser.RULE_track);
 		let _la: number;
 		try {
 			this.state = 442;
@@ -991,23 +991,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 240;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 241;
 				_localctx._key = this.expr(0);
 				this.state = 242;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 243;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 244;
-				_localctx._element = this.match(MapGrammarParser.X_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.X_ELEMENT);
 				this.state = 245;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 246;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 247;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 248;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1015,25 +1015,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 250;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 251;
 				_localctx._key = this.expr(0);
 				this.state = 252;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 253;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 254;
-				_localctx._element = this.match(MapGrammarParser.X_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.X_ELEMENT);
 				this.state = 255;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 256;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 257;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 258;
 				_localctx._xE = this.expr(0);
 				this.state = 259;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1041,29 +1041,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 261;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 262;
 				_localctx._key = this.expr(0);
 				this.state = 263;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 264;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 265;
-				_localctx._element = this.match(MapGrammarParser.X_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.X_ELEMENT);
 				this.state = 266;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 267;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 268;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 269;
 				_localctx._x = this.nullableExpr();
 				this.state = 270;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 271;
 				_localctx._radius = this.nullableExpr();
 				this.state = 272;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1071,23 +1071,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 274;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 275;
 				_localctx._key = this.expr(0);
 				this.state = 276;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 277;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 278;
-				_localctx._element = this.match(MapGrammarParser.Y_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.Y_ELEMENT);
 				this.state = 279;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 280;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 281;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 282;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1095,25 +1095,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 5);
 				{
 				this.state = 284;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 285;
 				_localctx._key = this.expr(0);
 				this.state = 286;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 287;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 288;
-				_localctx._element = this.match(MapGrammarParser.Y_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.Y_ELEMENT);
 				this.state = 289;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 290;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 291;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 292;
 				_localctx._yE = this.expr(0);
 				this.state = 293;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1121,29 +1121,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 6);
 				{
 				this.state = 295;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 296;
 				_localctx._key = this.expr(0);
 				this.state = 297;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 298;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 299;
-				_localctx._element = this.match(MapGrammarParser.Y_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.Y_ELEMENT);
 				this.state = 300;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 301;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 302;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 303;
 				_localctx._y = this.nullableExpr();
 				this.state = 304;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 305;
 				_localctx._radius = this.nullableExpr();
 				this.state = 306;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1151,25 +1151,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 7);
 				{
 				this.state = 308;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 309;
 				_localctx._key = this.expr(0);
 				this.state = 310;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 311;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 312;
-				_localctx._func = this.match(MapGrammarParser.POSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.POSITION);
 				this.state = 313;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 314;
 				_localctx._x = this.nullableExpr();
 				this.state = 315;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 316;
 				_localctx._y = this.nullableExpr();
 				this.state = 317;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1177,29 +1177,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 8);
 				{
 				this.state = 319;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 320;
 				_localctx._key = this.expr(0);
 				this.state = 321;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 322;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 323;
-				_localctx._func = this.match(MapGrammarParser.POSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.POSITION);
 				this.state = 324;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 325;
 				_localctx._x = this.nullableExpr();
 				this.state = 326;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 327;
 				_localctx._y = this.nullableExpr();
 				this.state = 328;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 329;
 				_localctx._radiusH = this.nullableExpr();
 				this.state = 330;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1207,33 +1207,33 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 9);
 				{
 				this.state = 332;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 333;
 				_localctx._key = this.expr(0);
 				this.state = 334;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 335;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 336;
-				_localctx._func = this.match(MapGrammarParser.POSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.POSITION);
 				this.state = 337;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 338;
 				_localctx._x = this.nullableExpr();
 				this.state = 339;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 340;
 				_localctx._y = this.nullableExpr();
 				this.state = 341;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 342;
 				_localctx._radiusH = this.nullableExpr();
 				this.state = 343;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 344;
 				_localctx._radiusV = this.nullableExpr();
 				this.state = 345;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1241,25 +1241,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 10);
 				{
 				this.state = 347;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 348;
 				_localctx._key = this.expr(0);
 				this.state = 349;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 350;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 351;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 352;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 353;
-				_localctx._func = this.match(MapGrammarParser.SET_CENTER);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_CENTER);
 				this.state = 354;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 355;
 				_localctx._x = this.nullableExpr();
 				this.state = 356;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1267,25 +1267,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 11);
 				{
 				this.state = 358;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 359;
 				_localctx._key = this.expr(0);
 				this.state = 360;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 361;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 362;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 363;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 364;
-				_localctx._func = this.match(MapGrammarParser.SET_GAUGE);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_GAUGE);
 				this.state = 365;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 366;
 				_localctx._gauge = this.nullableExpr();
 				this.state = 367;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1293,25 +1293,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 12);
 				{
 				this.state = 369;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 370;
 				_localctx._key = this.expr(0);
 				this.state = 371;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 372;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 373;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 374;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 375;
-				_localctx._func = this.match(MapGrammarParser.SET_FUNCTION);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_FUNCTION);
 				this.state = 376;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 377;
 				_localctx._id = this.nullableExpr();
 				this.state = 378;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1319,23 +1319,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 13);
 				{
 				this.state = 380;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 381;
 				_localctx._key = this.expr(0);
 				this.state = 382;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 383;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 384;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 385;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 386;
-				_localctx._func = this.match(MapGrammarParser.BEGIN_TRANSITION);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN_TRANSITION);
 				this.state = 387;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 388;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1343,25 +1343,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 14);
 				{
 				this.state = 390;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 391;
 				_localctx._key = this.expr(0);
 				this.state = 392;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 393;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 394;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 395;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 396;
-				_localctx._func = this.match(MapGrammarParser.BEGIN);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN);
 				this.state = 397;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 398;
 				_localctx._cant = this.nullableExpr();
 				this.state = 399;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1369,23 +1369,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 15);
 				{
 				this.state = 401;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 402;
 				_localctx._key = this.expr(0);
 				this.state = 403;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 404;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 405;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 406;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 407;
-				_localctx._func = this.match(MapGrammarParser.END);
+				_localctx._func = this.match(MapGrammarV2Parser.END);
 				this.state = 408;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 409;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1393,25 +1393,25 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 16);
 				{
 				this.state = 411;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 412;
 				_localctx._key = this.expr(0);
 				this.state = 413;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 414;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 415;
-				_localctx._element = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._element = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 416;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 417;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 418;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 420;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarParser.NUM - 66)) | (1 << (MapGrammarParser.DISTANCE - 66)) | (1 << (MapGrammarParser.PLUS - 66)) | (1 << (MapGrammarParser.MINUS - 66)) | (1 << (MapGrammarParser.ABS - 66)) | (1 << (MapGrammarParser.ATAN2 - 66)) | (1 << (MapGrammarParser.CEIL - 66)) | (1 << (MapGrammarParser.COS - 66)) | (1 << (MapGrammarParser.EXP - 66)) | (1 << (MapGrammarParser.FLOOR - 66)) | (1 << (MapGrammarParser.LOG - 66)) | (1 << (MapGrammarParser.POW - 66)) | (1 << (MapGrammarParser.RAND - 66)) | (1 << (MapGrammarParser.SIN - 66)) | (1 << (MapGrammarParser.SQRT - 66)) | (1 << (MapGrammarParser.OPN_PAR - 66)) | (1 << (MapGrammarParser.VAR_START - 66)) | (1 << (MapGrammarParser.QUOTE - 66)))) !== 0)) {
+				if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarV2Parser.NUM - 66)) | (1 << (MapGrammarV2Parser.DISTANCE - 66)) | (1 << (MapGrammarV2Parser.PLUS - 66)) | (1 << (MapGrammarV2Parser.MINUS - 66)) | (1 << (MapGrammarV2Parser.ABS - 66)) | (1 << (MapGrammarV2Parser.ATAN2 - 66)) | (1 << (MapGrammarV2Parser.CEIL - 66)) | (1 << (MapGrammarV2Parser.COS - 66)) | (1 << (MapGrammarV2Parser.EXP - 66)) | (1 << (MapGrammarV2Parser.FLOOR - 66)) | (1 << (MapGrammarV2Parser.LOG - 66)) | (1 << (MapGrammarV2Parser.POW - 66)) | (1 << (MapGrammarV2Parser.RAND - 66)) | (1 << (MapGrammarV2Parser.SIN - 66)) | (1 << (MapGrammarV2Parser.SQRT - 66)) | (1 << (MapGrammarV2Parser.OPN_PAR - 66)) | (1 << (MapGrammarV2Parser.VAR_START - 66)) | (1 << (MapGrammarV2Parser.QUOTE - 66)))) !== 0)) {
 					{
 					this.state = 419;
 					_localctx._cantE = this.expr(0);
@@ -1419,7 +1419,7 @@ export class MapGrammarParser extends Parser {
 				}
 
 				this.state = 422;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1427,21 +1427,21 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 17);
 				{
 				this.state = 424;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 425;
 				_localctx._key = this.expr(0);
 				this.state = 426;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 427;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 428;
-				_localctx._func = this.match(MapGrammarParser.CANT_ELEMENT);
+				_localctx._func = this.match(MapGrammarV2Parser.CANT_ELEMENT);
 				this.state = 429;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 430;
 				_localctx._cantE = this.expr(0);
 				this.state = 431;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1449,21 +1449,21 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 18);
 				{
 				this.state = 433;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 434;
 				_localctx._key = this.expr(0);
 				this.state = 435;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 436;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 437;
-				_localctx._func = this.match(MapGrammarParser.GAUGE);
+				_localctx._func = this.match(MapGrammarV2Parser.GAUGE);
 				this.state = 438;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 439;
 				_localctx._gauge = this.nullableExpr();
 				this.state = 440;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -1485,7 +1485,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public structure(): StructureContext {
 		let _localctx: StructureContext = new StructureContext(this._ctx, this.state);
-		this.enterRule(_localctx, 14, MapGrammarParser.RULE_structure);
+		this.enterRule(_localctx, 14, MapGrammarV2Parser.RULE_structure);
 		let _la: number;
 		try {
 			this.state = 503;
@@ -1495,15 +1495,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 444;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 445;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 446;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 447;
 				_localctx._path = this.string();
 				this.state = 448;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1511,53 +1511,53 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 450;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 451;
 				_localctx._key = this.expr(0);
 				this.state = 452;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 453;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 454;
-				_localctx._func = this.match(MapGrammarParser.PUT);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT);
 				this.state = 455;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 456;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 457;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 458;
 				_localctx._x = this.nullableExpr();
 				this.state = 459;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 460;
 				_localctx._y = this.nullableExpr();
 				this.state = 461;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 462;
 				_localctx._z = this.nullableExpr();
 				this.state = 463;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 464;
 				_localctx._rx = this.nullableExpr();
 				this.state = 465;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 466;
 				_localctx._ry = this.nullableExpr();
 				this.state = 467;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 468;
 				_localctx._rz = this.nullableExpr();
 				this.state = 469;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 470;
 				_localctx._tilt = this.nullableExpr();
 				this.state = 471;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 472;
 				_localctx._span = this.nullableExpr();
 				this.state = 473;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1565,29 +1565,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 475;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 476;
 				_localctx._key = this.expr(0);
 				this.state = 477;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 478;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 479;
-				_localctx._func = this.match(MapGrammarParser.PUT0);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT0);
 				this.state = 480;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 481;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 482;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 483;
 				_localctx._tilt = this.nullableExpr();
 				this.state = 484;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 485;
 				_localctx._span = this.nullableExpr();
 				this.state = 486;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1595,37 +1595,37 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 488;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 489;
 				_localctx._key = this.expr(0);
 				this.state = 490;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 491;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 492;
-				_localctx._func = this.match(MapGrammarParser.PUTBETWEEN);
+				_localctx._func = this.match(MapGrammarV2Parser.PUTBETWEEN);
 				this.state = 493;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 494;
 				_localctx._trackkey1 = this.nullableExpr();
 				this.state = 495;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 496;
 				_localctx._trackkey2 = this.nullableExpr();
 				this.state = 499;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === MapGrammarParser.COMMA) {
+				if (_la === MapGrammarV2Parser.COMMA) {
 					{
 					this.state = 497;
-					this.match(MapGrammarParser.COMMA);
+					this.match(MapGrammarV2Parser.COMMA);
 					this.state = 498;
 					_localctx._flag = this.nullableExpr();
 					}
 				}
 
 				this.state = 501;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -1647,7 +1647,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public repeater(): RepeaterContext {
 		let _localctx: RepeaterContext = new RepeaterContext(this._ctx, this.state);
-		this.enterRule(_localctx, 16, MapGrammarParser.RULE_repeater);
+		this.enterRule(_localctx, 16, MapGrammarV2Parser.RULE_repeater);
 		let _la: number;
 		try {
 			this.state = 565;
@@ -1657,53 +1657,53 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 505;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 506;
 				_localctx._key = this.expr(0);
 				this.state = 507;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 508;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 509;
-				_localctx._func = this.match(MapGrammarParser.BEGIN);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN);
 				this.state = 510;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 511;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 512;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 513;
 				_localctx._x = this.nullableExpr();
 				this.state = 514;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 515;
 				_localctx._y = this.nullableExpr();
 				this.state = 516;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 517;
 				_localctx._z = this.nullableExpr();
 				this.state = 518;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 519;
 				_localctx._rx = this.nullableExpr();
 				this.state = 520;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 521;
 				_localctx._ry = this.nullableExpr();
 				this.state = 522;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 523;
 				_localctx._rz = this.nullableExpr();
 				this.state = 524;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 525;
 				_localctx._tilt = this.nullableExpr();
 				this.state = 526;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 527;
 				_localctx._span = this.nullableExpr();
 				this.state = 528;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 529;
 				_localctx._interval = this.nullableExpr();
 				this.state = 531;
@@ -1719,9 +1719,9 @@ export class MapGrammarParser extends Parser {
 					this.state = 533;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-				} while (_la === MapGrammarParser.COMMA);
+				} while (_la === MapGrammarV2Parser.COMMA);
 				this.state = 535;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1729,29 +1729,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 537;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 538;
 				_localctx._key = this.expr(0);
 				this.state = 539;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 540;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 541;
-				_localctx._func = this.match(MapGrammarParser.BEGIN0);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN0);
 				this.state = 542;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 543;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 544;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 545;
 				_localctx._tilt = this.nullableExpr();
 				this.state = 546;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 547;
 				_localctx._span = this.nullableExpr();
 				this.state = 548;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 549;
 				_localctx._interval = this.nullableExpr();
 				this.state = 551;
@@ -1767,9 +1767,9 @@ export class MapGrammarParser extends Parser {
 					this.state = 553;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-				} while (_la === MapGrammarParser.COMMA);
+				} while (_la === MapGrammarV2Parser.COMMA);
 				this.state = 555;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1777,19 +1777,19 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 557;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 558;
 				_localctx._key = this.expr(0);
 				this.state = 559;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 560;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 561;
-				_localctx._func = this.match(MapGrammarParser.END);
+				_localctx._func = this.match(MapGrammarV2Parser.END);
 				this.state = 562;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 563;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -1811,20 +1811,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public background(): BackgroundContext {
 		let _localctx: BackgroundContext = new BackgroundContext(this._ctx, this.state);
-		this.enterRule(_localctx, 18, MapGrammarParser.RULE_background);
+		this.enterRule(_localctx, 18, MapGrammarV2Parser.RULE_background);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 567;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 568;
-			_localctx._func = this.match(MapGrammarParser.CHANGE);
+			_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 			this.state = 569;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 570;
 			_localctx._structurekey = this.nullableExpr();
 			this.state = 571;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -1844,53 +1844,53 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public station(): StationContext {
 		let _localctx: StationContext = new StationContext(this._ctx, this.state);
-		this.enterRule(_localctx, 20, MapGrammarParser.RULE_station);
+		this.enterRule(_localctx, 20, MapGrammarV2Parser.RULE_station);
 		try {
 			this.state = 592;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case MapGrammarParser.DOT:
+			case MapGrammarV2Parser.DOT:
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 573;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 574;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 575;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 576;
 				_localctx._path = this.string();
 				this.state = 577;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.OPN_BRA:
+			case MapGrammarV2Parser.OPN_BRA:
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 579;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 580;
 				_localctx._key = this.expr(0);
 				this.state = 581;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 582;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 583;
-				_localctx._func = this.match(MapGrammarParser.PUT);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT);
 				this.state = 584;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 585;
 				_localctx._door = this.nullableExpr();
 				this.state = 586;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 587;
 				_localctx._margin1 = this.nullableExpr();
 				this.state = 588;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 589;
 				_localctx._margin2 = this.nullableExpr();
 				this.state = 590;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			default:
@@ -1914,7 +1914,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public section(): SectionContext {
 		let _localctx: SectionContext = new SectionContext(this._ctx, this.state);
-		this.enterRule(_localctx, 22, MapGrammarParser.RULE_section);
+		this.enterRule(_localctx, 22, MapGrammarV2Parser.RULE_section);
 		let _la: number;
 		try {
 			this.state = 618;
@@ -1924,11 +1924,11 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 594;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 595;
 				_localctx._func = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.BEGIN || _la === MapGrammarParser.BEGIN_NEW)) {
+				if (!(_la === MapGrammarV2Parser.BEGIN || _la === MapGrammarV2Parser.BEGIN_NEW)) {
 					_localctx._func = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -1939,13 +1939,13 @@ export class MapGrammarParser extends Parser {
 					this.consume();
 				}
 				this.state = 596;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 597;
 				this.nullableExpr();
 				this.state = 601;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === MapGrammarParser.COMMA) {
+				while (_la === MapGrammarV2Parser.COMMA) {
 					{
 					{
 					this.state = 598;
@@ -1957,7 +1957,7 @@ export class MapGrammarParser extends Parser {
 					_la = this._input.LA(1);
 				}
 				this.state = 604;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -1965,17 +1965,17 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 606;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 607;
-				_localctx._func = this.match(MapGrammarParser.SET_SPEEDLIMIT);
+				_localctx._func = this.match(MapGrammarV2Parser.SET_SPEEDLIMIT);
 				this.state = 608;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 609;
 				this.nullableExpr();
 				this.state = 613;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === MapGrammarParser.COMMA) {
+				while (_la === MapGrammarV2Parser.COMMA) {
 					{
 					{
 					this.state = 610;
@@ -1987,7 +1987,7 @@ export class MapGrammarParser extends Parser {
 					_la = this._input.LA(1);
 				}
 				this.state = 616;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2009,7 +2009,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public signal(): SignalContext {
 		let _localctx: SignalContext = new SignalContext(this._ctx, this.state);
-		this.enterRule(_localctx, 24, MapGrammarParser.RULE_signal);
+		this.enterRule(_localctx, 24, MapGrammarV2Parser.RULE_signal);
 		let _la: number;
 		try {
 			this.state = 680;
@@ -2019,15 +2019,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 620;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 621;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 622;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 623;
 				_localctx._path = this.string();
 				this.state = 624;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2035,17 +2035,17 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 626;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 627;
-				_localctx._func = this.match(MapGrammarParser.SPEEDLIMIT);
+				_localctx._func = this.match(MapGrammarV2Parser.SPEEDLIMIT);
 				this.state = 628;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 629;
 				this.nullableExpr();
 				this.state = 633;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === MapGrammarParser.COMMA) {
+				while (_la === MapGrammarV2Parser.COMMA) {
 					{
 					{
 					this.state = 630;
@@ -2057,7 +2057,7 @@ export class MapGrammarParser extends Parser {
 					_la = this._input.LA(1);
 				}
 				this.state = 636;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2065,33 +2065,33 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 638;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 639;
 				_localctx._key = this.expr(0);
 				this.state = 640;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 641;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 642;
-				_localctx._func = this.match(MapGrammarParser.PUT);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT);
 				this.state = 643;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 644;
 				_localctx._sectionArgs = this.nullableExpr();
 				this.state = 645;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 646;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 647;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 648;
 				_localctx._x = this.nullableExpr();
 				this.state = 649;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 650;
 				_localctx._y = this.nullableExpr();
 				this.state = 651;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2099,57 +2099,57 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 653;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 654;
 				_localctx._key = this.expr(0);
 				this.state = 655;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 656;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 657;
-				_localctx._func = this.match(MapGrammarParser.PUT);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT);
 				this.state = 658;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 659;
 				_localctx._sectionArgs = this.nullableExpr();
 				this.state = 660;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 661;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 662;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 663;
 				_localctx._x = this.nullableExpr();
 				this.state = 664;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 665;
 				_localctx._y = this.nullableExpr();
 				this.state = 666;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 667;
 				_localctx._z = this.nullableExpr();
 				this.state = 668;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 669;
 				_localctx._rx = this.nullableExpr();
 				this.state = 670;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 671;
 				_localctx._ry = this.nullableExpr();
 				this.state = 672;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 673;
 				_localctx._rz = this.nullableExpr();
 				this.state = 674;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 675;
 				_localctx._tilt = this.nullableExpr();
 				this.state = 676;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 677;
 				_localctx._span = this.nullableExpr();
 				this.state = 678;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2171,28 +2171,28 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public beacon(): BeaconContext {
 		let _localctx: BeaconContext = new BeaconContext(this._ctx, this.state);
-		this.enterRule(_localctx, 26, MapGrammarParser.RULE_beacon);
+		this.enterRule(_localctx, 26, MapGrammarV2Parser.RULE_beacon);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 682;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 683;
-			_localctx._func = this.match(MapGrammarParser.PUT);
+			_localctx._func = this.match(MapGrammarV2Parser.PUT);
 			this.state = 684;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 685;
 			_localctx._type = this.nullableExpr();
 			this.state = 686;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 687;
 			_localctx._sectionArgs = this.nullableExpr();
 			this.state = 688;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 689;
 			_localctx._sendData = this.nullableExpr();
 			this.state = 690;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2212,7 +2212,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public speedlimit(): SpeedlimitContext {
 		let _localctx: SpeedlimitContext = new SpeedlimitContext(this._ctx, this.state);
-		this.enterRule(_localctx, 28, MapGrammarParser.RULE_speedlimit);
+		this.enterRule(_localctx, 28, MapGrammarV2Parser.RULE_speedlimit);
 		try {
 			this.state = 702;
 			this._errHandler.sync(this);
@@ -2221,15 +2221,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 692;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 693;
-				_localctx._func = this.match(MapGrammarParser.BEGIN);
+				_localctx._func = this.match(MapGrammarV2Parser.BEGIN);
 				this.state = 694;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 695;
 				_localctx._v = this.nullableExpr();
 				this.state = 696;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2237,13 +2237,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 698;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 699;
-				_localctx._func = this.match(MapGrammarParser.END);
+				_localctx._func = this.match(MapGrammarV2Parser.END);
 				this.state = 700;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 701;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2265,20 +2265,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public pretrain(): PretrainContext {
 		let _localctx: PretrainContext = new PretrainContext(this._ctx, this.state);
-		this.enterRule(_localctx, 30, MapGrammarParser.RULE_pretrain);
+		this.enterRule(_localctx, 30, MapGrammarV2Parser.RULE_pretrain);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 704;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 705;
-			_localctx._func = this.match(MapGrammarParser.PASS);
+			_localctx._func = this.match(MapGrammarV2Parser.PASS);
 			this.state = 706;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 707;
 			this.nullableExpr();
 			this.state = 708;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2298,7 +2298,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public light(): LightContext {
 		let _localctx: LightContext = new LightContext(this._ctx, this.state);
-		this.enterRule(_localctx, 32, MapGrammarParser.RULE_light);
+		this.enterRule(_localctx, 32, MapGrammarV2Parser.RULE_light);
 		try {
 			this.state = 738;
 			this._errHandler.sync(this);
@@ -2307,23 +2307,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 710;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 711;
-				_localctx._func = this.match(MapGrammarParser.AMBIENT);
+				_localctx._func = this.match(MapGrammarV2Parser.AMBIENT);
 				this.state = 712;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 713;
 				_localctx._red = this.nullableExpr();
 				this.state = 714;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 715;
 				_localctx._green = this.nullableExpr();
 				this.state = 716;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 717;
 				_localctx._blue = this.nullableExpr();
 				this.state = 718;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2331,23 +2331,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 720;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 721;
-				_localctx._func = this.match(MapGrammarParser.DIFFUSE);
+				_localctx._func = this.match(MapGrammarV2Parser.DIFFUSE);
 				this.state = 722;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 723;
 				_localctx._red = this.nullableExpr();
 				this.state = 724;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 725;
 				_localctx._green = this.nullableExpr();
 				this.state = 726;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 727;
 				_localctx._blue = this.nullableExpr();
 				this.state = 728;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2355,19 +2355,19 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 730;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 731;
-				_localctx._func = this.match(MapGrammarParser.DIRECTION);
+				_localctx._func = this.match(MapGrammarV2Parser.DIRECTION);
 				this.state = 732;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 733;
 				_localctx._pitch = this.nullableExpr();
 				this.state = 734;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 735;
 				_localctx._yaw = this.nullableExpr();
 				this.state = 736;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2389,7 +2389,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public fog(): FogContext {
 		let _localctx: FogContext = new FogContext(this._ctx, this.state);
-		this.enterRule(_localctx, 34, MapGrammarParser.RULE_fog);
+		this.enterRule(_localctx, 34, MapGrammarV2Parser.RULE_fog);
 		let _la: number;
 		try {
 			this.state = 762;
@@ -2399,13 +2399,13 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 740;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 741;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 742;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 743;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2413,15 +2413,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 744;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 745;
-				_localctx._func = this.match(MapGrammarParser.INTERPOLATE);
+				_localctx._func = this.match(MapGrammarV2Parser.INTERPOLATE);
 				this.state = 746;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 747;
 				_localctx._densityE = this.expr(0);
 				this.state = 748;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2429,11 +2429,11 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 750;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 751;
 				_localctx._func = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.SET || _la === MapGrammarParser.INTERPOLATE)) {
+				if (!(_la === MapGrammarV2Parser.SET || _la === MapGrammarV2Parser.INTERPOLATE)) {
 					_localctx._func = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -2444,23 +2444,23 @@ export class MapGrammarParser extends Parser {
 					this.consume();
 				}
 				this.state = 752;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 753;
 				_localctx._density = this.nullableExpr();
 				this.state = 754;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 755;
 				_localctx._red = this.nullableExpr();
 				this.state = 756;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 757;
 				_localctx._green = this.nullableExpr();
 				this.state = 758;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 759;
 				_localctx._blue = this.nullableExpr();
 				this.state = 760;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2482,20 +2482,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public drawdistance(): DrawdistanceContext {
 		let _localctx: DrawdistanceContext = new DrawdistanceContext(this._ctx, this.state);
-		this.enterRule(_localctx, 36, MapGrammarParser.RULE_drawdistance);
+		this.enterRule(_localctx, 36, MapGrammarV2Parser.RULE_drawdistance);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 764;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 765;
-			_localctx._func = this.match(MapGrammarParser.CHANGE);
+			_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 			this.state = 766;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 767;
 			_localctx._value = this.nullableExpr();
 			this.state = 768;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2515,17 +2515,17 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public cabilluminance(): CabilluminanceContext {
 		let _localctx: CabilluminanceContext = new CabilluminanceContext(this._ctx, this.state);
-		this.enterRule(_localctx, 38, MapGrammarParser.RULE_cabilluminance);
+		this.enterRule(_localctx, 38, MapGrammarV2Parser.RULE_cabilluminance);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 770;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 771;
 			_localctx._func = this._input.LT(1);
 			_la = this._input.LA(1);
-			if (!(_la === MapGrammarParser.SET || _la === MapGrammarParser.INTERPOLATE)) {
+			if (!(_la === MapGrammarV2Parser.SET || _la === MapGrammarV2Parser.INTERPOLATE)) {
 				_localctx._func = this._errHandler.recoverInline(this);
 			} else {
 				if (this._input.LA(1) === Token.EOF) {
@@ -2536,11 +2536,11 @@ export class MapGrammarParser extends Parser {
 				this.consume();
 			}
 			this.state = 772;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 774;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarParser.NUM - 66)) | (1 << (MapGrammarParser.DISTANCE - 66)) | (1 << (MapGrammarParser.PLUS - 66)) | (1 << (MapGrammarParser.MINUS - 66)) | (1 << (MapGrammarParser.ABS - 66)) | (1 << (MapGrammarParser.ATAN2 - 66)) | (1 << (MapGrammarParser.CEIL - 66)) | (1 << (MapGrammarParser.COS - 66)) | (1 << (MapGrammarParser.EXP - 66)) | (1 << (MapGrammarParser.FLOOR - 66)) | (1 << (MapGrammarParser.LOG - 66)) | (1 << (MapGrammarParser.POW - 66)) | (1 << (MapGrammarParser.RAND - 66)) | (1 << (MapGrammarParser.SIN - 66)) | (1 << (MapGrammarParser.SQRT - 66)) | (1 << (MapGrammarParser.OPN_PAR - 66)) | (1 << (MapGrammarParser.VAR_START - 66)) | (1 << (MapGrammarParser.QUOTE - 66)))) !== 0)) {
+			if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarV2Parser.NUM - 66)) | (1 << (MapGrammarV2Parser.DISTANCE - 66)) | (1 << (MapGrammarV2Parser.PLUS - 66)) | (1 << (MapGrammarV2Parser.MINUS - 66)) | (1 << (MapGrammarV2Parser.ABS - 66)) | (1 << (MapGrammarV2Parser.ATAN2 - 66)) | (1 << (MapGrammarV2Parser.CEIL - 66)) | (1 << (MapGrammarV2Parser.COS - 66)) | (1 << (MapGrammarV2Parser.EXP - 66)) | (1 << (MapGrammarV2Parser.FLOOR - 66)) | (1 << (MapGrammarV2Parser.LOG - 66)) | (1 << (MapGrammarV2Parser.POW - 66)) | (1 << (MapGrammarV2Parser.RAND - 66)) | (1 << (MapGrammarV2Parser.SIN - 66)) | (1 << (MapGrammarV2Parser.SQRT - 66)) | (1 << (MapGrammarV2Parser.OPN_PAR - 66)) | (1 << (MapGrammarV2Parser.VAR_START - 66)) | (1 << (MapGrammarV2Parser.QUOTE - 66)))) !== 0)) {
 				{
 				this.state = 773;
 				_localctx._value = this.expr(0);
@@ -2548,7 +2548,7 @@ export class MapGrammarParser extends Parser {
 			}
 
 			this.state = 776;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2568,40 +2568,40 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public irregularity(): IrregularityContext {
 		let _localctx: IrregularityContext = new IrregularityContext(this._ctx, this.state);
-		this.enterRule(_localctx, 40, MapGrammarParser.RULE_irregularity);
+		this.enterRule(_localctx, 40, MapGrammarV2Parser.RULE_irregularity);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 778;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 779;
-			_localctx._func = this.match(MapGrammarParser.CHANGE);
+			_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 			this.state = 780;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 781;
 			_localctx._x = this.nullableExpr();
 			this.state = 782;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 783;
 			_localctx._y = this.nullableExpr();
 			this.state = 784;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 785;
 			_localctx._r = this.nullableExpr();
 			this.state = 786;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 787;
 			_localctx._lx = this.nullableExpr();
 			this.state = 788;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 789;
 			_localctx._ly = this.nullableExpr();
 			this.state = 790;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 791;
 			_localctx._lr = this.nullableExpr();
 			this.state = 792;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2621,7 +2621,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public adhesion(): AdhesionContext {
 		let _localctx: AdhesionContext = new AdhesionContext(this._ctx, this.state);
-		this.enterRule(_localctx, 42, MapGrammarParser.RULE_adhesion);
+		this.enterRule(_localctx, 42, MapGrammarV2Parser.RULE_adhesion);
 		try {
 			this.state = 810;
 			this._errHandler.sync(this);
@@ -2630,15 +2630,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 794;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 795;
-				_localctx._func = this.match(MapGrammarParser.CHANGE);
+				_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 				this.state = 796;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 797;
 				_localctx._a = this.nullableExpr();
 				this.state = 798;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2646,23 +2646,23 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 800;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 801;
-				_localctx._func = this.match(MapGrammarParser.CHANGE);
+				_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 				this.state = 802;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 803;
 				_localctx._a = this.nullableExpr();
 				this.state = 804;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 805;
 				_localctx._b = this.nullableExpr();
 				this.state = 806;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 807;
 				_localctx._c = this.nullableExpr();
 				this.state = 808;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -2684,43 +2684,43 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public sound(): SoundContext {
 		let _localctx: SoundContext = new SoundContext(this._ctx, this.state);
-		this.enterRule(_localctx, 44, MapGrammarParser.RULE_sound);
+		this.enterRule(_localctx, 44, MapGrammarV2Parser.RULE_sound);
 		try {
 			this.state = 826;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case MapGrammarParser.DOT:
+			case MapGrammarV2Parser.DOT:
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 812;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 813;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 814;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 815;
 				_localctx._path = this.string();
 				this.state = 816;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.OPN_BRA:
+			case MapGrammarV2Parser.OPN_BRA:
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 818;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 819;
 				_localctx._key = this.expr(0);
 				this.state = 820;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 821;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 822;
-				_localctx._func = this.match(MapGrammarParser.PLAY);
+				_localctx._func = this.match(MapGrammarV2Parser.PLAY);
 				this.state = 823;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 824;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			default:
@@ -2744,49 +2744,49 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public sound3d(): Sound3dContext {
 		let _localctx: Sound3dContext = new Sound3dContext(this._ctx, this.state);
-		this.enterRule(_localctx, 46, MapGrammarParser.RULE_sound3d);
+		this.enterRule(_localctx, 46, MapGrammarV2Parser.RULE_sound3d);
 		try {
 			this.state = 845;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case MapGrammarParser.DOT:
+			case MapGrammarV2Parser.DOT:
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 828;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 829;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 830;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 831;
 				_localctx._path = this.string();
 				this.state = 832;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.OPN_BRA:
+			case MapGrammarV2Parser.OPN_BRA:
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 834;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 835;
 				_localctx._key = this.expr(0);
 				this.state = 836;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 837;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 838;
-				_localctx._func = this.match(MapGrammarParser.PUT);
+				_localctx._func = this.match(MapGrammarV2Parser.PUT);
 				this.state = 839;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 840;
 				_localctx._x = this.nullableExpr();
 				this.state = 841;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 842;
 				_localctx._y = this.nullableExpr();
 				this.state = 843;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			default:
@@ -2810,20 +2810,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public rollingnoise(): RollingnoiseContext {
 		let _localctx: RollingnoiseContext = new RollingnoiseContext(this._ctx, this.state);
-		this.enterRule(_localctx, 48, MapGrammarParser.RULE_rollingnoise);
+		this.enterRule(_localctx, 48, MapGrammarV2Parser.RULE_rollingnoise);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 847;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 848;
-			_localctx._func = this.match(MapGrammarParser.CHANGE);
+			_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 			this.state = 849;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 850;
 			_localctx._index = this.nullableExpr();
 			this.state = 851;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2843,20 +2843,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public flangenoise(): FlangenoiseContext {
 		let _localctx: FlangenoiseContext = new FlangenoiseContext(this._ctx, this.state);
-		this.enterRule(_localctx, 50, MapGrammarParser.RULE_flangenoise);
+		this.enterRule(_localctx, 50, MapGrammarV2Parser.RULE_flangenoise);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 853;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 854;
-			_localctx._func = this.match(MapGrammarParser.CHANGE);
+			_localctx._func = this.match(MapGrammarV2Parser.CHANGE);
 			this.state = 855;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 856;
 			_localctx._index = this.nullableExpr();
 			this.state = 857;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2876,20 +2876,20 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public jointnoise(): JointnoiseContext {
 		let _localctx: JointnoiseContext = new JointnoiseContext(this._ctx, this.state);
-		this.enterRule(_localctx, 52, MapGrammarParser.RULE_jointnoise);
+		this.enterRule(_localctx, 52, MapGrammarV2Parser.RULE_jointnoise);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 859;
-			this.match(MapGrammarParser.DOT);
+			this.match(MapGrammarV2Parser.DOT);
 			this.state = 860;
-			_localctx._func = this.match(MapGrammarParser.PLAY);
+			_localctx._func = this.match(MapGrammarV2Parser.PLAY);
 			this.state = 861;
-			this.match(MapGrammarParser.OPN_PAR);
+			this.match(MapGrammarV2Parser.OPN_PAR);
 			this.state = 862;
 			_localctx._index = this.nullableExpr();
 			this.state = 863;
-			this.match(MapGrammarParser.CLS_PAR);
+			this.match(MapGrammarV2Parser.CLS_PAR);
 			}
 		}
 		catch (re) {
@@ -2909,7 +2909,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public train(): TrainContext {
 		let _localctx: TrainContext = new TrainContext(this._ctx, this.state);
-		this.enterRule(_localctx, 54, MapGrammarParser.RULE_train);
+		this.enterRule(_localctx, 54, MapGrammarV2Parser.RULE_train);
 		try {
 			this.state = 914;
 			this._errHandler.sync(this);
@@ -2918,27 +2918,27 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 865;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 866;
-				_localctx._func = this.match(MapGrammarParser.ADD);
+				_localctx._func = this.match(MapGrammarV2Parser.ADD);
 				this.state = 867;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 868;
 				_localctx._trainkey = this.nullableExpr();
 				this.state = 869;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 870;
 				_localctx._path = this.expr(0);
 				this.state = 871;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 872;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 873;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 874;
 				_localctx._direction = this.nullableExpr();
 				this.state = 875;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2946,29 +2946,29 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 877;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 878;
 				_localctx._key = this.expr(0);
 				this.state = 879;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 880;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 881;
-				_localctx._func = this.match(MapGrammarParser.LOAD);
+				_localctx._func = this.match(MapGrammarV2Parser.LOAD);
 				this.state = 882;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 883;
 				_localctx._path = this.expr(0);
 				this.state = 884;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 885;
 				_localctx._trackkey = this.nullableExpr();
 				this.state = 886;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 887;
 				_localctx._direction = this.nullableExpr();
 				this.state = 888;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2976,21 +2976,21 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 890;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 891;
 				_localctx._key = this.expr(0);
 				this.state = 892;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 893;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 894;
-				_localctx._func = this.match(MapGrammarParser.ENABLE);
+				_localctx._func = this.match(MapGrammarV2Parser.ENABLE);
 				this.state = 895;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 896;
 				_localctx._time = this.nullableExpr();
 				this.state = 897;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -2998,33 +2998,33 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 899;
-				this.match(MapGrammarParser.OPN_BRA);
+				this.match(MapGrammarV2Parser.OPN_BRA);
 				this.state = 900;
 				_localctx._key = this.expr(0);
 				this.state = 901;
-				this.match(MapGrammarParser.CLS_BRA);
+				this.match(MapGrammarV2Parser.CLS_BRA);
 				this.state = 902;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 903;
-				_localctx._func = this.match(MapGrammarParser.STOP);
+				_localctx._func = this.match(MapGrammarV2Parser.STOP);
 				this.state = 904;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 905;
 				_localctx._decelerate = this.nullableExpr();
 				this.state = 906;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 907;
 				_localctx._stoptime = this.nullableExpr();
 				this.state = 908;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 909;
 				_localctx._accelerate = this.nullableExpr();
 				this.state = 910;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 911;
 				_localctx._speed = this.nullableExpr();
 				this.state = 912;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -3046,12 +3046,12 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public strkey(): StrkeyContext {
 		let _localctx: StrkeyContext = new StrkeyContext(this._ctx, this.state);
-		this.enterRule(_localctx, 56, MapGrammarParser.RULE_strkey);
+		this.enterRule(_localctx, 56, MapGrammarV2Parser.RULE_strkey);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 916;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 917;
 			_localctx._key = this.string();
 			}
@@ -3073,12 +3073,12 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public exprArgs(): ExprArgsContext {
 		let _localctx: ExprArgsContext = new ExprArgsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 58, MapGrammarParser.RULE_exprArgs);
+		this.enterRule(_localctx, 58, MapGrammarV2Parser.RULE_exprArgs);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 919;
-			this.match(MapGrammarParser.COMMA);
+			this.match(MapGrammarV2Parser.COMMA);
 			this.state = 920;
 			_localctx._arg = this.nullableExpr();
 			}
@@ -3100,14 +3100,14 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public varAssign(): VarAssignContext {
 		let _localctx: VarAssignContext = new VarAssignContext(this._ctx, this.state);
-		this.enterRule(_localctx, 60, MapGrammarParser.RULE_varAssign);
+		this.enterRule(_localctx, 60, MapGrammarV2Parser.RULE_varAssign);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 922;
 			_localctx._v = this.var();
 			this.state = 923;
-			this.match(MapGrammarParser.EQUAL);
+			this.match(MapGrammarV2Parser.EQUAL);
 			this.state = 924;
 			this.expr(0);
 			}
@@ -3129,7 +3129,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public legacy(): LegacyContext {
 		let _localctx: LegacyContext = new LegacyContext(this._ctx, this.state);
-		this.enterRule(_localctx, 62, MapGrammarParser.RULE_legacy);
+		this.enterRule(_localctx, 62, MapGrammarV2Parser.RULE_legacy);
 		try {
 			this.state = 960;
 			this._errHandler.sync(this);
@@ -3138,31 +3138,31 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 926;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 927;
-				_localctx._func = this.match(MapGrammarParser.FOG);
+				_localctx._func = this.match(MapGrammarV2Parser.FOG);
 				this.state = 928;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 929;
 				_localctx._arg_start = this.nullableExpr();
 				this.state = 930;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 931;
 				_localctx._arg_end = this.nullableExpr();
 				this.state = 932;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 933;
 				_localctx._red = this.nullableExpr();
 				this.state = 934;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 935;
 				_localctx._green = this.nullableExpr();
 				this.state = 936;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 937;
 				_localctx._blue = this.nullableExpr();
 				this.state = 938;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -3170,19 +3170,19 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 940;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 941;
-				_localctx._func = this.match(MapGrammarParser.CURVE);
+				_localctx._func = this.match(MapGrammarV2Parser.CURVE);
 				this.state = 942;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 943;
 				_localctx._radius = this.nullableExpr();
 				this.state = 944;
-				this.match(MapGrammarParser.COMMA);
+				this.match(MapGrammarV2Parser.COMMA);
 				this.state = 945;
 				_localctx._cant = this.nullableExpr();
 				this.state = 946;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -3190,15 +3190,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 948;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 949;
-				_localctx._func = this.match(MapGrammarParser.PITCH);
+				_localctx._func = this.match(MapGrammarV2Parser.PITCH);
 				this.state = 950;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 951;
 				_localctx._rate = this.nullableExpr();
 				this.state = 952;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 
@@ -3206,15 +3206,15 @@ export class MapGrammarParser extends Parser {
 				this.enterOuterAlt(_localctx, 4);
 				{
 				this.state = 954;
-				this.match(MapGrammarParser.DOT);
+				this.match(MapGrammarV2Parser.DOT);
 				this.state = 955;
-				_localctx._func = this.match(MapGrammarParser.TURN);
+				_localctx._func = this.match(MapGrammarV2Parser.TURN);
 				this.state = 956;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 957;
 				_localctx._slope = this.nullableExpr();
 				this.state = 958;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
 			}
@@ -3236,44 +3236,44 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public nullableExpr(): NullableExprContext {
 		let _localctx: NullableExprContext = new NullableExprContext(this._ctx, this.state);
-		this.enterRule(_localctx, 64, MapGrammarParser.RULE_nullableExpr);
+		this.enterRule(_localctx, 64, MapGrammarV2Parser.RULE_nullableExpr);
 		try {
 			this.state = 965;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case MapGrammarParser.NUM:
-			case MapGrammarParser.DISTANCE:
-			case MapGrammarParser.PLUS:
-			case MapGrammarParser.MINUS:
-			case MapGrammarParser.ABS:
-			case MapGrammarParser.ATAN2:
-			case MapGrammarParser.CEIL:
-			case MapGrammarParser.COS:
-			case MapGrammarParser.EXP:
-			case MapGrammarParser.FLOOR:
-			case MapGrammarParser.LOG:
-			case MapGrammarParser.POW:
-			case MapGrammarParser.RAND:
-			case MapGrammarParser.SIN:
-			case MapGrammarParser.SQRT:
-			case MapGrammarParser.OPN_PAR:
-			case MapGrammarParser.VAR_START:
-			case MapGrammarParser.QUOTE:
+			case MapGrammarV2Parser.NUM:
+			case MapGrammarV2Parser.DISTANCE:
+			case MapGrammarV2Parser.PLUS:
+			case MapGrammarV2Parser.MINUS:
+			case MapGrammarV2Parser.ABS:
+			case MapGrammarV2Parser.ATAN2:
+			case MapGrammarV2Parser.CEIL:
+			case MapGrammarV2Parser.COS:
+			case MapGrammarV2Parser.EXP:
+			case MapGrammarV2Parser.FLOOR:
+			case MapGrammarV2Parser.LOG:
+			case MapGrammarV2Parser.POW:
+			case MapGrammarV2Parser.RAND:
+			case MapGrammarV2Parser.SIN:
+			case MapGrammarV2Parser.SQRT:
+			case MapGrammarV2Parser.OPN_PAR:
+			case MapGrammarV2Parser.VAR_START:
+			case MapGrammarV2Parser.QUOTE:
 				this.enterOuterAlt(_localctx, 1);
 				{
 				this.state = 962;
 				this.expr(0);
 				}
 				break;
-			case MapGrammarParser.NULL:
+			case MapGrammarV2Parser.NULL:
 				this.enterOuterAlt(_localctx, 2);
 				{
 				this.state = 963;
-				_localctx._nullSyntax = this.match(MapGrammarParser.NULL);
+				_localctx._nullSyntax = this.match(MapGrammarV2Parser.NULL);
 				}
 				break;
-			case MapGrammarParser.COMMA:
-			case MapGrammarParser.CLS_PAR:
+			case MapGrammarV2Parser.COMMA:
+			case MapGrammarV2Parser.CLS_PAR:
 				this.enterOuterAlt(_localctx, 3);
 				// tslint:disable-next-line:no-empty
 				{
@@ -3311,7 +3311,7 @@ export class MapGrammarParser extends Parser {
 		let _localctx: ExprContext = new ExprContext(this._ctx, _parentState);
 		let _prevctx: ExprContext = _localctx;
 		let _startState: number = 66;
-		this.enterRecursionRule(_localctx, 66, MapGrammarParser.RULE_expr, _p);
+		this.enterRecursionRule(_localctx, 66, MapGrammarV2Parser.RULE_expr, _p);
 		let _la: number;
 		try {
 			let _alt: number;
@@ -3320,22 +3320,22 @@ export class MapGrammarParser extends Parser {
 			this.state = 1036;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case MapGrammarParser.OPN_PAR:
+			case MapGrammarV2Parser.OPN_PAR:
 				{
 				_localctx = new ParensExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 
 				this.state = 968;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 969;
 				this.expr(0);
 				this.state = 970;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.PLUS:
-			case MapGrammarParser.MINUS:
+			case MapGrammarV2Parser.PLUS:
+			case MapGrammarV2Parser.MINUS:
 				{
 				_localctx = new UnaryExprContext(_localctx);
 				this._ctx = _localctx;
@@ -3343,7 +3343,7 @@ export class MapGrammarParser extends Parser {
 				this.state = 972;
 				(_localctx as UnaryExprContext)._op = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(_la === MapGrammarParser.PLUS || _la === MapGrammarParser.MINUS)) {
+				if (!(_la === MapGrammarV2Parser.PLUS || _la === MapGrammarV2Parser.MINUS)) {
 					(_localctx as UnaryExprContext)._op = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -3357,143 +3357,143 @@ export class MapGrammarParser extends Parser {
 				this.expr(18);
 				}
 				break;
-			case MapGrammarParser.ABS:
+			case MapGrammarV2Parser.ABS:
 				{
 				_localctx = new AbsExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 974;
-				(_localctx as AbsExprContext)._func = this.match(MapGrammarParser.ABS);
+				(_localctx as AbsExprContext)._func = this.match(MapGrammarV2Parser.ABS);
 				this.state = 975;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 976;
 				(_localctx as AbsExprContext)._value = this.expr(0);
 				this.state = 977;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.ATAN2:
+			case MapGrammarV2Parser.ATAN2:
 				{
 				_localctx = new Atan2ExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 979;
-				(_localctx as Atan2ExprContext)._func = this.match(MapGrammarParser.ATAN2);
+				(_localctx as Atan2ExprContext)._func = this.match(MapGrammarV2Parser.ATAN2);
 				this.state = 980;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 981;
 				(_localctx as Atan2ExprContext)._y = this.expr(0);
 				this.state = 982;
 				(_localctx as Atan2ExprContext)._x = this.expr(0);
 				this.state = 983;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.CEIL:
+			case MapGrammarV2Parser.CEIL:
 				{
 				_localctx = new CeilExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 985;
-				(_localctx as CeilExprContext)._func = this.match(MapGrammarParser.CEIL);
+				(_localctx as CeilExprContext)._func = this.match(MapGrammarV2Parser.CEIL);
 				this.state = 986;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 987;
 				(_localctx as CeilExprContext)._value = this.expr(0);
 				this.state = 988;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.COS:
+			case MapGrammarV2Parser.COS:
 				{
 				_localctx = new CosExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 990;
-				(_localctx as CosExprContext)._func = this.match(MapGrammarParser.COS);
+				(_localctx as CosExprContext)._func = this.match(MapGrammarV2Parser.COS);
 				this.state = 991;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 992;
 				(_localctx as CosExprContext)._value = this.expr(0);
 				this.state = 993;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.EXP:
+			case MapGrammarV2Parser.EXP:
 				{
 				_localctx = new ExpExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 995;
-				(_localctx as ExpExprContext)._func = this.match(MapGrammarParser.EXP);
+				(_localctx as ExpExprContext)._func = this.match(MapGrammarV2Parser.EXP);
 				this.state = 996;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 997;
 				(_localctx as ExpExprContext)._value = this.expr(0);
 				this.state = 998;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.FLOOR:
+			case MapGrammarV2Parser.FLOOR:
 				{
 				_localctx = new FloorExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1000;
-				(_localctx as FloorExprContext)._func = this.match(MapGrammarParser.FLOOR);
+				(_localctx as FloorExprContext)._func = this.match(MapGrammarV2Parser.FLOOR);
 				this.state = 1001;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1002;
 				(_localctx as FloorExprContext)._value = this.expr(0);
 				this.state = 1003;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.LOG:
+			case MapGrammarV2Parser.LOG:
 				{
 				_localctx = new LogExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1005;
-				(_localctx as LogExprContext)._func = this.match(MapGrammarParser.LOG);
+				(_localctx as LogExprContext)._func = this.match(MapGrammarV2Parser.LOG);
 				this.state = 1006;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1007;
 				(_localctx as LogExprContext)._value = this.expr(0);
 				this.state = 1008;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.POW:
+			case MapGrammarV2Parser.POW:
 				{
 				_localctx = new PowExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1010;
-				(_localctx as PowExprContext)._func = this.match(MapGrammarParser.POW);
+				(_localctx as PowExprContext)._func = this.match(MapGrammarV2Parser.POW);
 				this.state = 1011;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1012;
 				(_localctx as PowExprContext)._x = this.expr(0);
 				this.state = 1013;
 				(_localctx as PowExprContext)._y = this.expr(0);
 				this.state = 1014;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.RAND:
+			case MapGrammarV2Parser.RAND:
 				{
 				_localctx = new RandExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1016;
-				(_localctx as RandExprContext)._func = this.match(MapGrammarParser.RAND);
+				(_localctx as RandExprContext)._func = this.match(MapGrammarV2Parser.RAND);
 				this.state = 1017;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1019;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarParser.NUM - 66)) | (1 << (MapGrammarParser.DISTANCE - 66)) | (1 << (MapGrammarParser.PLUS - 66)) | (1 << (MapGrammarParser.MINUS - 66)) | (1 << (MapGrammarParser.ABS - 66)) | (1 << (MapGrammarParser.ATAN2 - 66)) | (1 << (MapGrammarParser.CEIL - 66)) | (1 << (MapGrammarParser.COS - 66)) | (1 << (MapGrammarParser.EXP - 66)) | (1 << (MapGrammarParser.FLOOR - 66)) | (1 << (MapGrammarParser.LOG - 66)) | (1 << (MapGrammarParser.POW - 66)) | (1 << (MapGrammarParser.RAND - 66)) | (1 << (MapGrammarParser.SIN - 66)) | (1 << (MapGrammarParser.SQRT - 66)) | (1 << (MapGrammarParser.OPN_PAR - 66)) | (1 << (MapGrammarParser.VAR_START - 66)) | (1 << (MapGrammarParser.QUOTE - 66)))) !== 0)) {
+				if (((((_la - 66)) & ~0x1F) === 0 && ((1 << (_la - 66)) & ((1 << (MapGrammarV2Parser.NUM - 66)) | (1 << (MapGrammarV2Parser.DISTANCE - 66)) | (1 << (MapGrammarV2Parser.PLUS - 66)) | (1 << (MapGrammarV2Parser.MINUS - 66)) | (1 << (MapGrammarV2Parser.ABS - 66)) | (1 << (MapGrammarV2Parser.ATAN2 - 66)) | (1 << (MapGrammarV2Parser.CEIL - 66)) | (1 << (MapGrammarV2Parser.COS - 66)) | (1 << (MapGrammarV2Parser.EXP - 66)) | (1 << (MapGrammarV2Parser.FLOOR - 66)) | (1 << (MapGrammarV2Parser.LOG - 66)) | (1 << (MapGrammarV2Parser.POW - 66)) | (1 << (MapGrammarV2Parser.RAND - 66)) | (1 << (MapGrammarV2Parser.SIN - 66)) | (1 << (MapGrammarV2Parser.SQRT - 66)) | (1 << (MapGrammarV2Parser.OPN_PAR - 66)) | (1 << (MapGrammarV2Parser.VAR_START - 66)) | (1 << (MapGrammarV2Parser.QUOTE - 66)))) !== 0)) {
 					{
 					this.state = 1018;
 					(_localctx as RandExprContext)._value = this.expr(0);
@@ -3501,40 +3501,40 @@ export class MapGrammarParser extends Parser {
 				}
 
 				this.state = 1021;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.SIN:
+			case MapGrammarV2Parser.SIN:
 				{
 				_localctx = new SinExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1022;
-				(_localctx as SinExprContext)._func = this.match(MapGrammarParser.SIN);
+				(_localctx as SinExprContext)._func = this.match(MapGrammarV2Parser.SIN);
 				this.state = 1023;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1024;
 				(_localctx as SinExprContext)._value = this.expr(0);
 				this.state = 1025;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.SQRT:
+			case MapGrammarV2Parser.SQRT:
 				{
 				_localctx = new SqrtExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1027;
-				(_localctx as SqrtExprContext)._func = this.match(MapGrammarParser.SQRT);
+				(_localctx as SqrtExprContext)._func = this.match(MapGrammarV2Parser.SQRT);
 				this.state = 1028;
-				this.match(MapGrammarParser.OPN_PAR);
+				this.match(MapGrammarV2Parser.OPN_PAR);
 				this.state = 1029;
 				(_localctx as SqrtExprContext)._value = this.expr(0);
 				this.state = 1030;
-				this.match(MapGrammarParser.CLS_PAR);
+				this.match(MapGrammarV2Parser.CLS_PAR);
 				}
 				break;
-			case MapGrammarParser.VAR_START:
+			case MapGrammarV2Parser.VAR_START:
 				{
 				_localctx = new VarExprContext(_localctx);
 				this._ctx = _localctx;
@@ -3543,16 +3543,16 @@ export class MapGrammarParser extends Parser {
 				(_localctx as VarExprContext)._v = this.var();
 				}
 				break;
-			case MapGrammarParser.NUM:
+			case MapGrammarV2Parser.NUM:
 				{
 				_localctx = new NumberExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1033;
-				(_localctx as NumberExprContext)._num = this.match(MapGrammarParser.NUM);
+				(_localctx as NumberExprContext)._num = this.match(MapGrammarV2Parser.NUM);
 				}
 				break;
-			case MapGrammarParser.QUOTE:
+			case MapGrammarV2Parser.QUOTE:
 				{
 				_localctx = new StringExprContext(_localctx);
 				this._ctx = _localctx;
@@ -3561,13 +3561,13 @@ export class MapGrammarParser extends Parser {
 				(_localctx as StringExprContext)._str = this.string();
 				}
 				break;
-			case MapGrammarParser.DISTANCE:
+			case MapGrammarV2Parser.DISTANCE:
 				{
 				_localctx = new DistanceExprContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 				this.state = 1035;
-				(_localctx as DistanceExprContext)._dist = this.match(MapGrammarParser.DISTANCE);
+				(_localctx as DistanceExprContext)._dist = this.match(MapGrammarV2Parser.DISTANCE);
 				}
 				break;
 			default:
@@ -3591,7 +3591,7 @@ export class MapGrammarParser extends Parser {
 						{
 						_localctx = new InfixExprContext(new ExprContext(_parentctx, _parentState));
 						(_localctx as InfixExprContext)._left = _prevctx;
-						this.pushNewRecursionContext(_localctx, _startState, MapGrammarParser.RULE_expr);
+						this.pushNewRecursionContext(_localctx, _startState, MapGrammarV2Parser.RULE_expr);
 						this.state = 1038;
 						if (!(this.precpred(this._ctx, 17))) {
 							throw new FailedPredicateException(this, "this.precpred(this._ctx, 17)");
@@ -3599,7 +3599,7 @@ export class MapGrammarParser extends Parser {
 						this.state = 1039;
 						(_localctx as InfixExprContext)._op = this._input.LT(1);
 						_la = this._input.LA(1);
-						if (!(_la === MapGrammarParser.MULT || _la === MapGrammarParser.DIV)) {
+						if (!(_la === MapGrammarV2Parser.MULT || _la === MapGrammarV2Parser.DIV)) {
 							(_localctx as InfixExprContext)._op = this._errHandler.recoverInline(this);
 						} else {
 							if (this._input.LA(1) === Token.EOF) {
@@ -3618,7 +3618,7 @@ export class MapGrammarParser extends Parser {
 						{
 						_localctx = new InfixExprContext(new ExprContext(_parentctx, _parentState));
 						(_localctx as InfixExprContext)._left = _prevctx;
-						this.pushNewRecursionContext(_localctx, _startState, MapGrammarParser.RULE_expr);
+						this.pushNewRecursionContext(_localctx, _startState, MapGrammarV2Parser.RULE_expr);
 						this.state = 1041;
 						if (!(this.precpred(this._ctx, 16))) {
 							throw new FailedPredicateException(this, "this.precpred(this._ctx, 16)");
@@ -3626,7 +3626,7 @@ export class MapGrammarParser extends Parser {
 						this.state = 1042;
 						(_localctx as InfixExprContext)._op = this._input.LT(1);
 						_la = this._input.LA(1);
-						if (!(((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (MapGrammarParser.PLUS - 70)) | (1 << (MapGrammarParser.MINUS - 70)) | (1 << (MapGrammarParser.MOD - 70)))) !== 0))) {
+						if (!(((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (MapGrammarV2Parser.PLUS - 70)) | (1 << (MapGrammarV2Parser.MINUS - 70)) | (1 << (MapGrammarV2Parser.MOD - 70)))) !== 0))) {
 							(_localctx as InfixExprContext)._op = this._errHandler.recoverInline(this);
 						} else {
 							if (this._input.LA(1) === Token.EOF) {
@@ -3666,14 +3666,14 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public var(): VarContext {
 		let _localctx: VarContext = new VarContext(this._ctx, this.state);
-		this.enterRule(_localctx, 68, MapGrammarParser.RULE_var);
+		this.enterRule(_localctx, 68, MapGrammarV2Parser.RULE_var);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 1049;
-			this.match(MapGrammarParser.VAR_START);
+			this.match(MapGrammarV2Parser.VAR_START);
 			this.state = 1050;
-			_localctx._v = this.match(MapGrammarParser.VAR);
+			_localctx._v = this.match(MapGrammarV2Parser.VAR);
 			 _localctx.varName =  (_localctx._v != null ? _localctx._v.text : undefined) ;
 			}
 		}
@@ -3694,16 +3694,16 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public string(): StringContext {
 		let _localctx: StringContext = new StringContext(this._ctx, this.state);
-		this.enterRule(_localctx, 70, MapGrammarParser.RULE_string);
+		this.enterRule(_localctx, 70, MapGrammarV2Parser.RULE_string);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 1053;
-			this.match(MapGrammarParser.QUOTE);
+			this.match(MapGrammarV2Parser.QUOTE);
 			this.state = 1054;
 			_localctx._v = this.string_text();
 			this.state = 1055;
-			this.match(MapGrammarParser.RQUOTE);
+			this.match(MapGrammarV2Parser.RQUOTE);
 			 _localctx.value =  (_localctx._v != null ? this._input.getTextFromRange(_localctx._v._start, _localctx._v._stop) : undefined) ;
 			}
 		}
@@ -3724,7 +3724,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public string_text(): String_textContext {
 		let _localctx: String_textContext = new String_textContext(this._ctx, this.state);
-		this.enterRule(_localctx, 72, MapGrammarParser.RULE_string_text);
+		this.enterRule(_localctx, 72, MapGrammarV2Parser.RULE_string_text);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
@@ -3732,11 +3732,11 @@ export class MapGrammarParser extends Parser {
 			this.state = 1061;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === MapGrammarParser.CHAR) {
+			while (_la === MapGrammarV2Parser.CHAR) {
 				{
 				{
 				this.state = 1058;
-				this.match(MapGrammarParser.CHAR);
+				this.match(MapGrammarV2Parser.CHAR);
 				}
 				}
 				this.state = 1063;
@@ -3762,22 +3762,22 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public encoding(): EncodingContext {
 		let _localctx: EncodingContext = new EncodingContext(this._ctx, this.state);
-		this.enterRule(_localctx, 74, MapGrammarParser.RULE_encoding);
+		this.enterRule(_localctx, 74, MapGrammarV2Parser.RULE_encoding);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
 			this.state = 1064;
-			this.match(MapGrammarParser.SELECT_ENCODE);
+			this.match(MapGrammarV2Parser.SELECT_ENCODE);
 			this.state = 1065;
 			_localctx._v = this.encode_string();
 			this.state = 1067;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (_la === MapGrammarParser.ENCODE_END) {
+			if (_la === MapGrammarV2Parser.ENCODE_END) {
 				{
 				this.state = 1066;
-				this.match(MapGrammarParser.ENCODE_END);
+				this.match(MapGrammarV2Parser.ENCODE_END);
 				}
 			}
 
@@ -3801,7 +3801,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public encode_string(): Encode_stringContext {
 		let _localctx: Encode_stringContext = new Encode_stringContext(this._ctx, this.state);
-		this.enterRule(_localctx, 76, MapGrammarParser.RULE_encode_string);
+		this.enterRule(_localctx, 76, MapGrammarV2Parser.RULE_encode_string);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
@@ -3809,11 +3809,11 @@ export class MapGrammarParser extends Parser {
 			this.state = 1074;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === MapGrammarParser.ENCODE_CHAR) {
+			while (_la === MapGrammarV2Parser.ENCODE_CHAR) {
 				{
 				{
 				this.state = 1071;
-				this.match(MapGrammarParser.ENCODE_CHAR);
+				this.match(MapGrammarV2Parser.ENCODE_CHAR);
 				}
 				}
 				this.state = 1076;
@@ -3839,7 +3839,7 @@ export class MapGrammarParser extends Parser {
 	// @RuleVersion(0)
 	public error_tokens(): Error_tokensContext {
 		let _localctx: Error_tokensContext = new Error_tokensContext(this._ctx, this.state);
-		this.enterRule(_localctx, 78, MapGrammarParser.RULE_error_tokens);
+		this.enterRule(_localctx, 78, MapGrammarV2Parser.RULE_error_tokens);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
@@ -3847,11 +3847,11 @@ export class MapGrammarParser extends Parser {
 			this.state = 1080;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === MapGrammarParser.ERROR_TOKEN) {
+			while (_la === MapGrammarV2Parser.ERROR_TOKEN) {
 				{
 				{
 				this.state = 1077;
-				this.match(MapGrammarParser.ERROR_TOKEN);
+				this.match(MapGrammarV2Parser.ERROR_TOKEN);
 				}
 				}
 				this.state = 1082;
@@ -4409,28 +4409,28 @@ export class MapGrammarParser extends Parser {
 		"\u034F\u0394\u03C2\u03C7\u03FD\u040E\u0416\u0418\u0427\u042D\u0434\u043A";
 	public static readonly _serializedATN: string = Utils.join(
 		[
-			MapGrammarParser._serializedATNSegment0,
-			MapGrammarParser._serializedATNSegment1,
+			MapGrammarV2Parser._serializedATNSegment0,
+			MapGrammarV2Parser._serializedATNSegment1,
 		],
 		"",
 	);
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
-		if (!MapGrammarParser.__ATN) {
-			MapGrammarParser.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(MapGrammarParser._serializedATN));
+		if (!MapGrammarV2Parser.__ATN) {
+			MapGrammarV2Parser.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(MapGrammarV2Parser._serializedATN));
 		}
 
-		return MapGrammarParser.__ATN;
+		return MapGrammarV2Parser.__ATN;
 	}
 
 }
 
 export class RootContext extends ParserRuleContext {
 	public _version: Token;
-	public BVETS(): TerminalNode { return this.getToken(MapGrammarParser.BVETS, 0); }
-	public MAP(): TerminalNode { return this.getToken(MapGrammarParser.MAP, 0); }
-	public EOF(): TerminalNode { return this.getToken(MapGrammarParser.EOF, 0); }
-	public NUM(): TerminalNode { return this.getToken(MapGrammarParser.NUM, 0); }
+	public BVETS(): TerminalNode { return this.getToken(MapGrammarV2Parser.BVETS, 0); }
+	public MAP(): TerminalNode { return this.getToken(MapGrammarV2Parser.MAP, 0); }
+	public EOF(): TerminalNode { return this.getToken(MapGrammarV2Parser.EOF, 0); }
+	public NUM(): TerminalNode { return this.getToken(MapGrammarV2Parser.NUM, 0); }
 	public encoding(): EncodingContext | undefined {
 		return this.tryGetRuleContext(0, EncodingContext);
 	}
@@ -4447,30 +4447,30 @@ export class RootContext extends ParserRuleContext {
 	public STATE_END(i: number): TerminalNode;
 	public STATE_END(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.STATE_END);
+			return this.getTokens(MapGrammarV2Parser.STATE_END);
 		} else {
-			return this.getToken(MapGrammarParser.STATE_END, i);
+			return this.getToken(MapGrammarV2Parser.STATE_END, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_root; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_root; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRoot) {
 			listener.enterRoot(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRoot) {
 			listener.exitRoot(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRoot) {
 			return visitor.visitRoot(this);
 		} else {
@@ -4485,13 +4485,13 @@ export class StatementContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_statement; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_statement; }
 	public copyFrom(ctx: StatementContext): void {
 		super.copyFrom(ctx);
 	}
 }
 export class StructureStateContext extends StatementContext {
-	public STRUCTURE(): TerminalNode { return this.getToken(MapGrammarParser.STRUCTURE, 0); }
+	public STRUCTURE(): TerminalNode { return this.getToken(MapGrammarV2Parser.STRUCTURE, 0); }
 	public structure(): StructureContext {
 		return this.getRuleContext(0, StructureContext);
 	}
@@ -4500,19 +4500,19 @@ export class StructureStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStructureState) {
 			listener.enterStructureState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStructureState) {
 			listener.exitStructureState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStructureState) {
 			return visitor.visitStructureState(this);
 		} else {
@@ -4521,7 +4521,7 @@ export class StructureStateContext extends StatementContext {
 	}
 }
 export class CabilluminanceStateContext extends StatementContext {
-	public CABILLUMINANCE(): TerminalNode { return this.getToken(MapGrammarParser.CABILLUMINANCE, 0); }
+	public CABILLUMINANCE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CABILLUMINANCE, 0); }
 	public cabilluminance(): CabilluminanceContext {
 		return this.getRuleContext(0, CabilluminanceContext);
 	}
@@ -4530,19 +4530,19 @@ export class CabilluminanceStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCabilluminanceState) {
 			listener.enterCabilluminanceState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCabilluminanceState) {
 			listener.exitCabilluminanceState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCabilluminanceState) {
 			return visitor.visitCabilluminanceState(this);
 		} else {
@@ -4551,7 +4551,7 @@ export class CabilluminanceStateContext extends StatementContext {
 	}
 }
 export class StationStateContext extends StatementContext {
-	public STATION(): TerminalNode { return this.getToken(MapGrammarParser.STATION, 0); }
+	public STATION(): TerminalNode { return this.getToken(MapGrammarV2Parser.STATION, 0); }
 	public station(): StationContext {
 		return this.getRuleContext(0, StationContext);
 	}
@@ -4560,19 +4560,19 @@ export class StationStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStationState) {
 			listener.enterStationState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStationState) {
 			listener.exitStationState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStationState) {
 			return visitor.visitStationState(this);
 		} else {
@@ -4581,7 +4581,7 @@ export class StationStateContext extends StatementContext {
 	}
 }
 export class SpeedlimitStateContext extends StatementContext {
-	public SPEEDLIMIT(): TerminalNode { return this.getToken(MapGrammarParser.SPEEDLIMIT, 0); }
+	public SPEEDLIMIT(): TerminalNode { return this.getToken(MapGrammarV2Parser.SPEEDLIMIT, 0); }
 	public speedlimit(): SpeedlimitContext {
 		return this.getRuleContext(0, SpeedlimitContext);
 	}
@@ -4590,19 +4590,19 @@ export class SpeedlimitStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSpeedlimitState) {
 			listener.enterSpeedlimitState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSpeedlimitState) {
 			listener.exitSpeedlimitState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSpeedlimitState) {
 			return visitor.visitSpeedlimitState(this);
 		} else {
@@ -4611,7 +4611,7 @@ export class SpeedlimitStateContext extends StatementContext {
 	}
 }
 export class LegacyStateContext extends StatementContext {
-	public LEGACY(): TerminalNode { return this.getToken(MapGrammarParser.LEGACY, 0); }
+	public LEGACY(): TerminalNode { return this.getToken(MapGrammarV2Parser.LEGACY, 0); }
 	public legacy(): LegacyContext {
 		return this.getRuleContext(0, LegacyContext);
 	}
@@ -4620,19 +4620,19 @@ export class LegacyStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterLegacyState) {
 			listener.enterLegacyState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitLegacyState) {
 			listener.exitLegacyState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitLegacyState) {
 			return visitor.visitLegacyState(this);
 		} else {
@@ -4641,7 +4641,7 @@ export class LegacyStateContext extends StatementContext {
 	}
 }
 export class TrainStateContext extends StatementContext {
-	public TRAIN(): TerminalNode { return this.getToken(MapGrammarParser.TRAIN, 0); }
+	public TRAIN(): TerminalNode { return this.getToken(MapGrammarV2Parser.TRAIN, 0); }
 	public train(): TrainContext {
 		return this.getRuleContext(0, TrainContext);
 	}
@@ -4650,19 +4650,19 @@ export class TrainStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterTrainState) {
 			listener.enterTrainState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitTrainState) {
 			listener.exitTrainState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitTrainState) {
 			return visitor.visitTrainState(this);
 		} else {
@@ -4671,7 +4671,7 @@ export class TrainStateContext extends StatementContext {
 	}
 }
 export class CurveStateContext extends StatementContext {
-	public CURVE(): TerminalNode { return this.getToken(MapGrammarParser.CURVE, 0); }
+	public CURVE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CURVE, 0); }
 	public curve(): CurveContext {
 		return this.getRuleContext(0, CurveContext);
 	}
@@ -4680,19 +4680,19 @@ export class CurveStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCurveState) {
 			listener.enterCurveState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCurveState) {
 			listener.exitCurveState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCurveState) {
 			return visitor.visitCurveState(this);
 		} else {
@@ -4701,7 +4701,7 @@ export class CurveStateContext extends StatementContext {
 	}
 }
 export class BackgroundStateContext extends StatementContext {
-	public BACKGROUND(): TerminalNode { return this.getToken(MapGrammarParser.BACKGROUND, 0); }
+	public BACKGROUND(): TerminalNode { return this.getToken(MapGrammarV2Parser.BACKGROUND, 0); }
 	public background(): BackgroundContext {
 		return this.getRuleContext(0, BackgroundContext);
 	}
@@ -4710,19 +4710,19 @@ export class BackgroundStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterBackgroundState) {
 			listener.enterBackgroundState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitBackgroundState) {
 			listener.exitBackgroundState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitBackgroundState) {
 			return visitor.visitBackgroundState(this);
 		} else {
@@ -4731,7 +4731,7 @@ export class BackgroundStateContext extends StatementContext {
 	}
 }
 export class RollingnoiseStateContext extends StatementContext {
-	public ROLLINGNOISE(): TerminalNode { return this.getToken(MapGrammarParser.ROLLINGNOISE, 0); }
+	public ROLLINGNOISE(): TerminalNode { return this.getToken(MapGrammarV2Parser.ROLLINGNOISE, 0); }
 	public rollingnoise(): RollingnoiseContext {
 		return this.getRuleContext(0, RollingnoiseContext);
 	}
@@ -4740,19 +4740,19 @@ export class RollingnoiseStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRollingnoiseState) {
 			listener.enterRollingnoiseState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRollingnoiseState) {
 			listener.exitRollingnoiseState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRollingnoiseState) {
 			return visitor.visitRollingnoiseState(this);
 		} else {
@@ -4761,7 +4761,7 @@ export class RollingnoiseStateContext extends StatementContext {
 	}
 }
 export class FogStateContext extends StatementContext {
-	public FOG(): TerminalNode { return this.getToken(MapGrammarParser.FOG, 0); }
+	public FOG(): TerminalNode { return this.getToken(MapGrammarV2Parser.FOG, 0); }
 	public fog(): FogContext {
 		return this.getRuleContext(0, FogContext);
 	}
@@ -4770,19 +4770,19 @@ export class FogStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterFogState) {
 			listener.enterFogState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitFogState) {
 			listener.exitFogState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitFogState) {
 			return visitor.visitFogState(this);
 		} else {
@@ -4791,7 +4791,7 @@ export class FogStateContext extends StatementContext {
 	}
 }
 export class IncludeStateContext extends StatementContext {
-	public INCLUDE(): TerminalNode { return this.getToken(MapGrammarParser.INCLUDE, 0); }
+	public INCLUDE(): TerminalNode { return this.getToken(MapGrammarV2Parser.INCLUDE, 0); }
 	public include(): IncludeContext {
 		return this.getRuleContext(0, IncludeContext);
 	}
@@ -4800,19 +4800,19 @@ export class IncludeStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterIncludeState) {
 			listener.enterIncludeState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitIncludeState) {
 			listener.exitIncludeState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitIncludeState) {
 			return visitor.visitIncludeState(this);
 		} else {
@@ -4821,7 +4821,7 @@ export class IncludeStateContext extends StatementContext {
 	}
 }
 export class PretrainStateContext extends StatementContext {
-	public PRETRAIN(): TerminalNode { return this.getToken(MapGrammarParser.PRETRAIN, 0); }
+	public PRETRAIN(): TerminalNode { return this.getToken(MapGrammarV2Parser.PRETRAIN, 0); }
 	public pretrain(): PretrainContext {
 		return this.getRuleContext(0, PretrainContext);
 	}
@@ -4830,19 +4830,19 @@ export class PretrainStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterPretrainState) {
 			listener.enterPretrainState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitPretrainState) {
 			listener.exitPretrainState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitPretrainState) {
 			return visitor.visitPretrainState(this);
 		} else {
@@ -4851,7 +4851,7 @@ export class PretrainStateContext extends StatementContext {
 	}
 }
 export class AdhesionStateContext extends StatementContext {
-	public ADHESION(): TerminalNode { return this.getToken(MapGrammarParser.ADHESION, 0); }
+	public ADHESION(): TerminalNode { return this.getToken(MapGrammarV2Parser.ADHESION, 0); }
 	public adhesion(): AdhesionContext {
 		return this.getRuleContext(0, AdhesionContext);
 	}
@@ -4860,19 +4860,19 @@ export class AdhesionStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterAdhesionState) {
 			listener.enterAdhesionState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitAdhesionState) {
 			listener.exitAdhesionState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitAdhesionState) {
 			return visitor.visitAdhesionState(this);
 		} else {
@@ -4881,7 +4881,7 @@ export class AdhesionStateContext extends StatementContext {
 	}
 }
 export class DrawdistanceStateContext extends StatementContext {
-	public DRAWDISTANCE(): TerminalNode { return this.getToken(MapGrammarParser.DRAWDISTANCE, 0); }
+	public DRAWDISTANCE(): TerminalNode { return this.getToken(MapGrammarV2Parser.DRAWDISTANCE, 0); }
 	public drawdistance(): DrawdistanceContext {
 		return this.getRuleContext(0, DrawdistanceContext);
 	}
@@ -4890,19 +4890,19 @@ export class DrawdistanceStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterDrawdistanceState) {
 			listener.enterDrawdistanceState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitDrawdistanceState) {
 			listener.exitDrawdistanceState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitDrawdistanceState) {
 			return visitor.visitDrawdistanceState(this);
 		} else {
@@ -4911,7 +4911,7 @@ export class DrawdistanceStateContext extends StatementContext {
 	}
 }
 export class IrregularityStateContext extends StatementContext {
-	public IRREGULARITY(): TerminalNode { return this.getToken(MapGrammarParser.IRREGULARITY, 0); }
+	public IRREGULARITY(): TerminalNode { return this.getToken(MapGrammarV2Parser.IRREGULARITY, 0); }
 	public irregularity(): IrregularityContext {
 		return this.getRuleContext(0, IrregularityContext);
 	}
@@ -4920,19 +4920,19 @@ export class IrregularityStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterIrregularityState) {
 			listener.enterIrregularityState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitIrregularityState) {
 			listener.exitIrregularityState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitIrregularityState) {
 			return visitor.visitIrregularityState(this);
 		} else {
@@ -4941,7 +4941,7 @@ export class IrregularityStateContext extends StatementContext {
 	}
 }
 export class SoundStateContext extends StatementContext {
-	public SOUND(): TerminalNode { return this.getToken(MapGrammarParser.SOUND, 0); }
+	public SOUND(): TerminalNode { return this.getToken(MapGrammarV2Parser.SOUND, 0); }
 	public sound(): SoundContext {
 		return this.getRuleContext(0, SoundContext);
 	}
@@ -4950,19 +4950,19 @@ export class SoundStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSoundState) {
 			listener.enterSoundState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSoundState) {
 			listener.exitSoundState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSoundState) {
 			return visitor.visitSoundState(this);
 		} else {
@@ -4971,7 +4971,7 @@ export class SoundStateContext extends StatementContext {
 	}
 }
 export class SectionStateContext extends StatementContext {
-	public SECTION(): TerminalNode { return this.getToken(MapGrammarParser.SECTION, 0); }
+	public SECTION(): TerminalNode { return this.getToken(MapGrammarV2Parser.SECTION, 0); }
 	public section(): SectionContext {
 		return this.getRuleContext(0, SectionContext);
 	}
@@ -4980,19 +4980,19 @@ export class SectionStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSectionState) {
 			listener.enterSectionState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSectionState) {
 			listener.exitSectionState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSectionState) {
 			return visitor.visitSectionState(this);
 		} else {
@@ -5001,7 +5001,7 @@ export class SectionStateContext extends StatementContext {
 	}
 }
 export class LightStateContext extends StatementContext {
-	public LIGHT(): TerminalNode { return this.getToken(MapGrammarParser.LIGHT, 0); }
+	public LIGHT(): TerminalNode { return this.getToken(MapGrammarV2Parser.LIGHT, 0); }
 	public light(): LightContext {
 		return this.getRuleContext(0, LightContext);
 	}
@@ -5010,19 +5010,19 @@ export class LightStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterLightState) {
 			listener.enterLightState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitLightState) {
 			listener.exitLightState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitLightState) {
 			return visitor.visitLightState(this);
 		} else {
@@ -5031,7 +5031,7 @@ export class LightStateContext extends StatementContext {
 	}
 }
 export class BeaconStateContext extends StatementContext {
-	public BEACON(): TerminalNode { return this.getToken(MapGrammarParser.BEACON, 0); }
+	public BEACON(): TerminalNode { return this.getToken(MapGrammarV2Parser.BEACON, 0); }
 	public beacon(): BeaconContext {
 		return this.getRuleContext(0, BeaconContext);
 	}
@@ -5040,19 +5040,19 @@ export class BeaconStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterBeaconState) {
 			listener.enterBeaconState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitBeaconState) {
 			listener.exitBeaconState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitBeaconState) {
 			return visitor.visitBeaconState(this);
 		} else {
@@ -5061,7 +5061,7 @@ export class BeaconStateContext extends StatementContext {
 	}
 }
 export class FlangenoiseStateContext extends StatementContext {
-	public FLANGENOISE(): TerminalNode { return this.getToken(MapGrammarParser.FLANGENOISE, 0); }
+	public FLANGENOISE(): TerminalNode { return this.getToken(MapGrammarV2Parser.FLANGENOISE, 0); }
 	public flangenoise(): FlangenoiseContext {
 		return this.getRuleContext(0, FlangenoiseContext);
 	}
@@ -5070,19 +5070,19 @@ export class FlangenoiseStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterFlangenoiseState) {
 			listener.enterFlangenoiseState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitFlangenoiseState) {
 			listener.exitFlangenoiseState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitFlangenoiseState) {
 			return visitor.visitFlangenoiseState(this);
 		} else {
@@ -5099,19 +5099,19 @@ export class DistStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterDistState) {
 			listener.enterDistState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitDistState) {
 			listener.exitDistState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitDistState) {
 			return visitor.visitDistState(this);
 		} else {
@@ -5128,19 +5128,19 @@ export class VarAssignStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterVarAssignState) {
 			listener.enterVarAssignState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitVarAssignState) {
 			listener.exitVarAssignState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitVarAssignState) {
 			return visitor.visitVarAssignState(this);
 		} else {
@@ -5149,7 +5149,7 @@ export class VarAssignStateContext extends StatementContext {
 	}
 }
 export class RepeaterStateContext extends StatementContext {
-	public REPEATER(): TerminalNode { return this.getToken(MapGrammarParser.REPEATER, 0); }
+	public REPEATER(): TerminalNode { return this.getToken(MapGrammarV2Parser.REPEATER, 0); }
 	public repeater(): RepeaterContext {
 		return this.getRuleContext(0, RepeaterContext);
 	}
@@ -5158,19 +5158,19 @@ export class RepeaterStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRepeaterState) {
 			listener.enterRepeaterState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRepeaterState) {
 			listener.exitRepeaterState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRepeaterState) {
 			return visitor.visitRepeaterState(this);
 		} else {
@@ -5179,7 +5179,7 @@ export class RepeaterStateContext extends StatementContext {
 	}
 }
 export class GradientStateContext extends StatementContext {
-	public GRADIENT(): TerminalNode { return this.getToken(MapGrammarParser.GRADIENT, 0); }
+	public GRADIENT(): TerminalNode { return this.getToken(MapGrammarV2Parser.GRADIENT, 0); }
 	public gradient(): GradientContext {
 		return this.getRuleContext(0, GradientContext);
 	}
@@ -5188,19 +5188,19 @@ export class GradientStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterGradientState) {
 			listener.enterGradientState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitGradientState) {
 			listener.exitGradientState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitGradientState) {
 			return visitor.visitGradientState(this);
 		} else {
@@ -5209,7 +5209,7 @@ export class GradientStateContext extends StatementContext {
 	}
 }
 export class SignalStateContext extends StatementContext {
-	public SIGNAL(): TerminalNode { return this.getToken(MapGrammarParser.SIGNAL, 0); }
+	public SIGNAL(): TerminalNode { return this.getToken(MapGrammarV2Parser.SIGNAL, 0); }
 	public signal(): SignalContext {
 		return this.getRuleContext(0, SignalContext);
 	}
@@ -5218,19 +5218,19 @@ export class SignalStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSignalState) {
 			listener.enterSignalState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSignalState) {
 			listener.exitSignalState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSignalState) {
 			return visitor.visitSignalState(this);
 		} else {
@@ -5239,7 +5239,7 @@ export class SignalStateContext extends StatementContext {
 	}
 }
 export class JointnoiseStateContext extends StatementContext {
-	public JOINTNOISE(): TerminalNode { return this.getToken(MapGrammarParser.JOINTNOISE, 0); }
+	public JOINTNOISE(): TerminalNode { return this.getToken(MapGrammarV2Parser.JOINTNOISE, 0); }
 	public jointnoise(): JointnoiseContext {
 		return this.getRuleContext(0, JointnoiseContext);
 	}
@@ -5248,19 +5248,19 @@ export class JointnoiseStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterJointnoiseState) {
 			listener.enterJointnoiseState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitJointnoiseState) {
 			listener.exitJointnoiseState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitJointnoiseState) {
 			return visitor.visitJointnoiseState(this);
 		} else {
@@ -5269,7 +5269,7 @@ export class JointnoiseStateContext extends StatementContext {
 	}
 }
 export class TrackStateContext extends StatementContext {
-	public TRACK(): TerminalNode { return this.getToken(MapGrammarParser.TRACK, 0); }
+	public TRACK(): TerminalNode { return this.getToken(MapGrammarV2Parser.TRACK, 0); }
 	public track(): TrackContext {
 		return this.getRuleContext(0, TrackContext);
 	}
@@ -5278,19 +5278,19 @@ export class TrackStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterTrackState) {
 			listener.enterTrackState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitTrackState) {
 			listener.exitTrackState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitTrackState) {
 			return visitor.visitTrackState(this);
 		} else {
@@ -5299,7 +5299,7 @@ export class TrackStateContext extends StatementContext {
 	}
 }
 export class Sound3dStateContext extends StatementContext {
-	public SOUND3D(): TerminalNode { return this.getToken(MapGrammarParser.SOUND3D, 0); }
+	public SOUND3D(): TerminalNode { return this.getToken(MapGrammarV2Parser.SOUND3D, 0); }
 	public sound3d(): Sound3dContext {
 		return this.getRuleContext(0, Sound3dContext);
 	}
@@ -5308,19 +5308,19 @@ export class Sound3dStateContext extends StatementContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSound3dState) {
 			listener.enterSound3dState(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSound3dState) {
 			listener.exitSound3dState(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSound3dState) {
 			return visitor.visitSound3dState(this);
 		} else {
@@ -5338,21 +5338,21 @@ export class DistanceContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_distance; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_distance; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterDistance) {
 			listener.enterDistance(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitDistance) {
 			listener.exitDistance(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitDistance) {
 			return visitor.visitDistance(this);
 		} else {
@@ -5371,21 +5371,21 @@ export class IncludeContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_include; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_include; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterInclude) {
 			listener.enterInclude(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitInclude) {
 			listener.exitInclude(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitInclude) {
 			return visitor.visitInclude(this);
 		} else {
@@ -5403,9 +5403,9 @@ export class CurveContext extends ParserRuleContext {
 	public _radius: NullableExprContext;
 	public _cant: NullableExprContext;
 	public _radiusE: ExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -5415,39 +5415,39 @@ export class CurveContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public SET_GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_GAUGE, 0); }
-	public GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.GAUGE, 0); }
-	public SET_CENTER(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_CENTER, 0); }
-	public SET_FUNCTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_FUNCTION, 0); }
-	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_TRANSITION, 0); }
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
-	public BEGIN_CIRCULAR(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_CIRCULAR, 0); }
-	public COMMA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.COMMA, 0); }
-	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
-	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
+	public SET_GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_GAUGE, 0); }
+	public GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.GAUGE, 0); }
+	public SET_CENTER(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_CENTER, 0); }
+	public SET_FUNCTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_FUNCTION, 0); }
+	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_TRANSITION, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
+	public BEGIN_CIRCULAR(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_CIRCULAR, 0); }
+	public COMMA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.COMMA, 0); }
+	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.END, 0); }
+	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.INTERPOLATE, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public CHANGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CHANGE, 0); }
+	public CHANGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CHANGE, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_curve; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_curve; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCurve) {
 			listener.enterCurve(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCurve) {
 			listener.exitCurve(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCurve) {
 			return visitor.visitCurve(this);
 		} else {
@@ -5460,36 +5460,36 @@ export class CurveContext extends ParserRuleContext {
 export class GradientContext extends ParserRuleContext {
 	public _func: Token;
 	public _gradientArgs: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_TRANSITION, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_TRANSITION, 0); }
 	public nullableExpr(): NullableExprContext | undefined {
 		return this.tryGetRuleContext(0, NullableExprContext);
 	}
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
-	public BEGIN_CONST(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_CONST, 0); }
-	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
-	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
+	public BEGIN_CONST(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_CONST, 0); }
+	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.END, 0); }
+	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.INTERPOLATE, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_gradient; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_gradient; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterGradient) {
 			listener.enterGradient(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitGradient) {
 			listener.exitGradient(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitGradient) {
 			return visitor.visitGradient(this);
 		} else {
@@ -5514,19 +5514,19 @@ export class TrackContext extends ParserRuleContext {
 	public _id: NullableExprContext;
 	public _cant: NullableExprContext;
 	public _cantE: ExprContext;
-	public OPN_BRA(): TerminalNode { return this.getToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode { return this.getToken(MapGrammarParser.CLS_BRA, 0); }
+	public OPN_BRA(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_BRA, 0); }
 	public DOT(): TerminalNode[];
 	public DOT(i: number): TerminalNode;
 	public DOT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.DOT);
+			return this.getTokens(MapGrammarV2Parser.DOT);
 		} else {
-			return this.getToken(MapGrammarParser.DOT, i);
+			return this.getToken(MapGrammarV2Parser.DOT, i);
 		}
 	}
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
 	public expr(): ExprContext[];
 	public expr(i: number): ExprContext;
 	public expr(i?: number): ExprContext | ExprContext[] {
@@ -5536,15 +5536,15 @@ export class TrackContext extends ParserRuleContext {
 			return this.getRuleContext(i, ExprContext);
 		}
 	}
-	public X_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.X_ELEMENT, 0); }
-	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
+	public X_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.X_ELEMENT, 0); }
+	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.INTERPOLATE, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	public nullableExpr(): NullableExprContext[];
@@ -5556,35 +5556,35 @@ export class TrackContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public Y_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.Y_ELEMENT, 0); }
-	public POSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.POSITION, 0); }
-	public CANT_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CANT_ELEMENT, 0); }
-	public SET_CENTER(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_CENTER, 0); }
-	public SET_GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_GAUGE, 0); }
-	public SET_FUNCTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_FUNCTION, 0); }
-	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_TRANSITION, 0); }
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
-	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
-	public GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.GAUGE, 0); }
+	public Y_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.Y_ELEMENT, 0); }
+	public POSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.POSITION, 0); }
+	public CANT_ELEMENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CANT_ELEMENT, 0); }
+	public SET_CENTER(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_CENTER, 0); }
+	public SET_GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_GAUGE, 0); }
+	public SET_FUNCTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_FUNCTION, 0); }
+	public BEGIN_TRANSITION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_TRANSITION, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
+	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.END, 0); }
+	public GAUGE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.GAUGE, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_track; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_track; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterTrack) {
 			listener.enterTrack(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitTrack) {
 			listener.exitTrack(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitTrack) {
 			return visitor.visitTrack(this);
 		} else {
@@ -5610,28 +5610,28 @@ export class StructureContext extends ParserRuleContext {
 	public _trackkey1: NullableExprContext;
 	public _trackkey2: NullableExprContext;
 	public _flag: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUT, 0); }
+	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUT, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -5641,27 +5641,27 @@ export class StructureContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public PUT0(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUT0, 0); }
-	public PUTBETWEEN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUTBETWEEN, 0); }
+	public PUT0(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUT0, 0); }
+	public PUTBETWEEN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUTBETWEEN, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_structure; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_structure; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStructure) {
 			listener.enterStructure(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStructure) {
 			listener.exitStructure(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStructure) {
 			return visitor.visitStructure(this);
 		} else {
@@ -5684,24 +5684,24 @@ export class RepeaterContext extends ParserRuleContext {
 	public _tilt: NullableExprContext;
 	public _span: NullableExprContext;
 	public _interval: NullableExprContext;
-	public OPN_BRA(): TerminalNode { return this.getToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode { return this.getToken(MapGrammarParser.CLS_BRA, 0); }
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public OPN_BRA(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_BRA, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -5720,27 +5720,27 @@ export class RepeaterContext extends ParserRuleContext {
 			return this.getRuleContext(i, StrkeyContext);
 		}
 	}
-	public BEGIN0(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN0, 0); }
-	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
+	public BEGIN0(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN0, 0); }
+	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.END, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_repeater; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_repeater; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRepeater) {
 			listener.enterRepeater(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRepeater) {
 			listener.exitRepeater(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRepeater) {
 			return visitor.visitRepeater(this);
 		} else {
@@ -5753,10 +5753,10 @@ export class RepeaterContext extends ParserRuleContext {
 export class BackgroundContext extends ParserRuleContext {
 	public _func: Token;
 	public _structurekey: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -5764,21 +5764,21 @@ export class BackgroundContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_background; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_background; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterBackground) {
 			listener.enterBackground(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitBackground) {
 			listener.exitBackground(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitBackground) {
 			return visitor.visitBackground(this);
 		} else {
@@ -5795,28 +5795,28 @@ export class StationContext extends ParserRuleContext {
 	public _door: NullableExprContext;
 	public _margin1: NullableExprContext;
 	public _margin2: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUT, 0); }
+	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUT, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -5830,21 +5830,21 @@ export class StationContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_station; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_station; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStation) {
 			listener.enterStation(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStation) {
 			listener.exitStation(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStation) {
 			return visitor.visitStation(this);
 		} else {
@@ -5856,14 +5856,14 @@ export class StationContext extends ParserRuleContext {
 
 export class SectionContext extends ParserRuleContext {
 	public _func: Token;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
-	public BEGIN_NEW(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN_NEW, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
+	public BEGIN_NEW(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN_NEW, 0); }
 	public exprArgs(): ExprArgsContext[];
 	public exprArgs(i: number): ExprArgsContext;
 	public exprArgs(i?: number): ExprArgsContext | ExprArgsContext[] {
@@ -5873,26 +5873,26 @@ export class SectionContext extends ParserRuleContext {
 			return this.getRuleContext(i, ExprArgsContext);
 		}
 	}
-	public SET_SPEEDLIMIT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET_SPEEDLIMIT, 0); }
+	public SET_SPEEDLIMIT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET_SPEEDLIMIT, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_section; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_section; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSection) {
 			listener.enterSection(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSection) {
 			listener.exitSection(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSection) {
 			return visitor.visitSection(this);
 		} else {
@@ -5916,10 +5916,10 @@ export class SignalContext extends ParserRuleContext {
 	public _rz: NullableExprContext;
 	public _tilt: NullableExprContext;
 	public _span: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
@@ -5932,7 +5932,7 @@ export class SignalContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public SPEEDLIMIT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SPEEDLIMIT, 0); }
+	public SPEEDLIMIT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SPEEDLIMIT, 0); }
 	public exprArgs(): ExprArgsContext[];
 	public exprArgs(i: number): ExprArgsContext;
 	public exprArgs(i?: number): ExprArgsContext | ExprArgsContext[] {
@@ -5942,40 +5942,40 @@ export class SignalContext extends ParserRuleContext {
 			return this.getRuleContext(i, ExprArgsContext);
 		}
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUT, 0); }
+	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUT, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_signal; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_signal; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSignal) {
 			listener.enterSignal(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSignal) {
 			listener.exitSignal(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSignal) {
 			return visitor.visitSignal(this);
 		} else {
@@ -5990,19 +5990,19 @@ export class BeaconContext extends ParserRuleContext {
 	public _type: NullableExprContext;
 	public _sectionArgs: NullableExprContext;
 	public _sendData: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public PUT(): TerminalNode { return this.getToken(MapGrammarParser.PUT, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public PUT(): TerminalNode { return this.getToken(MapGrammarV2Parser.PUT, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6016,21 +6016,21 @@ export class BeaconContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_beacon; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_beacon; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterBeacon) {
 			listener.enterBeacon(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitBeacon) {
 			listener.exitBeacon(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitBeacon) {
 			return visitor.visitBeacon(this);
 		} else {
@@ -6043,33 +6043,33 @@ export class BeaconContext extends ParserRuleContext {
 export class SpeedlimitContext extends ParserRuleContext {
 	public _func: Token;
 	public _v: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.BEGIN, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public BEGIN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.BEGIN, 0); }
 	public nullableExpr(): NullableExprContext | undefined {
 		return this.tryGetRuleContext(0, NullableExprContext);
 	}
-	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.END, 0); }
+	public END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.END, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_speedlimit; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_speedlimit; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSpeedlimit) {
 			listener.enterSpeedlimit(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSpeedlimit) {
 			listener.exitSpeedlimit(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSpeedlimit) {
 			return visitor.visitSpeedlimit(this);
 		} else {
@@ -6081,32 +6081,32 @@ export class SpeedlimitContext extends ParserRuleContext {
 
 export class PretrainContext extends ParserRuleContext {
 	public _func: Token;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public PASS(): TerminalNode { return this.getToken(MapGrammarParser.PASS, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public PASS(): TerminalNode { return this.getToken(MapGrammarV2Parser.PASS, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_pretrain; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_pretrain; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterPretrain) {
 			listener.enterPretrain(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitPretrain) {
 			listener.exitPretrain(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitPretrain) {
 			return visitor.visitPretrain(this);
 		} else {
@@ -6123,19 +6123,19 @@ export class LightContext extends ParserRuleContext {
 	public _blue: NullableExprContext;
 	public _pitch: NullableExprContext;
 	public _yaw: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public AMBIENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.AMBIENT, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public AMBIENT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.AMBIENT, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6145,27 +6145,27 @@ export class LightContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public DIFFUSE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.DIFFUSE, 0); }
-	public DIRECTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.DIRECTION, 0); }
+	public DIFFUSE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.DIFFUSE, 0); }
+	public DIRECTION(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.DIRECTION, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_light; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_light; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterLight) {
 			listener.enterLight(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitLight) {
 			listener.exitLight(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitLight) {
 			return visitor.visitLight(this);
 		} else {
@@ -6182,10 +6182,10 @@ export class FogContext extends ParserRuleContext {
 	public _red: NullableExprContext;
 	public _green: NullableExprContext;
 	public _blue: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.INTERPOLATE, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
@@ -6193,9 +6193,9 @@ export class FogContext extends ParserRuleContext {
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	public nullableExpr(): NullableExprContext[];
@@ -6207,26 +6207,26 @@ export class FogContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public SET(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET, 0); }
+	public SET(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_fog; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_fog; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterFog) {
 			listener.enterFog(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitFog) {
 			listener.exitFog(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitFog) {
 			return visitor.visitFog(this);
 		} else {
@@ -6239,10 +6239,10 @@ export class FogContext extends ParserRuleContext {
 export class DrawdistanceContext extends ParserRuleContext {
 	public _func: Token;
 	public _value: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -6250,21 +6250,21 @@ export class DrawdistanceContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_drawdistance; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_drawdistance; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterDrawdistance) {
 			listener.enterDrawdistance(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitDrawdistance) {
 			listener.exitDrawdistance(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitDrawdistance) {
 			return visitor.visitDrawdistance(this);
 		} else {
@@ -6277,11 +6277,11 @@ export class DrawdistanceContext extends ParserRuleContext {
 export class CabilluminanceContext extends ParserRuleContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.INTERPOLATE, 0); }
-	public SET(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.SET, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public INTERPOLATE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.INTERPOLATE, 0); }
+	public SET(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.SET, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
@@ -6289,21 +6289,21 @@ export class CabilluminanceContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_cabilluminance; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_cabilluminance; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCabilluminance) {
 			listener.enterCabilluminance(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCabilluminance) {
 			listener.exitCabilluminance(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCabilluminance) {
 			return visitor.visitCabilluminance(this);
 		} else {
@@ -6321,19 +6321,19 @@ export class IrregularityContext extends ParserRuleContext {
 	public _lx: NullableExprContext;
 	public _ly: NullableExprContext;
 	public _lr: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6347,21 +6347,21 @@ export class IrregularityContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_irregularity; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_irregularity; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterIrregularity) {
 			listener.enterIrregularity(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitIrregularity) {
 			listener.exitIrregularity(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitIrregularity) {
 			return visitor.visitIrregularity(this);
 		} else {
@@ -6376,10 +6376,10 @@ export class AdhesionContext extends ParserRuleContext {
 	public _a: NullableExprContext;
 	public _b: NullableExprContext;
 	public _c: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6393,30 +6393,30 @@ export class AdhesionContext extends ParserRuleContext {
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_adhesion; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_adhesion; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterAdhesion) {
 			listener.enterAdhesion(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitAdhesion) {
 			listener.exitAdhesion(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitAdhesion) {
 			return visitor.visitAdhesion(this);
 		} else {
@@ -6430,38 +6430,38 @@ export class SoundContext extends ParserRuleContext {
 	public _func: Token;
 	public _path: StringContext;
 	public _key: ExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public PLAY(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PLAY, 0); }
+	public PLAY(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PLAY, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_sound; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_sound; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSound) {
 			listener.enterSound(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSound) {
 			listener.exitSound(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSound) {
 			return visitor.visitSound(this);
 		} else {
@@ -6477,20 +6477,20 @@ export class Sound3dContext extends ParserRuleContext {
 	public _key: ExprContext;
 	public _x: NullableExprContext;
 	public _y: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
-	public COMMA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.COMMA, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
+	public COMMA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.COMMA, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PUT, 0); }
+	public PUT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PUT, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6504,21 +6504,21 @@ export class Sound3dContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_sound3d; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_sound3d; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSound3d) {
 			listener.enterSound3d(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSound3d) {
 			listener.exitSound3d(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSound3d) {
 			return visitor.visitSound3d(this);
 		} else {
@@ -6531,10 +6531,10 @@ export class Sound3dContext extends ParserRuleContext {
 export class RollingnoiseContext extends ParserRuleContext {
 	public _func: Token;
 	public _index: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -6542,21 +6542,21 @@ export class RollingnoiseContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_rollingnoise; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_rollingnoise; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRollingnoise) {
 			listener.enterRollingnoise(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRollingnoise) {
 			listener.exitRollingnoise(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRollingnoise) {
 			return visitor.visitRollingnoise(this);
 		} else {
@@ -6569,10 +6569,10 @@ export class RollingnoiseContext extends ParserRuleContext {
 export class FlangenoiseContext extends ParserRuleContext {
 	public _func: Token;
 	public _index: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CHANGE(): TerminalNode { return this.getToken(MapGrammarParser.CHANGE, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CHANGE(): TerminalNode { return this.getToken(MapGrammarV2Parser.CHANGE, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -6580,21 +6580,21 @@ export class FlangenoiseContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_flangenoise; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_flangenoise; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterFlangenoise) {
 			listener.enterFlangenoise(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitFlangenoise) {
 			listener.exitFlangenoise(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitFlangenoise) {
 			return visitor.visitFlangenoise(this);
 		} else {
@@ -6607,10 +6607,10 @@ export class FlangenoiseContext extends ParserRuleContext {
 export class JointnoiseContext extends ParserRuleContext {
 	public _func: Token;
 	public _index: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public PLAY(): TerminalNode { return this.getToken(MapGrammarParser.PLAY, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public PLAY(): TerminalNode { return this.getToken(MapGrammarV2Parser.PLAY, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -6618,21 +6618,21 @@ export class JointnoiseContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_jointnoise; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_jointnoise; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterJointnoise) {
 			listener.enterJointnoise(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitJointnoise) {
 			listener.exitJointnoise(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitJointnoise) {
 			return visitor.visitJointnoise(this);
 		} else {
@@ -6654,19 +6654,19 @@ export class TrainContext extends ParserRuleContext {
 	public _stoptime: NullableExprContext;
 	public _accelerate: NullableExprContext;
 	public _speed: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public ADD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.ADD, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public ADD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.ADD, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6685,30 +6685,30 @@ export class TrainContext extends ParserRuleContext {
 			return this.getRuleContext(i, ExprContext);
 		}
 	}
-	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.OPN_BRA, 0); }
-	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CLS_BRA, 0); }
-	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.LOAD, 0); }
-	public ENABLE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.ENABLE, 0); }
-	public STOP(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.STOP, 0); }
+	public OPN_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.OPN_BRA, 0); }
+	public CLS_BRA(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CLS_BRA, 0); }
+	public LOAD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.LOAD, 0); }
+	public ENABLE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.ENABLE, 0); }
+	public STOP(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.STOP, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_train; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_train; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterTrain) {
 			listener.enterTrain(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitTrain) {
 			listener.exitTrain(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitTrain) {
 			return visitor.visitTrain(this);
 		} else {
@@ -6720,7 +6720,7 @@ export class TrainContext extends ParserRuleContext {
 
 export class StrkeyContext extends ParserRuleContext {
 	public _key: StringContext;
-	public COMMA(): TerminalNode { return this.getToken(MapGrammarParser.COMMA, 0); }
+	public COMMA(): TerminalNode { return this.getToken(MapGrammarV2Parser.COMMA, 0); }
 	public string(): StringContext {
 		return this.getRuleContext(0, StringContext);
 	}
@@ -6728,21 +6728,21 @@ export class StrkeyContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_strkey; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_strkey; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStrkey) {
 			listener.enterStrkey(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStrkey) {
 			listener.exitStrkey(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStrkey) {
 			return visitor.visitStrkey(this);
 		} else {
@@ -6754,7 +6754,7 @@ export class StrkeyContext extends ParserRuleContext {
 
 export class ExprArgsContext extends ParserRuleContext {
 	public _arg: NullableExprContext;
-	public COMMA(): TerminalNode { return this.getToken(MapGrammarParser.COMMA, 0); }
+	public COMMA(): TerminalNode { return this.getToken(MapGrammarV2Parser.COMMA, 0); }
 	public nullableExpr(): NullableExprContext {
 		return this.getRuleContext(0, NullableExprContext);
 	}
@@ -6762,21 +6762,21 @@ export class ExprArgsContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_exprArgs; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_exprArgs; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterExprArgs) {
 			listener.enterExprArgs(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitExprArgs) {
 			listener.exitExprArgs(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitExprArgs) {
 			return visitor.visitExprArgs(this);
 		} else {
@@ -6788,7 +6788,7 @@ export class ExprArgsContext extends ParserRuleContext {
 
 export class VarAssignContext extends ParserRuleContext {
 	public _v: VarContext;
-	public EQUAL(): TerminalNode { return this.getToken(MapGrammarParser.EQUAL, 0); }
+	public EQUAL(): TerminalNode { return this.getToken(MapGrammarV2Parser.EQUAL, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -6799,21 +6799,21 @@ export class VarAssignContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_varAssign; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_varAssign; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterVarAssign) {
 			listener.enterVarAssign(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitVarAssign) {
 			listener.exitVarAssign(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitVarAssign) {
 			return visitor.visitVarAssign(this);
 		} else {
@@ -6834,19 +6834,19 @@ export class LegacyContext extends ParserRuleContext {
 	public _cant: NullableExprContext;
 	public _rate: NullableExprContext;
 	public _slope: NullableExprContext;
-	public DOT(): TerminalNode { return this.getToken(MapGrammarParser.DOT, 0); }
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public DOT(): TerminalNode { return this.getToken(MapGrammarV2Parser.DOT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public COMMA(): TerminalNode[];
 	public COMMA(i: number): TerminalNode;
 	public COMMA(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.COMMA);
+			return this.getTokens(MapGrammarV2Parser.COMMA);
 		} else {
-			return this.getToken(MapGrammarParser.COMMA, i);
+			return this.getToken(MapGrammarV2Parser.COMMA, i);
 		}
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public FOG(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.FOG, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public FOG(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.FOG, 0); }
 	public nullableExpr(): NullableExprContext[];
 	public nullableExpr(i: number): NullableExprContext;
 	public nullableExpr(i?: number): NullableExprContext | NullableExprContext[] {
@@ -6856,28 +6856,28 @@ export class LegacyContext extends ParserRuleContext {
 			return this.getRuleContext(i, NullableExprContext);
 		}
 	}
-	public CURVE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.CURVE, 0); }
-	public PITCH(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PITCH, 0); }
-	public TURN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.TURN, 0); }
+	public CURVE(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.CURVE, 0); }
+	public PITCH(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PITCH, 0); }
+	public TURN(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.TURN, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_legacy; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_legacy; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterLegacy) {
 			listener.enterLegacy(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitLegacy) {
 			listener.exitLegacy(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitLegacy) {
 			return visitor.visitLegacy(this);
 		} else {
@@ -6892,26 +6892,26 @@ export class NullableExprContext extends ParserRuleContext {
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
-	public NULL(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.NULL, 0); }
+	public NULL(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.NULL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_nullableExpr; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_nullableExpr; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterNullableExpr) {
 			listener.enterNullableExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitNullableExpr) {
 			listener.exitNullableExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitNullableExpr) {
 			return visitor.visitNullableExpr(this);
 		} else {
@@ -6926,7 +6926,7 @@ export class ExprContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_expr; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_expr; }
 	public copyFrom(ctx: ExprContext): void {
 		super.copyFrom(ctx);
 	}
@@ -6934,9 +6934,9 @@ export class ExprContext extends ParserRuleContext {
 export class RandExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public RAND(): TerminalNode { return this.getToken(MapGrammarParser.RAND, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public RAND(): TerminalNode { return this.getToken(MapGrammarV2Parser.RAND, 0); }
 	public expr(): ExprContext | undefined {
 		return this.tryGetRuleContext(0, ExprContext);
 	}
@@ -6945,19 +6945,19 @@ export class RandExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterRandExpr) {
 			listener.enterRandExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitRandExpr) {
 			listener.exitRandExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitRandExpr) {
 			return visitor.visitRandExpr(this);
 		} else {
@@ -6968,9 +6968,9 @@ export class RandExprContext extends ExprContext {
 export class SinExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public SIN(): TerminalNode { return this.getToken(MapGrammarParser.SIN, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public SIN(): TerminalNode { return this.getToken(MapGrammarV2Parser.SIN, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -6979,19 +6979,19 @@ export class SinExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSinExpr) {
 			listener.enterSinExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSinExpr) {
 			listener.exitSinExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSinExpr) {
 			return visitor.visitSinExpr(this);
 		} else {
@@ -7002,9 +7002,9 @@ export class SinExprContext extends ExprContext {
 export class SqrtExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public SQRT(): TerminalNode { return this.getToken(MapGrammarParser.SQRT, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public SQRT(): TerminalNode { return this.getToken(MapGrammarV2Parser.SQRT, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7013,19 +7013,19 @@ export class SqrtExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterSqrtExpr) {
 			listener.enterSqrtExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitSqrtExpr) {
 			listener.exitSqrtExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitSqrtExpr) {
 			return visitor.visitSqrtExpr(this);
 		} else {
@@ -7035,25 +7035,25 @@ export class SqrtExprContext extends ExprContext {
 }
 export class NumberExprContext extends ExprContext {
 	public _num: Token;
-	public NUM(): TerminalNode { return this.getToken(MapGrammarParser.NUM, 0); }
+	public NUM(): TerminalNode { return this.getToken(MapGrammarV2Parser.NUM, 0); }
 	constructor(ctx: ExprContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterNumberExpr) {
 			listener.enterNumberExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitNumberExpr) {
 			listener.exitNumberExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitNumberExpr) {
 			return visitor.visitNumberExpr(this);
 		} else {
@@ -7064,9 +7064,9 @@ export class NumberExprContext extends ExprContext {
 export class FloorExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public FLOOR(): TerminalNode { return this.getToken(MapGrammarParser.FLOOR, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public FLOOR(): TerminalNode { return this.getToken(MapGrammarV2Parser.FLOOR, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7075,19 +7075,19 @@ export class FloorExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterFloorExpr) {
 			listener.enterFloorExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitFloorExpr) {
 			listener.exitFloorExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitFloorExpr) {
 			return visitor.visitFloorExpr(this);
 		} else {
@@ -7098,9 +7098,9 @@ export class FloorExprContext extends ExprContext {
 export class AbsExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public ABS(): TerminalNode { return this.getToken(MapGrammarParser.ABS, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public ABS(): TerminalNode { return this.getToken(MapGrammarV2Parser.ABS, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7109,19 +7109,19 @@ export class AbsExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterAbsExpr) {
 			listener.enterAbsExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitAbsExpr) {
 			listener.exitAbsExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitAbsExpr) {
 			return visitor.visitAbsExpr(this);
 		} else {
@@ -7130,29 +7130,29 @@ export class AbsExprContext extends ExprContext {
 	}
 }
 export class ParensExprContext extends ExprContext {
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
 	constructor(ctx: ExprContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterParensExpr) {
 			listener.enterParensExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitParensExpr) {
 			listener.exitParensExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitParensExpr) {
 			return visitor.visitParensExpr(this);
 		} else {
@@ -7164,9 +7164,9 @@ export class Atan2ExprContext extends ExprContext {
 	public _func: Token;
 	public _y: ExprContext;
 	public _x: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public ATAN2(): TerminalNode { return this.getToken(MapGrammarParser.ATAN2, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public ATAN2(): TerminalNode { return this.getToken(MapGrammarV2Parser.ATAN2, 0); }
 	public expr(): ExprContext[];
 	public expr(i: number): ExprContext;
 	public expr(i?: number): ExprContext | ExprContext[] {
@@ -7181,19 +7181,19 @@ export class Atan2ExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterAtan2Expr) {
 			listener.enterAtan2Expr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitAtan2Expr) {
 			listener.exitAtan2Expr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitAtan2Expr) {
 			return visitor.visitAtan2Expr(this);
 		} else {
@@ -7204,9 +7204,9 @@ export class Atan2ExprContext extends ExprContext {
 export class LogExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public LOG(): TerminalNode { return this.getToken(MapGrammarParser.LOG, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public LOG(): TerminalNode { return this.getToken(MapGrammarV2Parser.LOG, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7215,19 +7215,19 @@ export class LogExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterLogExpr) {
 			listener.enterLogExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitLogExpr) {
 			listener.exitLogExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitLogExpr) {
 			return visitor.visitLogExpr(this);
 		} else {
@@ -7245,19 +7245,19 @@ export class StringExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterStringExpr) {
 			listener.enterStringExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitStringExpr) {
 			listener.exitStringExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitStringExpr) {
 			return visitor.visitStringExpr(this);
 		} else {
@@ -7275,19 +7275,19 @@ export class VarExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterVarExpr) {
 			listener.enterVarExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitVarExpr) {
 			listener.exitVarExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitVarExpr) {
 			return visitor.visitVarExpr(this);
 		} else {
@@ -7308,29 +7308,29 @@ export class InfixExprContext extends ExprContext {
 			return this.getRuleContext(i, ExprContext);
 		}
 	}
-	public MULT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.MULT, 0); }
-	public DIV(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.DIV, 0); }
-	public PLUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PLUS, 0); }
-	public MINUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.MINUS, 0); }
-	public MOD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.MOD, 0); }
+	public MULT(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.MULT, 0); }
+	public DIV(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.DIV, 0); }
+	public PLUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PLUS, 0); }
+	public MINUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.MINUS, 0); }
+	public MOD(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.MOD, 0); }
 	constructor(ctx: ExprContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterInfixExpr) {
 			listener.enterInfixExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitInfixExpr) {
 			listener.exitInfixExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitInfixExpr) {
 			return visitor.visitInfixExpr(this);
 		} else {
@@ -7343,26 +7343,26 @@ export class UnaryExprContext extends ExprContext {
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
-	public PLUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.PLUS, 0); }
-	public MINUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.MINUS, 0); }
+	public PLUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.PLUS, 0); }
+	public MINUS(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.MINUS, 0); }
 	constructor(ctx: ExprContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterUnaryExpr) {
 			listener.enterUnaryExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitUnaryExpr) {
 			listener.exitUnaryExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitUnaryExpr) {
 			return visitor.visitUnaryExpr(this);
 		} else {
@@ -7373,9 +7373,9 @@ export class UnaryExprContext extends ExprContext {
 export class CeilExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public CEIL(): TerminalNode { return this.getToken(MapGrammarParser.CEIL, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public CEIL(): TerminalNode { return this.getToken(MapGrammarV2Parser.CEIL, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7384,19 +7384,19 @@ export class CeilExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCeilExpr) {
 			listener.enterCeilExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCeilExpr) {
 			listener.exitCeilExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCeilExpr) {
 			return visitor.visitCeilExpr(this);
 		} else {
@@ -7407,9 +7407,9 @@ export class CeilExprContext extends ExprContext {
 export class CosExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public COS(): TerminalNode { return this.getToken(MapGrammarParser.COS, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public COS(): TerminalNode { return this.getToken(MapGrammarV2Parser.COS, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7418,19 +7418,19 @@ export class CosExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterCosExpr) {
 			listener.enterCosExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitCosExpr) {
 			listener.exitCosExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitCosExpr) {
 			return visitor.visitCosExpr(this);
 		} else {
@@ -7441,9 +7441,9 @@ export class CosExprContext extends ExprContext {
 export class ExpExprContext extends ExprContext {
 	public _func: Token;
 	public _value: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public EXP(): TerminalNode { return this.getToken(MapGrammarParser.EXP, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public EXP(): TerminalNode { return this.getToken(MapGrammarV2Parser.EXP, 0); }
 	public expr(): ExprContext {
 		return this.getRuleContext(0, ExprContext);
 	}
@@ -7452,19 +7452,19 @@ export class ExpExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterExpExpr) {
 			listener.enterExpExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitExpExpr) {
 			listener.exitExpExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitExpExpr) {
 			return visitor.visitExpExpr(this);
 		} else {
@@ -7474,25 +7474,25 @@ export class ExpExprContext extends ExprContext {
 }
 export class DistanceExprContext extends ExprContext {
 	public _dist: Token;
-	public DISTANCE(): TerminalNode { return this.getToken(MapGrammarParser.DISTANCE, 0); }
+	public DISTANCE(): TerminalNode { return this.getToken(MapGrammarV2Parser.DISTANCE, 0); }
 	constructor(ctx: ExprContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterDistanceExpr) {
 			listener.enterDistanceExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitDistanceExpr) {
 			listener.exitDistanceExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitDistanceExpr) {
 			return visitor.visitDistanceExpr(this);
 		} else {
@@ -7504,9 +7504,9 @@ export class PowExprContext extends ExprContext {
 	public _func: Token;
 	public _x: ExprContext;
 	public _y: ExprContext;
-	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarParser.OPN_PAR, 0); }
-	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarParser.CLS_PAR, 0); }
-	public POW(): TerminalNode { return this.getToken(MapGrammarParser.POW, 0); }
+	public OPN_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.OPN_PAR, 0); }
+	public CLS_PAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.CLS_PAR, 0); }
+	public POW(): TerminalNode { return this.getToken(MapGrammarV2Parser.POW, 0); }
 	public expr(): ExprContext[];
 	public expr(i: number): ExprContext;
 	public expr(i?: number): ExprContext | ExprContext[] {
@@ -7521,19 +7521,19 @@ export class PowExprContext extends ExprContext {
 		this.copyFrom(ctx);
 	}
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterPowExpr) {
 			listener.enterPowExpr(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitPowExpr) {
 			listener.exitPowExpr(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitPowExpr) {
 			return visitor.visitPowExpr(this);
 		} else {
@@ -7546,27 +7546,27 @@ export class PowExprContext extends ExprContext {
 export class VarContext extends ParserRuleContext {
 	public varName: string | undefined;
 	public _v: Token;
-	public VAR_START(): TerminalNode { return this.getToken(MapGrammarParser.VAR_START, 0); }
-	public VAR(): TerminalNode { return this.getToken(MapGrammarParser.VAR, 0); }
+	public VAR_START(): TerminalNode { return this.getToken(MapGrammarV2Parser.VAR_START, 0); }
+	public VAR(): TerminalNode { return this.getToken(MapGrammarV2Parser.VAR, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_var; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_var; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterVar) {
 			listener.enterVar(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitVar) {
 			listener.exitVar(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitVar) {
 			return visitor.visitVar(this);
 		} else {
@@ -7579,8 +7579,8 @@ export class VarContext extends ParserRuleContext {
 export class StringContext extends ParserRuleContext {
 	public value: string | undefined;
 	public _v: String_textContext;
-	public QUOTE(): TerminalNode { return this.getToken(MapGrammarParser.QUOTE, 0); }
-	public RQUOTE(): TerminalNode { return this.getToken(MapGrammarParser.RQUOTE, 0); }
+	public QUOTE(): TerminalNode { return this.getToken(MapGrammarV2Parser.QUOTE, 0); }
+	public RQUOTE(): TerminalNode { return this.getToken(MapGrammarV2Parser.RQUOTE, 0); }
 	public string_text(): String_textContext {
 		return this.getRuleContext(0, String_textContext);
 	}
@@ -7588,21 +7588,21 @@ export class StringContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_string; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_string; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterString) {
 			listener.enterString(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitString) {
 			listener.exitString(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitString) {
 			return visitor.visitString(this);
 		} else {
@@ -7617,30 +7617,30 @@ export class String_textContext extends ParserRuleContext {
 	public CHAR(i: number): TerminalNode;
 	public CHAR(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.CHAR);
+			return this.getTokens(MapGrammarV2Parser.CHAR);
 		} else {
-			return this.getToken(MapGrammarParser.CHAR, i);
+			return this.getToken(MapGrammarV2Parser.CHAR, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_string_text; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_string_text; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterString_text) {
 			listener.enterString_text(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitString_text) {
 			listener.exitString_text(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitString_text) {
 			return visitor.visitString_text(this);
 		} else {
@@ -7653,30 +7653,30 @@ export class String_textContext extends ParserRuleContext {
 export class EncodingContext extends ParserRuleContext {
 	public value: string | undefined;
 	public _v: Encode_stringContext;
-	public SELECT_ENCODE(): TerminalNode { return this.getToken(MapGrammarParser.SELECT_ENCODE, 0); }
+	public SELECT_ENCODE(): TerminalNode { return this.getToken(MapGrammarV2Parser.SELECT_ENCODE, 0); }
 	public encode_string(): Encode_stringContext {
 		return this.getRuleContext(0, Encode_stringContext);
 	}
-	public ENCODE_END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarParser.ENCODE_END, 0); }
+	public ENCODE_END(): TerminalNode | undefined { return this.tryGetToken(MapGrammarV2Parser.ENCODE_END, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_encoding; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_encoding; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterEncoding) {
 			listener.enterEncoding(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitEncoding) {
 			listener.exitEncoding(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitEncoding) {
 			return visitor.visitEncoding(this);
 		} else {
@@ -7691,30 +7691,30 @@ export class Encode_stringContext extends ParserRuleContext {
 	public ENCODE_CHAR(i: number): TerminalNode;
 	public ENCODE_CHAR(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.ENCODE_CHAR);
+			return this.getTokens(MapGrammarV2Parser.ENCODE_CHAR);
 		} else {
-			return this.getToken(MapGrammarParser.ENCODE_CHAR, i);
+			return this.getToken(MapGrammarV2Parser.ENCODE_CHAR, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_encode_string; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_encode_string; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterEncode_string) {
 			listener.enterEncode_string(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitEncode_string) {
 			listener.exitEncode_string(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitEncode_string) {
 			return visitor.visitEncode_string(this);
 		} else {
@@ -7729,30 +7729,30 @@ export class Error_tokensContext extends ParserRuleContext {
 	public ERROR_TOKEN(i: number): TerminalNode;
 	public ERROR_TOKEN(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(MapGrammarParser.ERROR_TOKEN);
+			return this.getTokens(MapGrammarV2Parser.ERROR_TOKEN);
 		} else {
-			return this.getToken(MapGrammarParser.ERROR_TOKEN, i);
+			return this.getToken(MapGrammarV2Parser.ERROR_TOKEN, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return MapGrammarParser.RULE_error_tokens; }
+	public get ruleIndex(): number { return MapGrammarV2Parser.RULE_error_tokens; }
 	// @Override
-	public enterRule(listener: MapGrammarParserListener): void {
+	public enterRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.enterError_tokens) {
 			listener.enterError_tokens(this);
 		}
 	}
 	// @Override
-	public exitRule(listener: MapGrammarParserListener): void {
+	public exitRule(listener: MapGrammarV2ParserListener): void {
 		if (listener.exitError_tokens) {
 			listener.exitError_tokens(this);
 		}
 	}
 	// @Override
-	public accept<Result>(visitor: MapGrammarParserVisitor<Result>): Result {
+	public accept<Result>(visitor: MapGrammarV2ParserVisitor<Result>): Result {
 		if (visitor.visitError_tokens) {
 			return visitor.visitError_tokens(this);
 		} else {

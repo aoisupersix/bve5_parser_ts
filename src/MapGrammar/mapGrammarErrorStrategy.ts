@@ -1,5 +1,5 @@
 import { DefaultErrorStrategy, Parser, InputMismatchException, NoViableAltException, RecognitionException, Token } from "antlr4ts";
-import { MapGrammarLexer } from "./Parser/MapGrammarLexer";
+import { MapGrammarV2Lexer } from "./V2Parser/Parser/MapGrammarV2Lexer";
 import * as btoken from './token'
 import { ParseError, ErrorLevel } from "../parseError";
 
@@ -84,7 +84,7 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
 
   recover(recognizer: Parser, e: RecognitionException): void {
     let ttype = recognizer.inputStream.LA(1)
-    while(ttype !== MapGrammarLexer.EOF && ttype != MapGrammarLexer.STATE_END) {
+    while(ttype !== MapGrammarV2Lexer.EOF && ttype != MapGrammarV2Lexer.STATE_END) {
       recognizer.consume()
       ttype = recognizer.inputStream.LA(1)
     }

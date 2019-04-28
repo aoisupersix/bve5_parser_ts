@@ -1,15 +1,15 @@
-import { MapGrammarParserVisitor } from './Parser/MapGrammarParserVisitor'
+import { MapGrammarV2ParserVisitor } from './Parser/MapGrammarV2ParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import * as parser from './Parser/MapGrammarParser';
-import * as ast from './AstNodes/mapGrammarAstNodes';
-import { Token } from './token';
+import * as parser from './Parser/MapGrammarV2Parser';
+import * as ast from '../AstNodes/mapGrammarAstNodes';
+import { Token } from '../token';
 import { ParserRuleContext } from 'antlr4ts';
-import { MapFunction } from './mapFunction';
-import { MapGrammarLexer } from './Parser/MapGrammarLexer';
+import { MapFunction } from '../mapFunction';
+import { MapGrammarV2Lexer } from './Parser/MapGrammarV2Lexer';
 
 export type AstNode = ast.MapGrammarAstNode | null
 
-export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> implements MapGrammarParserVisitor<AstNode> {
+export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode> implements MapGrammarV2ParserVisitor<AstNode> {
 
   /**
    * SyntaxNodeのインスタンス化に必要なデータをコンテキストから取得して返します。
@@ -567,9 +567,9 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
    */
   visitUnaryExpr(ctx: parser.UnaryExprContext): AstNode {
     switch(ctx._op.type) {
-      case MapGrammarLexer.PLUS:
+      case MapGrammarV2Lexer.PLUS:
         return this.visit(ctx.expr())
-      case MapGrammarLexer.MINUS:
+      case MapGrammarV2Lexer.MINUS:
       const start = Token.fromIToken(ctx.start)!
       const end = Token.fromIToken(ctx.stop)
       const node = new ast.UnaryNode(start, end, ctx.text)
@@ -591,19 +591,19 @@ export class MapGrammarVisitor extends AbstractParseTreeVisitor<AstNode> impleme
     const end = Token.fromIToken(ctx.stop)
 
     switch(ctx._op.type) {
-    case MapGrammarLexer.PLUS:
+    case MapGrammarV2Lexer.PLUS:
       node = new ast.AdditionNode(start, end, ctx.text)
       break
-    case MapGrammarLexer.MINUS:
+    case MapGrammarV2Lexer.MINUS:
       node = new ast.SubtractionNode(start, end, ctx.text)
       break
-    case MapGrammarLexer.MULT:
+    case MapGrammarV2Lexer.MULT:
       node = new ast.MultiplicationNode(start, end, ctx.text)
       break
-    case MapGrammarLexer.DIV:
+    case MapGrammarV2Lexer.DIV:
       node = new ast.DivisionNode(start, end, ctx.text)
       break
-    case MapGrammarLexer.MOD:
+    case MapGrammarV2Lexer.MOD:
       node = new ast.ModuloNode(start, end, ctx.text)
       break
     }
