@@ -1,9 +1,9 @@
 import { ANTLRInputStream, CommonTokenStream, ANTLRErrorListener, Token } from 'antlr4ts'
-import { MapGrammarV2Visitor, AstNode } from './V2Parser/MapGrammarV2Visitor'
+import { MapGrammarV2Visitor } from './V2Parser/MapGrammarV2Visitor'
 import { MapGrammarV2Lexer } from './V2Parser/Parser/MapGrammarV2Lexer'
 import * as v2parser from './V2Parser/Parser/MapGrammarV2Parser'
-import { MapGrammarErrorStrategy } from './mapGrammarErrorStrategy';
 import { ParseError } from '../parseError';
+import { MapGrammarV2ErrorStrategy } from './V2Parser/mapGrammarV2ErrorStrategy';
 
 export class MapGrammarParser {
 
@@ -27,7 +27,7 @@ export class MapGrammarParser {
     let lexer = new MapGrammarV2Lexer(inputStream)
     let tokenStream = new CommonTokenStream(lexer)
     let antlrParser = new v2parser.MapGrammarV2Parser(tokenStream)
-    antlrParser.errorHandler = new MapGrammarErrorStrategy(this.errors)
+    antlrParser.errorHandler = new MapGrammarV2ErrorStrategy(this.errors)
 
     if (this.errorListener !== null) {
       antlrParser.addErrorListener(this.errorListener)
