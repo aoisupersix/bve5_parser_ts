@@ -1,4 +1,4 @@
-import { Token } from "./MapGrammar/token";
+import { Token } from "./token";
 
 /**
  * bve5_parsingのパースエラー種別です。

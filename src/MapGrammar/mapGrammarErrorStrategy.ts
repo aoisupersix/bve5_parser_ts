@@ -1,5 +1,5 @@
 import { DefaultErrorStrategy, Parser, InputMismatchException, NoViableAltException, Token } from "antlr4ts";
-import * as btoken from './token'
+import * as btoken from '../token'
 import { ParseError, ErrorLevel } from "../parseError";
 
 /**

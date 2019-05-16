@@ -1,4 +1,4 @@
-import { Token } from "../token";
+import { Token } from "../../token";
 import { MapElement } from "../mapElement";
 import { MapFunction } from "../mapFunction";
 

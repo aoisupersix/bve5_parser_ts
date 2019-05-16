@@ -9,7 +9,8 @@
     "test": "mocha --require ts-node/register src/test/**/*.ts",
     "test-watch": "mocha --watch-extensions ts -w --require ts-node/register src/test/**/*.ts",
     "gen": "npm run compile && node out/generator/mapGrammarGenerator.js",
-    "build-antlr-v2map": "antlr4ts -o src/MapGrammar/V2Parser/Parser -visitor src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Parser.g4 src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Lexer.g4"
+    "build-antlr-v2map": "antlr4ts -o src/MapGrammar/V2Parser/Parser -visitor src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Parser.g4 src/MapGrammar/V2Parser/SyntaxDefinitions/MapGrammarV2Lexer.g4",
+    "build-antlr-scenario": "antlr4ts -o src/ScenarioGrammar/Parser -visitor src/ScenarioGrammar/SyntaxDefinitions/ScenarioGrammarParser.g4 src/ScenarioGrammar/SyntaxDefinitions/ScenarioGrammarLexer.g4"
   },
   "author": "aoisupersix",
   "license": "ISC",
