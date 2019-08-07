@@ -1,11 +1,11 @@
-import { MapGrammarV2ParserVisitor } from './Parser/MapGrammarV2ParserVisitor'
+import { MapGrammarV2ParserVisitor } from './parser/MapGrammarV2ParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
-import * as parser from './Parser/MapGrammarV2Parser';
-import * as ast from '../AstNodes/mapGrammarAstNodes';
+import * as parser from './parser/MapGrammarV2Parser';
+import * as ast from '../ast-nodes/mapGrammarAstNodes';
 import { Token } from '../../token';
 import { ParserRuleContext } from 'antlr4ts';
 import { MapFunction } from '../mapFunction';
-import { MapGrammarV2Lexer } from './Parser/MapGrammarV2Lexer';
+import { MapGrammarV2Lexer } from './parser/MapGrammarV2Lexer';
 
 export type AstNode = ast.MapGrammarAstNode | null
 

@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
-import { MapGrammarParser } from './MapGrammar/mapGrammarParser';
-import { MapGrammarType, RootNode } from './MapGrammar/AstNodes/mapGrammarAstNodes';
+import { MapGrammarParser } from './map-grammar/MapGrammarParser';
+import { MapGrammarType, RootNode } from './map-grammar/ast-nodes/mapGrammarAstNodes';
 
 const input = readFileSync("testMap.b5map", {encoding: "utf-8"})
 const parser = new MapGrammarParser()

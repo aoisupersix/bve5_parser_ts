@@ -1,5 +1,5 @@
 import { DefaultErrorStrategy, Parser, InputMismatchException, NoViableAltException, RecognitionException, Token } from "antlr4ts";
-import { MapGrammarV2Lexer } from "./Parser/MapGrammarV2Lexer";
+import { MapGrammarV2Lexer } from "./parser/MapGrammarV2Lexer";
 import { MapGrammarErrorStrategy } from '../mapGrammarErrorStrategy'
 
 export class MapGrammarV2ErrorStrategy extends MapGrammarErrorStrategy {

@@ -1,11 +1,10 @@
 import { ANTLRInputStream, CommonTokenStream, ANTLRErrorListener, Token } from 'antlr4ts'
-import { MapGrammarV2Visitor } from './V2Parser/mapGrammarV2Visitor'
-import { MapGrammarV2Lexer } from './V2Parser/Parser/MapGrammarV2Lexer'
-import * as v2parser from './V2Parser/Parser/MapGrammarV2Parser'
+import { ScenarioGrammarLexer } from './parser/ScenarioGrammarLexer'
+import { ScenarioGrammarVisitor } from './scenarioGrammarVisitor'
+import * as sParser from './parser/ScenarioGrammarParser'
 import { ParseError } from '../parseError';
-import { MapGrammarV2ErrorStrategy } from './V2Parser/mapGrammarV2ErrorStrategy';
 
-export class MapGrammarParser {
+export class ScenarioGrammarParser {
 
   /**
    * パースエラーです。
@@ -24,17 +23,16 @@ export class MapGrammarParser {
    */
   parse(input: string) {
     let inputStream = new ANTLRInputStream(input)
-    let lexer = new MapGrammarV2Lexer(inputStream)
+    let lexer = new ScenarioGrammarLexer(inputStream)
     let tokenStream = new CommonTokenStream(lexer)
-    let antlrParser = new v2parser.MapGrammarV2Parser(tokenStream)
-    antlrParser.errorHandler = new MapGrammarV2ErrorStrategy(this.errors)
+    let antlrParser = new sParser.ScenarioGrammarParser(tokenStream)
 
     if (this.errorListener !== null) {
       antlrParser.addErrorListener(this.errorListener)
     }
     let tree = antlrParser.root()
   
-    const mapGrammarVisitor = new MapGrammarV2Visitor()
+    const mapGrammarVisitor = new ScenarioGrammarVisitor()
     return mapGrammarVisitor.visit(tree)
   }
 }

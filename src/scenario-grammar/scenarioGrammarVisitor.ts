@@ -1,9 +1,9 @@
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
 import * as ast from './astNodes'
-import * as parser from './Parser/ScenarioGrammarParser'
+import * as parser from './parser/ScenarioGrammarParser'
 import { ParserRuleContext, Parser } from 'antlr4ts'
 import { Token } from '../token'
-import { ScenarioGrammarParserVisitor } from './Parser/ScenarioGrammarParserVisitor'
+import { ScenarioGrammarParserVisitor } from './parser/ScenarioGrammarParserVisitor'
 
 export type AstNode = ast.ScenarioGrammarAstNode | null
 
