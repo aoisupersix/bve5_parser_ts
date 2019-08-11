@@ -5,12 +5,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/out/index.js",
-      "preLaunchTask": "Compile Typescript"
-    },
+			"name": "Node Inspector",
+			"type": "node",
+			"request": "launch",
+			"args": ["${workspaceRoot}/src/index.ts"],
+			"runtimeArgs": ["-r", "ts-node/register"],
+			"cwd": "${workspaceRoot}",
+			"protocol": "inspector",
+			"internalConsoleOptions": "openOnSessionStart",
+			"env": {
+				"TS_NODE_IGNORE": "false"
+			}
+		},
     {
       "type": "node",
       "request": "launch",
