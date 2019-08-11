@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/node": "^11.9.6",
     "antlr4ts-cli": "^0.5.0-alpha.2",
+    "b5g": "0.0.3",
     "typescript": "^3.3.3333"
   }
 }

@@ -10,6 +10,13 @@
       "name": "Launch Program",
       "program": "${workspaceFolder}/out/index.js",
       "preLaunchTask": "Compile Typescript"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "GenerateMapGrammar",
+      "program": "${workspaceFolder}/out/generator/mapGrammarGenerator.js",
+      "preLaunchTask": "Compile Typescript"
     }
   ]
 }
