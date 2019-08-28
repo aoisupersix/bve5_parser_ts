@@ -1,14 +1,12 @@
-import { ParserRuleContext } from 'antlr4ts'
-
 import { MapGrammarV2ParserVisitor } from './parser/MapGrammarV2ParserVisitor'
 import { AbstractParseTreeVisitor } from 'antlr4ts/tree/AbstractParseTreeVisitor'
 import * as parser from './parser/MapGrammarV2Parser'
 import { MapGrammarAstNode } from '../ast-nodes/mapGrammarAstNodes'
 import { Token } from '../../token'
 import { MapFunction } from '../mapFunction'
-import { MapGrammarV2Lexer } from './parser/MapGrammarV2Lexer'
 import { RootNode } from '../ast-nodes/rootNode'
-import { statementNode, DistanceNode, CurveSetgaugeNode } from '../ast-nodes/statementNode'
+import { statementNode, DistanceNode } from '../ast-nodes/statementNode'
+import { CurveSetgaugeNode } from '../ast-nodes/syntaxNode';
 
 export type AstNode = MapGrammarAstNode | null
 
