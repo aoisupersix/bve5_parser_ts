@@ -14,22 +14,6 @@ export type AstNode = MapGrammarAstNode | null
 
 export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
     implements MapGrammarV2ParserVisitor<AstNode> {
-    /**
-     * SyntaxNodeのインスタンス化に必要なデータをコンテキストから取得して返します。
-     * @param ctx 構文の文脈データ
-     */
-    private getSyntaxData(ctx: ParserRuleContext): [Token, Token | undefined, string] {
-        let start = ctx.start
-        let text = ctx.text
-        if (ctx.parent !== undefined) {
-            start = ctx.parent.start
-            text = start.text! + ctx.text
-        }
-        const st = Token.fromIToken(start)!
-        const et = Token.fromIToken(ctx.stop)
-
-        return [st, et, text]
-    }
 
     defaultResult() {
         return null
@@ -303,7 +287,6 @@ export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
      * @param ctx
      */
     visitCurve(ctx: parser.CurveContext): AstNode {
-        const data = this.getSyntaxData(ctx)
 
         if (ctx._func.text === undefined) {
             return null
@@ -312,7 +295,7 @@ export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
         switch (funcName) {
             /* Curve.SetGauge(value) */
             case MapFunction.SetGauge:
-                const setGaugeNode = new CurveSetgaugeNode(data)
+                const setGaugeNode = new CurveSetgaugeNode(ctx)
                 setGaugeNode.value = this.visit(ctx._value)
                 return setGaugeNode
         }

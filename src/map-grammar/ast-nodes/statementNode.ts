@@ -3,6 +3,7 @@ import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
 import { MapElement } from '../mapElement'
 import { MapFunction } from '../mapFunction'
 import { exprNode } from './exprNode'
+import { ParserRuleContext } from 'antlr4ts';
 
 /**
  * 全てのマップ構文ASTノードです。
@@ -19,28 +20,31 @@ export abstract class SyntaxNode extends MapGrammarAstNode {
     abstract readonly function: MapFunction
 
     /**
-     * MapGrammarVisitor.getSyntaxDataの戻り値からインスタンスを生成する便利コンストラクタ
-     * @param data start,end,textをまとめた配列
-     */
-    constructor(data: [Token, Token | undefined, string])
-
-    /**
      * ベースクラスと同じコンストラクタ
      * @param start
      * @param end
      * @param text
      */
     constructor(start: Token, end: Token | undefined, text: string)
-    constructor(startOrData: any, end?: Token | undefined, text?: string) {
-        if (startOrData instanceof Token) {
-            var start = startOrData
-            super(start, end, text!)
+
+    /**
+     * Contextからトークンを取得してインスタンス化します。
+     * @param ctx 各構文のParserRuleContext
+     */
+    constructor(ctx: ParserRuleContext)
+
+    constructor(startOrContext: Token | ParserRuleContext, end?: Token | undefined, text?: string) {
+        if (startOrContext instanceof Token) {
+            // Default
+            super(startOrContext, end, text!)
         } else {
-            const data = <[Token, Token | undefined, string]>startOrData
-            start = data[0]
-            const end = data[1]
-            const text = data[2]
-            super(start, end, text)
+            // Get Token from Context
+            const ctx = <ParserRuleContext>startOrContext
+            const targetNode = ctx.parent !== undefined ? ctx.parent : ctx
+            super(
+                Token.fromIToken(targetNode.start)!,
+                Token.fromIToken(targetNode.stop),
+                targetNode.text)
         }
     }
 }
