@@ -15,8 +15,8 @@ export type statementNode = DistanceNode | VarAssignNode | SyntaxNode
  * 構文のASTノードベースクラス。
  */
 export abstract class SyntaxNode extends MapGrammarAstNode {
-    readonly mapElement: MapElement
-    readonly function: MapFunction
+    abstract readonly mapElement: MapElement
+    abstract readonly function: MapFunction
 
     /**
      * MapGrammarVisitor.getSyntaxDataの戻り値からインスタンスを生成する便利コンストラクタ
