@@ -6,6 +6,7 @@ import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
 import { MapElement } from '../mapElement'
 import { MapFunction } from '../mapFunction'
 import { exprNode } from './exprNode'
+import { stringify } from 'querystring';
 
 // #region Decorators
 
@@ -68,6 +69,12 @@ export abstract class SyntaxNode extends MapGrammarAstNode {
      */
     getAllArgumentNames(): string[] {
         return Reflect.getMetadata('custom:arguments', this) || []
+    }
+
+    getAllArgumentKeyValuePairs(): Map<String, exprNode | null> {
+        const args = new Map<String, exprNode | null>()
+        this.getAllArgumentNames().forEach(argName => args.set(argName, (this as any)[argName]))
+        return args
     }
 }
 
