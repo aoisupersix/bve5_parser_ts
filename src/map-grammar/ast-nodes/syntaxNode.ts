@@ -1,9 +1,31 @@
+import 'reflect-metadata'
+import { ParserRuleContext } from 'antlr4ts'
+
 import { Token } from '../../token'
 import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
 import { MapElement } from '../mapElement'
 import { MapFunction } from '../mapFunction'
-import { ParserRuleContext } from 'antlr4ts'
 import { exprNode } from './exprNode'
+
+// #region Decorators
+
+/**
+ * プロパティを引数として扱います。
+ * @param optional 省略可能か？
+ */
+function argument(optional: boolean) {
+    return (target: SyntaxNode, props: string) => {
+        // targetに保持している全引数名を記録
+        const args: string[] = Reflect.getMetadata('custom:arguments', target) || []
+        args.push(props)
+        Reflect.defineMetadata('custom:arguments', args, target)
+
+        // 省略可能な引数かどうか
+        Reflect.defineMetadata('argument:isoptional', optional, target, props)
+    }
+}
+
+// #endregion
 
 /**
  * 構文のASTノードベースクラス。
