@@ -79,6 +79,8 @@ export class CurveSetgaugeNode extends SyntaxNode {
     readonly type: MapGrammarType = MapGrammarType.CurveSetgauge
     readonly mapElement: MapElement = MapElement.Curve
     readonly function: MapFunction = MapFunction.SetGauge
+
+    @argument(false)
     value: exprNode | null = null
 }
 
