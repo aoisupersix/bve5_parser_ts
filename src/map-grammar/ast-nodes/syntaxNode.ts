@@ -62,6 +62,13 @@ export abstract class SyntaxNode extends MapGrammarAstNode {
                 targetNode.text)
         }
     }
+
+    /**
+     * 構文が持つ全ての引数名を取得します。
+     */
+    getAllArgumentNames(): string[] {
+        return Reflect.getMetadata('custom:arguments', this) || []
+    }
 }
 
 /**
