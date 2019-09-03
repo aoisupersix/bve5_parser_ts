@@ -13,7 +13,7 @@ export type statementNode = DistanceNode | VarAssignNode | SyntaxNode
  * 距離程ノード。
  */
 export class DistanceNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Distance
+    public get type(): MapGrammarType { return MapGrammarType.Distance }
     value: exprNode | null = null
 }
 
@@ -21,7 +21,7 @@ export class DistanceNode extends MapGrammarAstNode {
  * 変数宣言ノード。
  */
 export class VarAssignNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.VarAssign
+    public get type(): MapGrammarType { return MapGrammarType.VarAssign }
     varName: string | null = null
     value: exprNode | null = null
 }

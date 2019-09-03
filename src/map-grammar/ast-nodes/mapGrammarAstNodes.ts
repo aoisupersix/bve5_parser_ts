@@ -94,10 +94,11 @@ export enum MapGrammarType {
  * 全てのASTノードがこのクラスを継承しています。
  */
 export abstract class MapGrammarAstNode {
+
     /**
      * Astノードの種類
      */
-    abstract readonly type: MapGrammarType
+    public abstract get type(): MapGrammarType
 
     constructor(
         /**

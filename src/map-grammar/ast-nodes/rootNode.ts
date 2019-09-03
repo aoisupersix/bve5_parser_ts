@@ -7,7 +7,7 @@ import { statementNode } from './statementNode'
  * 各構文はstatementsに格納されています。
  */
 export class RootNode extends MapGrammarAstNode {
-    readonly type: MapGrammarType = MapGrammarType.Root
+    public get type(): MapGrammarType { return MapGrammarType.Root }
     version: string
     encoding: string | null = null
     statements: Array<statementNode> = []

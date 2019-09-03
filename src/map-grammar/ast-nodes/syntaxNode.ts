@@ -89,7 +89,7 @@ export abstract class SyntaxWithKeyNode extends SyntaxNode {
  * Curve.SetGauge(value)ノード。
  */
 export class CurveSetgaugeNode extends SyntaxNode {
-    readonly type: MapGrammarType = MapGrammarType.CurveSetgauge
+    public get type(): MapGrammarType { return MapGrammarType.CurveSetgauge }
     readonly mapElement: MapElement = MapElement.Curve
     readonly function: MapFunction = MapFunction.SetGauge
 
@@ -101,7 +101,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.SetCenter(x)ノード。
 //  */
 // export class CurveSetcenterNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveSetcenter
+//   public get type(): MapGrammarType { return MapGrammarType.CurveSetcenter }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.SetCenter
 //   x: exprNode | null = null
@@ -111,7 +111,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.SetFunction(id)ノード。
 //  */
 // export class CurveSetfunctionNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveSetfunction
+//   public get type(): MapGrammarType { return MapGrammarType.CurveSetfunction }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.SetFunction
 //   id: exprNode | null = null
@@ -121,7 +121,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.BeginTransition()ノード。
 //  */
 // export class CurveBegintransitionNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveBegintransition
+//   public get type(): MapGrammarType { return MapGrammarType.CurveBegintransition }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.BeginTransition
 // }
@@ -130,7 +130,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.Begin(radius?, cant?)ノード。
 //  */
 // export class CurveBeginNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveBegin
+//   public get type(): MapGrammarType { return MapGrammarType.CurveBegin }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.Begin
 //   radius: exprNode | null = null
@@ -141,7 +141,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.End()ノード。
 //  */
 // export class CurveEndNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveEnd
+//   public get type(): MapGrammarType { return MapGrammarType.CurveEnd }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.End
 // }
@@ -150,7 +150,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.Interpolate(radius?, cant?)ノード。
 //  */
 // export class CurveInterpolateNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveInterpolate
+//   public get type(): MapGrammarType { return MapGrammarType.CurveInterpolate }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.Interpolate
 //   radius: exprNode | null = null
@@ -161,7 +161,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Curve.Change(radius)ノード。
 //  */
 // export class CurveChangeNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.CurveChange
+//   public get type(): MapGrammarType { return MapGrammarType.CurveChange }
 //   readonly mapElement: MapElement = MapElement.Curve
 //   readonly function: MapFunction = MapFunction.Change
 //   radius: exprNode | null = null
@@ -173,7 +173,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Gradient.BeginTransition()ノード。
 //  */
 // export class GradientBegintransitionNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.GradientBegintransition
+//   public get type(): MapGrammarType { return MapGrammarType.GradientBegintransition }
 //   readonly mapElement: MapElement = MapElement.Gradient
 //   readonly function: MapFunction = MapFunction.BeginTransition
 // }
@@ -182,7 +182,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Gradient.Begin()ノード。
 //  */
 // export class GradientBeginNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.GradientBegin
+//   public get type(): MapGrammarType { return MapGrammarType.GradientBegin }
 //   readonly mapElement: MapElement = MapElement.Gradient
 //   readonly function: MapFunction = MapFunction.Begin
 //   gradient: exprNode | null = null
@@ -192,7 +192,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Gradient.End()ノード。
 //  */
 // export class GradientEndNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.GradientEnd
+//   public get type(): MapGrammarType { return MapGrammarType.GradientEnd }
 //   readonly mapElement: MapElement = MapElement.Gradient
 //   readonly function: MapFunction = MapFunction.End
 // }
@@ -201,7 +201,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Gradient.Interpolate(gradient?)ノード。
 //  */
 // export class GradientInterpolateNode extends SyntaxNode {
-//   readonly type: MapGrammarType = MapGrammarType.GradientInterpolate
+//   public get type(): MapGrammarType { return MapGrammarType.GradientInterpolate }
 //   readonly mapElement: MapElement = MapElement.Gradient
 //   readonly function: MapFunction = MapFunction.Interpolate
 //   gradient: exprNode | null = null
@@ -213,7 +213,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].X.Interpolate(x?, radius?)ノード。
 //  */
 // export class TrackXInterpolateNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackXInterpolate
+//   public get type(): MapGrammarType { return MapGrammarType.TrackXInterpolate }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.X_Interpolate
 //   x: exprNode | null = null
@@ -224,7 +224,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Y.Interpolate(x?, radius?)ノード。
 //  */
 // export class TrackYInterpolateNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackYInterpolate
+//   public get type(): MapGrammarType { return MapGrammarType.TrackYInterpolate }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Y_Interpolate
 //   y: exprNode | null = null
@@ -235,7 +235,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.SetCenter(x)ノード。
 //  */
 // export class TrackCantSetcenterNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantSetcenter
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantSetcenter }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_SetCenter
 //   x: exprNode | null = null
@@ -245,7 +245,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.Setfunction(id)ノード。
 //  */
 // export class TrackCantSetfunctionNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantSetfunction
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantSetfunction }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_SetFunction
 //   id: exprNode | null = null
@@ -255,7 +255,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.BeginTransition()ノード。
 //  */
 // export class TrackCantBegintransitionNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantBegintransition
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantBegintransition }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_BeginTransition
 // }
@@ -264,7 +264,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.Begin(cant)ノード。
 //  */
 // export class TrackCantBeginNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantBegin
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantBegin }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_Begin
 //   cant: exprNode | null = null
@@ -274,7 +274,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.End()ノード。
 //  */
 // export class TrackCantEndNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantEnd
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantEnd }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_End
 // }
@@ -283,7 +283,7 @@ export class CurveSetgaugeNode extends SyntaxNode {
 //  * Track[Key].Cant.Interpolate(cant?)ノード。
 //  */
 // export class TrackCantInterpolateNode extends SyntaxWithKeyNode {
-//   readonly type: MapGrammarType = MapGrammarType.TrackCantInterpolate
+//   public get type(): MapGrammarType { return MapGrammarType.TrackCantInterpolate }
 //   readonly mapElement: MapElement = MapElement.Track
 //   readonly function: MapFunction = MapFunction.Cant_Interpolate
 //   cant: exprNode | null = null

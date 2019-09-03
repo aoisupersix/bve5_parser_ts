@@ -40,42 +40,42 @@ export abstract class InfixExpressionNode extends MapGrammarAstNode {
  * 加算ノード。
  */
 export class AdditionNode extends InfixExpressionNode {
-    type: MapGrammarType = MapGrammarType.Calc_Addition
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Addition }
 }
 
 /**
  * 減算ノード。
  */
 export class SubtractionNode extends InfixExpressionNode {
-    type: MapGrammarType = MapGrammarType.Calc_Subtraction
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Subtraction }
 }
 
 /**
  * 乗算ノード。
  */
 export class MultiplicationNode extends InfixExpressionNode {
-    type: MapGrammarType = MapGrammarType.Calc_Multiplication
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Multiplication }
 }
 
 /**
  * 除算ノード。
  */
 export class DivisionNode extends InfixExpressionNode {
-    type: MapGrammarType = MapGrammarType.Calc_Division
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Division }
 }
 
 /**
  * 剰余算ノード。
  */
 export class ModuloNode extends InfixExpressionNode {
-    type: MapGrammarType = MapGrammarType.Calc_Modulo
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Modulo }
 }
 
 /**
  * ユーナリ演算ノード。
  */
 export class UnaryNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Unary
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Unary }
     inner: exprNode | null = null
 }
 
@@ -83,7 +83,7 @@ export class UnaryNode extends MapGrammarAstNode {
  * 絶対値関数ノード。
  */
 export class AbsNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Abs
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Abs }
     value: exprNode | null = null
 }
 
@@ -91,7 +91,7 @@ export class AbsNode extends MapGrammarAstNode {
  * ArcTan関数ノード。
  */
 export class Atan2Node extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Atan2
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Atan2 }
     y: exprNode | null = null
     x: exprNode | null = null
 }
@@ -100,7 +100,7 @@ export class Atan2Node extends MapGrammarAstNode {
  * Ceil関数ノード。
  */
 export class CeilNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Ceil
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Ceil }
     value: exprNode | null = null
 }
 
@@ -108,7 +108,7 @@ export class CeilNode extends MapGrammarAstNode {
  * Cos関数ノード。
  */
 export class CosNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Cos
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Cos }
     value: exprNode | null = null
 }
 
@@ -116,7 +116,7 @@ export class CosNode extends MapGrammarAstNode {
  * Exp関数ノード。
  */
 export class ExpNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Exp
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Exp }
     value: exprNode | null = null
 }
 
@@ -124,7 +124,7 @@ export class ExpNode extends MapGrammarAstNode {
  * Floor関数ノード。
  */
 export class FloorNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Floor
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Floor }
     value: exprNode | null = null
 }
 
@@ -132,7 +132,7 @@ export class FloorNode extends MapGrammarAstNode {
  * Log関数ノード。
  */
 export class LogNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Log
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Log }
     value: exprNode | null = null
 }
 
@@ -140,7 +140,7 @@ export class LogNode extends MapGrammarAstNode {
  * Pow関数ノード。
  */
 export class PowNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Pow
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Pow }
     x: exprNode | null = null
     y: exprNode | null = null
 }
@@ -149,7 +149,7 @@ export class PowNode extends MapGrammarAstNode {
  * Rand関数ノード。
  */
 export class RandNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Rand
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Rand }
     value: exprNode | null = null
 }
 
@@ -157,7 +157,7 @@ export class RandNode extends MapGrammarAstNode {
  * Sin関数ノード。
  */
 export class SinNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Sin
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Sin }
     value: exprNode | null = null
 }
 
@@ -165,7 +165,7 @@ export class SinNode extends MapGrammarAstNode {
  * Sqrt関数ノード。
  */
 export class SqrtNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Calc_Sqrt
+    public get type(): MapGrammarType { return MapGrammarType.Calc_Sqrt }
     value: exprNode | null = null
 }
 //#endregion
@@ -175,7 +175,7 @@ export class SqrtNode extends MapGrammarAstNode {
  * 数値ノード。
  */
 export class NumberNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Number
+    public get type(): MapGrammarType { return MapGrammarType.Number }
     value: number | null = null
 }
 
@@ -183,14 +183,14 @@ export class NumberNode extends MapGrammarAstNode {
  * 距離変数ノード。
  */
 export class DistanceVariableNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.DistanceVariable
+    public get type(): MapGrammarType { return MapGrammarType.DistanceVariable }
 }
 
 /**
  * 文字列ノード。
  */
 export class StringNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.String
+    public get type(): MapGrammarType { return MapGrammarType.String }
     value: string | null = null
 }
 
@@ -198,7 +198,7 @@ export class StringNode extends MapGrammarAstNode {
  * 数値ノード。
  */
 export class VarNode extends MapGrammarAstNode {
-    type: MapGrammarType = MapGrammarType.Var
+    public get type(): MapGrammarType { return MapGrammarType.Var }
     varName: string | null = null
 }
 //#endregion
