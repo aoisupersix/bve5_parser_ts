@@ -16,6 +16,15 @@ export class RootNode extends MapGrammarAstNode {
 
     public get type(): MapGrammarType { return MapGrammarType.Root }
 
+    public get version(): string { return this._version }
+    public set version(v: string) { this._version = v }
+
+    public get encoding(): string | null { return this._encoding }
+    public set encoding(enc: string | null) { this.encoding = enc }
+
+    // TODO: これ結局外側からArrayを触り放題だからわざわざgetterにする必要ないよね...
+    public get statements(): Array<statementNode> { return this._statements }
+
     /**
      * ベースクラスと同じコンストラクタ
      * @param start
