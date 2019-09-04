@@ -10,10 +10,11 @@ import { MapGrammarV2Visitor } from '../v2-parser/MapGrammarV2Visitor';
  * 各構文はstatementsに格納されています。
  */
 export class RootNode extends MapGrammarAstNode {
-    public get type(): MapGrammarType { return MapGrammarType.Root }
     private _version: string
     private _encoding: string | null
     private _statements: Array<statementNode>
+
+    public get type(): MapGrammarType { return MapGrammarType.Root }
 
     /**
      * ベースクラスと同じコンストラクタ
