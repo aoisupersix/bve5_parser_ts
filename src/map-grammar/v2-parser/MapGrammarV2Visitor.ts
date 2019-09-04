@@ -23,21 +23,7 @@ export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
      */
     visitRoot(ctx: parser.RootContext): AstNode {
         const node = new RootNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
-
-        if (ctx._version.text !== undefined) {
-            node.version = ctx._version.text
-        }
-        var encodeCtx = ctx.encoding()
-        if (encodeCtx !== undefined) {
-            node.encoding = encodeCtx.text
-        }
-
-        for (const statement of ctx.statement()) {
-            const child = this.visit(statement)
-            if (child !== null) {
-                node.statements.push(<statementNode>child)
-            }
-        }
+        node.initialize(ctx, this)
 
         return node
     }

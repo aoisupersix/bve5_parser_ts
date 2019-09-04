@@ -1,5 +1,8 @@
 import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
 import { statementNode } from './statementNode'
+import { Token } from '../../token'
+import { RootContext } from '../v2-parser/parser/MapGrammarV2Parser';
+import { MapGrammarV2Visitor } from '../v2-parser/MapGrammarV2Visitor';
 
 /**
  * ルートノード。
@@ -8,7 +11,53 @@ import { statementNode } from './statementNode'
  */
 export class RootNode extends MapGrammarAstNode {
     public get type(): MapGrammarType { return MapGrammarType.Root }
-    version: string
-    encoding: string | null = null
-    statements: Array<statementNode> = []
+    private _version: string
+    private _encoding: string | null
+    private _statements: Array<statementNode>
+
+    /**
+     * ベースクラスと同じコンストラクタ
+     * @param start
+     * @param end
+     * @param text
+     */
+    constructor(start: Token, end: Token | undefined, text: string)
+
+    /**
+     * ParserContextからノードを生成します。
+     * @param ctx RootContext
+     */
+    constructor(ctx: RootContext)
+
+    constructor(startOrContext: Token | RootContext, end?: Token | undefined, text?: string) {
+        if (startOrContext instanceof Token) {
+            // Default
+            super(startOrContext, end, text!)
+        }
+        else {
+            // Get Token from Context
+            const ctx = <RootContext>startOrContext
+            super(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+        }
+
+        this._encoding = null
+        this._statements = []
+    }
+
+    initialize(ctx: RootContext, visitor: MapGrammarV2Visitor) {
+        if (ctx._version.text !== undefined) {
+            this._version = ctx._version.text
+        }
+        var encodeCtx = ctx.encoding()
+        if (encodeCtx !== undefined) {
+            this._encoding = encodeCtx.text
+        }
+
+        for (const statement of ctx.statement()) {
+            const child = visitor.visit(statement)
+            if (child !== null) {
+                this._statements.push(<statementNode>child)
+            }
+        }
+    }
 }
