@@ -55,6 +55,14 @@ export class RootNode extends MapGrammarAstNode {
         this._statements = []
     }
 
+    /**
+     * ステートメントを追加します。
+     * @param statement statementNode
+     */
+    addStatement(statement: statementNode) {
+        this._statements.push(statement)
+    }
+
     initialize(ctx: RootContext, visitor: MapGrammarV2Visitor) {
         if (ctx._version.text !== undefined) {
             this._version = ctx._version.text
