@@ -1,8 +1,7 @@
 import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
 import { statementNode } from './statementNode'
 import { Token } from '../../token'
-import { RootContext } from '../v2-parser/parser/MapGrammarV2Parser';
-import { MapGrammarV2Visitor } from '../v2-parser/MapGrammarV2Visitor';
+import { RootContext } from '../v2-parser/parser/MapGrammarV2Parser'
 
 /**
  * ルートノード。
