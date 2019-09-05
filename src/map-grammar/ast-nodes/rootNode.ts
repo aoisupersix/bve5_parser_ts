@@ -62,21 +62,4 @@ export class RootNode extends MapGrammarAstNode {
     addStatement(statement: statementNode) {
         this._statements.push(statement)
     }
-
-    initialize(ctx: RootContext, visitor: MapGrammarV2Visitor) {
-        if (ctx._version.text !== undefined) {
-            this._version = ctx._version.text
-        }
-        var encodeCtx = ctx.encoding()
-        if (encodeCtx !== undefined) {
-            this._encoding = encodeCtx.text
-        }
-
-        for (const statement of ctx.statement()) {
-            const child = visitor.visit(statement)
-            if (child !== null) {
-                this._statements.push(<statementNode>child)
-            }
-        }
-    }
 }
