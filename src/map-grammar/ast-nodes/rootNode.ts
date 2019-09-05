@@ -22,8 +22,9 @@ export class RootNode extends MapGrammarAstNode {
     public get encoding(): string | null { return this._encoding }
     public set encoding(enc: string | null) { this.encoding = enc }
 
-    // TODO: これ結局外側からArrayを触り放題だからわざわざgetterにする必要ないよね...
-    public get statements(): Array<statementNode> { return this._statements }
+    public get statements(): ReadonlyArray<statementNode> {
+        return this._statements as ReadonlyArray<statementNode>
+    }
 
     /**
      * ベースクラスと同じコンストラクタ
