@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { MapGrammarParser } from './map-grammar/MapGrammarParser';
+import { MapGrammarParser } from './map-grammar/mapGrammarParser';
 import { MapGrammarType } from './map-grammar/ast-nodes/mapGrammarAstNodes';
 import { RootNode } from './map-grammar/ast-nodes/rootNode';
 
