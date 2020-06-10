@@ -1,18 +1,17 @@
-import { Token } from "../token"
+import { Token } from '../token'
 
 export enum ScenarioGrammarType {
   Root,
   WeightStatement,
   TextStatement,
-  WeightPath
+  WeightPath,
 }
 
 export abstract class ScenarioGrammarAstNode {
-
   /**
    * Astノードの種類
    */
-  readonly abstract type: ScenarioGrammarType
+  abstract readonly type: ScenarioGrammarType
 
   constructor(
     /**
@@ -30,7 +29,6 @@ export abstract class ScenarioGrammarAstNode {
      */
     public text: string
   ) {}
-
 }
 
 /**

@@ -2,10 +2,10 @@ import 'reflect-metadata'
 import { ParserRuleContext } from 'antlr4ts'
 
 import { Token } from '../../token'
-import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
-import { MapElement } from '../mapElement'
-import { MapFunction } from '../mapFunction'
-import { exprNode } from './exprNode'
+import { MapGrammarAstNode, MapGrammarType } from './map-grammar-ast-nodes'
+import { MapElement } from '../map-element'
+import { MapFunction } from '../map-function'
+import { exprNode } from './expr-node'
 
 // #region Decorators
 
@@ -14,15 +14,15 @@ import { exprNode } from './exprNode'
  * @param optional 省略可能か？
  */
 function argument(optional: boolean) {
-    return (target: SyntaxNode, props: string) => {
-        // targetに保持している全引数名を記録
-        const args: string[] = Reflect.getMetadata('custom:arguments', target) || []
-        args.push(props)
-        Reflect.defineMetadata('custom:arguments', args, target)
+  return (target: SyntaxNode, props: string) => {
+    // targetに保持している全引数名を記録
+    const args: string[] = Reflect.getMetadata('custom:arguments', target) || []
+    args.push(props)
+    Reflect.defineMetadata('custom:arguments', args, target)
 
-        // 省略可能な引数かどうか
-        Reflect.defineMetadata('argument:isoptional', optional, target, props)
-    }
+    // 省略可能な引数かどうか
+    Reflect.defineMetadata('argument:isoptional', optional, target, props)
+  }
 }
 
 // #endregion
@@ -31,57 +31,54 @@ function argument(optional: boolean) {
  * 構文のASTノードベースクラス。
  */
 export abstract class SyntaxNode extends MapGrammarAstNode {
-    abstract readonly mapElement: MapElement
-    abstract readonly function: MapFunction
+  abstract readonly mapElement: MapElement
+  abstract readonly function: MapFunction
 
-    /**
-     * ベースクラスと同じコンストラクタ
-     * @param start
-     * @param end
-     * @param text
-     */
-    constructor(start: Token, end: Token | undefined, text: string)
+  /**
+   * ベースクラスと同じコンストラクタ
+   * @param start
+   * @param end
+   * @param text
+   */
+  constructor(start: Token, end: Token | undefined, text: string)
 
-    /**
-     * Contextからトークンを取得してインスタンス化します。
-     * @param ctx 各構文のParserRuleContext
-     */
-    constructor(ctx: ParserRuleContext)
+  /**
+   * Contextからトークンを取得してインスタンス化します。
+   * @param ctx 各構文のParserRuleContext
+   */
+  constructor(ctx: ParserRuleContext)
 
-    constructor(startOrContext: Token | ParserRuleContext, end?: Token | undefined, text?: string) {
-        if (startOrContext instanceof Token) {
-            // Default
-            super(startOrContext, end, text!)
-        } else {
-            // Get Token from Context
-            const ctx = <ParserRuleContext>startOrContext
-            const targetNode = ctx.parent !== undefined ? ctx.parent : ctx
-            super(
-                Token.fromIToken(targetNode.start)!,
-                Token.fromIToken(targetNode.stop),
-                targetNode.text)
-        }
+  constructor(startOrContext: Token | ParserRuleContext, end?: Token | undefined, text?: string) {
+    if (startOrContext instanceof Token) {
+      // Default
+      super(startOrContext, end, text!)
+    } else {
+      // Get Token from Context
+      const ctx = <ParserRuleContext>startOrContext
+      const targetNode = ctx.parent !== undefined ? ctx.parent : ctx
+      super(Token.fromIToken(targetNode.start)!, Token.fromIToken(targetNode.stop), targetNode.text)
     }
+  }
 
-    /**
-     * 構文が持つ全ての引数名を取得します。
-     */
-    getAllArgumentNames(): string[] {
-        return Reflect.getMetadata('custom:arguments', this) || []
-    }
+  /**
+   * 構文が持つ全ての引数名を取得します。
+   */
+  getAllArgumentNames(): string[] {
+    return Reflect.getMetadata('custom:arguments', this) || []
+  }
 
-    getAllArgumentKeyValuePairs(): Map<String, exprNode | null> {
-        const args = new Map<String, exprNode | null>()
-        this.getAllArgumentNames().forEach(argName => args.set(argName, (this as any)[argName]))
-        return args
-    }
+  getAllArgumentKeyValuePairs(): Map<string, exprNode | null> {
+    const args = new Map<string, exprNode | null>()
+    this.getAllArgumentNames().forEach((argName) => args.set(argName, (this as any)[argName]))
+    return args
+  }
 }
 
 /**
  * キーを保持する構文のASTノードベースクラス。
  */
 export abstract class SyntaxWithKeyNode extends SyntaxNode {
-    key: exprNode | null = null
+  key: exprNode | null = null
 }
 
 //#region Curve構文
@@ -89,12 +86,14 @@ export abstract class SyntaxWithKeyNode extends SyntaxNode {
  * Curve.SetGauge(value)ノード。
  */
 export class CurveSetgaugeNode extends SyntaxNode {
-    public get type(): MapGrammarType { return MapGrammarType.CurveSetgauge }
-    readonly mapElement: MapElement = MapElement.Curve
-    readonly function: MapFunction = MapFunction.SetGauge
+  public get type(): MapGrammarType {
+    return MapGrammarType.CurveSetgauge
+  }
+  readonly mapElement: MapElement = MapElement.Curve
+  readonly function: MapFunction = MapFunction.SetGauge
 
-    @argument(false)
-    value: exprNode | null = null
+  @argument(false)
+  value: exprNode | null = null
 }
 
 // /**

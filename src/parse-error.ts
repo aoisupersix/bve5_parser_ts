@@ -1,4 +1,4 @@
-import { Token } from "./token";
+import { Token } from './token'
 
 /**
  * bve5_parsingのパースエラー種別です。
@@ -12,7 +12,7 @@ export enum ErrorLevel {
   /**
    * エラー
    */
-  Error
+  Error,
 }
 
 /**
@@ -20,7 +20,6 @@ export enum ErrorLevel {
  * 必要に応じてエラーをコンソールに表示するなどして下さい。
  */
 export class ParseError {
-
   constructor(
     /**
      * エラー種別
@@ -41,6 +40,5 @@ export class ParseError {
      * エラーメッセージ
      */
     public msg: string
-  ) { }
-
+  ) {}
 }
