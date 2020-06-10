@@ -1,5 +1,8 @@
 import * as antlr from 'antlr4ts'
 
+/**
+ * 字句
+ */
 export class Token {
   constructor(
     public line: number,
@@ -8,6 +11,10 @@ export class Token {
     public text: string | undefined
   ) {}
 
+  /**
+   * Antlrの字句をbve5parser上の字句に変換して返します
+   * @param token Antlr字句
+   */
   static fromIToken(token: antlr.Token | undefined): Token | undefined {
     if (token === undefined) {
       return undefined
