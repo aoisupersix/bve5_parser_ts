@@ -1,0 +1,4 @@
+src/map-grammar/v2-parser/parser/*
+src/map-grammar/v2-parser/syntax-definitions/*
+src/scenario-grammar/parser/*
+src/scenario-grammar/syntax-definitions/*

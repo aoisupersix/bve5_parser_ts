@@ -1,6 +1,6 @@
-import { MapGrammarAstNode, MapGrammarType } from './mapGrammarAstNodes'
-import { exprNode } from './exprNode'
-import { SyntaxNode } from './syntaxNode'
+import { MapGrammarAstNode, MapGrammarType } from './map-grammar-ast-nodes'
+import { exprNode } from './expr-node'
+import { SyntaxNode } from './syntax-node'
 
 /**
  * 全てのマップ構文ASTノードです。
@@ -13,15 +13,19 @@ export type statementNode = DistanceNode | VarAssignNode | SyntaxNode
  * 距離程ノード。
  */
 export class DistanceNode extends MapGrammarAstNode {
-    public get type(): MapGrammarType { return MapGrammarType.Distance }
-    value: exprNode | null = null
+  public get type(): MapGrammarType {
+    return MapGrammarType.Distance
+  }
+  value: exprNode | null = null
 }
 
 /**
  * 変数宣言ノード。
  */
 export class VarAssignNode extends MapGrammarAstNode {
-    public get type(): MapGrammarType { return MapGrammarType.VarAssign }
-    varName: string | null = null
-    value: exprNode | null = null
+  public get type(): MapGrammarType {
+    return MapGrammarType.VarAssign
+  }
+  varName: string | null = null
+  value: exprNode | null = null
 }

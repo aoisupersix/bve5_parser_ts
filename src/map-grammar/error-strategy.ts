@@ -1,12 +1,11 @@
-import { DefaultErrorStrategy, Parser, InputMismatchException, NoViableAltException, Token } from "antlr4ts";
+import { DefaultErrorStrategy, Parser, InputMismatchException, NoViableAltException, Token } from 'antlr4ts'
 import * as btoken from '../token'
-import { ParseError, ErrorLevel } from "../parseError";
+import { ParseError, ErrorLevel } from '../parse-error'
 
 /**
  * MapGrammarのエラー処理クラス
  */
 export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
-
   constructor(protected errors: Array<ParseError>) {
     super()
   }
@@ -23,7 +22,7 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
 
   reportInputMismatch(recognizer: Parser, e: InputMismatchException): void {
     const token = this.getTokenErrorDisplay(e.getOffendingToken(recognizer))
-		const expectedString = e.expectedTokens ? e.expectedTokens.toStringVocabulary(recognizer.vocabulary) : "";
+    const expectedString = e.expectedTokens ? e.expectedTokens.toStringVocabulary(recognizer.vocabulary) : ''
     const msg = `入力文字列${token}が予期されたマップ構文'${expectedString}'と一致しませんでした。`
 
     this.addError(recognizer, msg)
@@ -77,7 +76,7 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
     this.errors.push(err)
   }
 
-  notifyErrorListenersFromToken(recognizer: Parser, message: string, offendingToken: Token, ) {
+  notifyErrorListenersFromToken(recognizer: Parser, message: string, offendingToken: Token): void {
     recognizer.notifyErrorListeners(message, offendingToken, undefined)
   }
 }

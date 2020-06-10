@@ -1,11 +1,10 @@
 import { ANTLRInputStream, CommonTokenStream, ANTLRErrorListener, Token } from 'antlr4ts'
 import { ScenarioGrammarLexer } from './parser/ScenarioGrammarLexer'
-import { ScenarioGrammarVisitor } from './scenarioGrammarVisitor'
+import { ScenarioGrammarVisitor, AstNode } from './visitor'
 import * as sParser from './parser/ScenarioGrammarParser'
-import { ParseError } from '../parseError';
+import { ParseError } from '../parse-error'
 
 export class ScenarioGrammarParser {
-
   /**
    * パースエラーです。
    */
@@ -21,17 +20,17 @@ export class ScenarioGrammarParser {
    * 引数に与えられた文字列をパースしてASTノードを返します。
    * @param input マップ構文を表す文字列
    */
-  parse(input: string) {
-    let inputStream = new ANTLRInputStream(input)
-    let lexer = new ScenarioGrammarLexer(inputStream)
-    let tokenStream = new CommonTokenStream(lexer)
-    let antlrParser = new sParser.ScenarioGrammarParser(tokenStream)
+  parse(input: string): AstNode {
+    const inputStream = new ANTLRInputStream(input)
+    const lexer = new ScenarioGrammarLexer(inputStream)
+    const tokenStream = new CommonTokenStream(lexer)
+    const antlrParser = new sParser.ScenarioGrammarParser(tokenStream)
 
     if (this.errorListener !== null) {
       antlrParser.addErrorListener(this.errorListener)
     }
-    let tree = antlrParser.root()
-  
+    const tree = antlrParser.root()
+
     const mapGrammarVisitor = new ScenarioGrammarVisitor()
     return mapGrammarVisitor.visit(tree)
   }
