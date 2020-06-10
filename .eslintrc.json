@@ -19,7 +19,6 @@
         "project": "./tsconfig.json"
     },
     "rules": {
-        "semi": "off",
-        "@typescript-eslint/camelcase": false
+        "semi": "off"
     }
 }
