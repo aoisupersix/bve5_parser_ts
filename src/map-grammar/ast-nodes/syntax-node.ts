@@ -56,7 +56,7 @@ export abstract class SyntaxNode extends MapGrammarAstNode {
       // Get Token from Context
       const ctx = <ParserRuleContext>startOrContext
       const targetNode = ctx.parent !== undefined ? ctx.parent : ctx
-      super(Token.fromIToken(targetNode.start)!, Token.fromIToken(targetNode.stop), targetNode.text)
+      super(Token.fromIToken(targetNode.start), Token.fromITokenOrUndefined(targetNode.stop), targetNode.text)
     }
   }
 

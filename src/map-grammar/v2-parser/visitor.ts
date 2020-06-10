@@ -21,7 +21,7 @@ export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
    * @param ctx
    */
   visitRoot(ctx: parser.RootContext): AstNode {
-    const node = new RootNode(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+    const node = new RootNode(Token.fromIToken(ctx.start), Token.fromITokenOrUndefined(ctx.stop), ctx.text)
 
     if (ctx._version.text !== undefined) {
       node.version = ctx._version.text
@@ -268,7 +268,7 @@ export class MapGrammarV2Visitor extends AbstractParseTreeVisitor<AstNode>
     if (ctx.parent !== undefined) {
       start = ctx.parent.start
     }
-    const node = new DistanceNode(Token.fromIToken(start)!, Token.fromIToken(ctx.stop), ctx.text)
+    const node = new DistanceNode(Token.fromIToken(start), Token.fromITokenOrUndefined(ctx.stop), ctx.text)
 
     const val = this.visit(ctx.expr())
     if (val !== null) {

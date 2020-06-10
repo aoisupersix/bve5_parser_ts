@@ -19,8 +19,8 @@ export class ScenarioGrammarVisitor extends AbstractParseTreeVisitor<AstNode>
       start = ctx.parent.start
       text = start.text! + ctx.text
     }
-    const st = Token.fromIToken(start)!
-    const et = Token.fromIToken(ctx.stop)
+    const st = Token.fromIToken(start)
+    const et = Token.fromITokenOrUndefined(ctx.stop)
 
     return [st, et, text]
   }

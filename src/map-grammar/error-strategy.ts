@@ -71,7 +71,7 @@ export class MapGrammarErrorStrategy extends DefaultErrorStrategy {
   }
 
   addError(recognizer: Parser, msg: string): void {
-    const start = btoken.Token.fromIToken(recognizer.currentToken)!
+    const start = btoken.Token.fromIToken(recognizer.currentToken)
     const err = new ParseError(ErrorLevel.Error, start, null, msg)
     this.errors.push(err)
   }

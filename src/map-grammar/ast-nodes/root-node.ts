@@ -56,7 +56,7 @@ export class RootNode extends MapGrammarAstNode {
     } else {
       // Get Token from Context
       const ctx = <RootContext>startOrContext
-      super(Token.fromIToken(ctx.start)!, Token.fromIToken(ctx.stop), ctx.text)
+      super(Token.fromIToken(ctx.start), Token.fromITokenOrUndefined(ctx.stop), ctx.text)
     }
 
     this._encoding = null
